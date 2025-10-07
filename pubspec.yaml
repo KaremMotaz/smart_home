@@ -7,9 +7,13 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
+  bloc: ^9.0.1
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
+  flutter_bloc: ^9.1.1
   flutter_svg: ^2.2.1
+  local_auth: ^2.3.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -20,6 +24,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/svgs/
 
   fonts:
     - family: Poppins

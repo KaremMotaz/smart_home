@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smart_home/core/theming/assets_data.dart';
+import 'package:smart_home/core/theming/colors_manager.dart';
+import 'package:smart_home/core/theming/text_styles.dart';
+import 'package:smart_home/features/auth/logic/biometric_cubit/biometric_cubit.dart';
 
 class FingerLoginContainer extends StatelessWidget {
   const FingerLoginContainer({super.key});
@@ -10,38 +14,57 @@ class FingerLoginContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
       decoration: BoxDecoration(
-        color: Colors.white.withAlpha(100),
+        color: Colors.white.withAlpha(130),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50),
           topRight: Radius.circular(50),
         ),
       ),
-      child: Column(
-        children: [
-          Text("Place your finger to open"),
-          Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.black, width: 2),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Colors.black, Color(0xffEFF1F5).withAlpha(0)],
-              ),
+      child: GestureDetector(
+        onTap: () {
+          context.read<BiometricCubit>().authenticate();
+        },
+        child: Column(
+          children: [
+            Text(
+              "Place your finger to open",
+              style: TextStyles.regular14.copyWith(color: Color(0xff404344)),
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-              ),
-              child: SvgPicture.asset(
-                AssetsData.fingerIcon,
-                width: 42,
-                height: 44,
-              ),
+            SizedBox(height: 16),
+            Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: 78,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        ColorsManager.darkerBlue,
+                        ColorsManager.darkBlue,
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: SvgPicture.asset(AssetsData.fingerIcon),
+                ),
+                Positioned(
+                  bottom: -16,
+                  child: SvgPicture.asset(AssetsData.fingerShape, width: 220),
+                ),
+              ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
