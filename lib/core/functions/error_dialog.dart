@@ -7,21 +7,21 @@ import '../theming/text_styles.dart';
 void errorDialog({
   required BuildContext context,
   required String message,
-  required List<String> details,
+  required String error,
 }) {
   showDialog(
     context: context,
     builder: (context) {
-      return ErrorDialog(message: message, details: details);
+      return ErrorDialog(message: message, error: error);
     },
   );
 }
 
 class ErrorDialog extends StatelessWidget {
   final String message;
-  final List<String> details;
+  final String error;
 
-  const ErrorDialog({super.key, required this.message, required this.details});
+  const ErrorDialog({super.key, required this.message, required this.error});
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +55,7 @@ class ErrorDialog extends StatelessWidget {
           const SizedBox(height: 16),
           Text(message, style: TextStyles.bold20, textAlign: TextAlign.center),
           const SizedBox(height: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: details
-                .map((msg) => Text(msg, style: TextStyles.medium16))
-                .toList(),
-          ),
+          Text(error, style: TextStyles.medium16, textAlign: TextAlign.center),
           const SizedBox(height: 20),
           OutlinedButton(
             onPressed: () => GoRouter.of(context).pop(),

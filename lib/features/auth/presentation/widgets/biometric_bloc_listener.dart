@@ -19,7 +19,7 @@ class BiometricBlocListener extends StatelessWidget {
           successSnackBar(context: context, message: "Successfully Logged In");
           GoRouter.of(context).go(Routes.homeView);
         } else if (state is BiometricFailureState) {
-          errorDialog(context: context, message: state.message, details: []);
+          errorDialog(context: context, message: state.message, error: "");
         }
       },
       child: GestureDetector(

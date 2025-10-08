@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:local_auth/local_auth.dart';
-import '../../data/biometric_repo.dart';
+import '../../data/repos/biometric_repo.dart';
 import 'biometric_state.dart';
 
 class BiometricCubit extends Cubit<BiometricState> {
