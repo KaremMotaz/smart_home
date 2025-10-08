@@ -39,13 +39,18 @@ class BiometricCubit extends Cubit<BiometricState> {
     final List<BiometricType> available = await biometricRepo
         .getAvailableBiometrics();
 
-    final bool authenticated = available.isNotEmpty
-        ? await biometricRepo.authenticateWithBiometrics(available)
-        : await biometricRepo.authenticateWithPIN();
+    try {
+      final bool authenticated = available.isNotEmpty
+          ? await biometricRepo.authenticateWithBiometrics(available)
+          : await biometricRepo.authenticateWithPIN();
 
-    if (isClosed) return;
-    authenticated
-        ? emit(BiometricSuccessState())
-        : emit(BiometricFailureState("Authentication failed."));
+      if (isClosed) return;
+      if (authenticated) {
+        emit(BiometricSuccessState());
+      }
+    } catch (e) {
+      if (isClosed) return;
+      emit(BiometricFailureState(e.toString()));
+    }
   }
 }
