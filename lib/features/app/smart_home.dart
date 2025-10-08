@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/routing/app_router.dart';
+
+import '../../core/routing/app_router.dart';
 
 class SmartHome extends StatelessWidget {
   const SmartHome({super.key});

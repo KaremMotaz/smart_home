@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:smart_home/features/auth/data/biometric_repo.dart';
-import 'package:smart_home/features/auth/manager/biometric_cubit/biometric_cubit.dart';
+import '../../features/auth/data/biometric_repo.dart';
+import '../../features/auth/manager/biometric_cubit/biometric_cubit.dart';
 
 final getIt = GetIt.instance;
 

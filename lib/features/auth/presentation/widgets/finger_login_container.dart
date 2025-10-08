@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/auth/presentation/widgets/biometric_bloc_listener.dart';
+import 'biometric_bloc_listener.dart';
 
 class FingerLoginContainer extends StatelessWidget {
   const FingerLoginContainer({super.key});

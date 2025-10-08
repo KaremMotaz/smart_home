@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/functions/build_snack_bar.dart';
-import 'package:smart_home/core/functions/error_dialog.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/features/auth/manager/biometric_cubit/biometric_cubit.dart';
-import 'package:smart_home/features/auth/manager/biometric_cubit/biometric_state.dart';
-import 'package:smart_home/features/auth/presentation/widgets/fingerprint_shape.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/functions/error_dialog.dart';
+import '../../../../core/routing/routes.dart';
+import '../../manager/biometric_cubit/biometric_cubit.dart';
+import '../../manager/biometric_cubit/biometric_state.dart';
+import 'fingerprint_shape.dart';
 
 class BiometricBlocListener extends StatelessWidget {
   const BiometricBlocListener({super.key});

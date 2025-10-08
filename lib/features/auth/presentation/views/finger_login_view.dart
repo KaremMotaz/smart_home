@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:smart_home/features/auth/presentation/widgets/finger_login_view_body.dart';
+import '../widgets/finger_login_view_body.dart';
 
 class FingerLoginView extends StatelessWidget {
   const FingerLoginView({super.key});

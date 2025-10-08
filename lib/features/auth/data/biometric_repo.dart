@@ -18,9 +18,9 @@ class BiometricRepo {
   }
 
   Future<bool> authenticateWithBiometrics(List<BiometricType> available) {
-    final reason = available.contains(BiometricType.face)
-        ? 'Please use Face ID to log in.'
-        : 'Please use your fingerprint to log in.';
+    final reason = available.contains(BiometricType.fingerprint)
+        ? 'Please use your fingerprint to log in.'
+        : 'Please use Face ID to log in.';
     return auth.authenticate(
       localizedReason: reason,
       options: const AuthenticationOptions(
