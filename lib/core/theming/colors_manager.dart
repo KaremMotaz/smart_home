@@ -8,6 +8,7 @@ class ColorsManager {
   static const Color formFieldGrey = Color(0x69CECACA);
   static const Color lightBlue = Color(0xffEFF1F5);
   static const Color orange = Color(0xffFF8A00);
+  static const Color orange2 = Color(0xffffb901);
   static const Color green = Color(0xff4CAF50);
   static const Color darkRed = Color(0xffdb2323);
   static const Color red = Color(0xffEA7173);

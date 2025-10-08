@@ -83,6 +83,6 @@ class AppTextFormField extends StatelessWidget {
 OutlineInputBorder buildOutLineInputBorder({required Color borderColor}) {
   return OutlineInputBorder(
     borderSide: BorderSide(color: borderColor, width: 1.3),
-    borderRadius: BorderRadius.circular(16),
+    borderRadius: BorderRadius.circular(40),
   );
 }

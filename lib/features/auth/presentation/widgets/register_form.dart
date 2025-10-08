@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/helpers/app_validators.dart';
 import 'package:smart_home/features/auth/manager/cubit/register_cubit.dart';
-
 import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/theming/text_styles.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
 import '../../data/models/register_request_body.dart';
@@ -91,25 +90,13 @@ class _RegisterFormState extends State<RegisterForm> {
                 isPasswordObscureText ? Icons.visibility_off : Icons.visibility,
               ),
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return "Please enter your password";
-              }
-              if (!AppRegex.isPasswordValid(value)) {
-                return "Please enter a valid password";
-              }
-              return null;
-            },
+            validator: AppValidators.validatePassword,
           ),
-          const SizedBox(height: 24),
-          const Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Text("Password must contain:", style: TextStyles.regular14),
-          ),
-
-          const SizedBox(height: 25),
+          const SizedBox(height: 40),
           BlocButton<RegisterCubit, RegisterState>(
             label: "Register",
+            borderRadius: 50,
+            buttonHeight: 60,
             isLoading: (state) => state is RegisterLoadingState,
             onPressed: () {
               validateThenRegister(context);
@@ -124,10 +111,13 @@ class _RegisterFormState extends State<RegisterForm> {
     if (formKey.currentState!.validate()) {
       context.read<RegisterCubit>().register(
         registerRequestBody: RegisterRequestBody(
-          email: emailController.text,
           firstName: firstNameController.text,
           lastName: lastNameController.text,
-          password: passwordController.text,
+          email: emailController.text,
+          credentials: Credentials(
+            userName: "${firstNameController.text} ${lastNameController.text}",
+            password: passwordController.text,
+          ),
         ),
       );
     }
