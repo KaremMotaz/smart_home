@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:local_auth/local_auth.dart';
+import 'package:smart_home/core/services/get_it_service.dart';
 import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/features/auth/data/biometric_repo.dart';
-import 'package:smart_home/features/auth/logic/biometric_cubit/biometric_cubit.dart';
+import 'package:smart_home/features/auth/manager/biometric_cubit/biometric_cubit.dart';
 import 'package:smart_home/features/auth/presentation/widgets/finger_login_container.dart';
 import 'package:smart_home/features/auth/presentation/widgets/shadow_container.dart';
 import 'package:smart_home/features/auth/presentation/widgets/text_body.dart';
@@ -21,9 +20,7 @@ class FingerLoginViewBody extends StatelessWidget {
         ShadowContainer(),
         TextBody(),
         BlocProvider(
-          create: (context) => BiometricCubit(
-            biometricRepo: BiometricRepo(LocalAuthentication()),
-          ),
+          create: (context) => getIt<BiometricCubit>(),
           child: Positioned(
             bottom: 0,
             right: 0,

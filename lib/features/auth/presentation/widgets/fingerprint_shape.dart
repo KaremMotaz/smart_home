@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:smart_home/core/theming/assets_data.dart';
+import 'package:smart_home/core/theming/colors_manager.dart';
+import 'package:smart_home/core/theming/text_styles.dart';
+
+class FingerprintShape extends StatelessWidget {
+  const FingerprintShape({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          "Place your finger to open",
+          style: TextStyles.regular14.copyWith(color: Color(0xff404344)),
+        ),
+        SizedBox(height: 16),
+        Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.center,
+          children: [
+            Container(
+              height: 78,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [ColorsManager.darkerBlue, ColorsManager.darkBlue],
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              child: SvgPicture.asset(AssetsData.fingerIcon),
+            ),
+            Positioned(
+              bottom: -16,
+              child: SvgPicture.asset(AssetsData.fingerShape, width: 220),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}

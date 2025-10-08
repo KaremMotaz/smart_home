@@ -1,14 +1,21 @@
 import 'package:local_auth/local_auth.dart';
 
-class BiometricRepo{
+class BiometricRepo {
   final LocalAuthentication auth;
 
-  BiometricRepo(this.auth);
+  BiometricRepo({required this.auth});
 
-  Future<bool> canCheckBiometrics() => auth.canCheckBiometrics;
+  Future<bool> canCheckBiometrics() {
+    return auth.canCheckBiometrics;
+  }
 
-  
-  Future<List<BiometricType>> getAvailableBiometrics() => auth.getAvailableBiometrics();
+  Future<bool> isDeviceSupported() {
+    return auth.isDeviceSupported();
+  }
+
+  Future<List<BiometricType>> getAvailableBiometrics() {
+    return auth.getAvailableBiometrics();
+  }
 
   Future<bool> authenticateWithBiometrics(List<BiometricType> available) {
     final reason = available.contains(BiometricType.face)
