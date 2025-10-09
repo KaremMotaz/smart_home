@@ -118,7 +118,7 @@ class _RegisterFormState extends State<RegisterForm> {
           lastName: lastNameController.text,
           email: emailController.text,
           credentials: Credentials(
-            userName: "${firstNameController.text} ${lastNameController.text}",
+            userName: "${firstNameController.text}${lastNameController.text}",
             password: passwordController.text,
           ),
           metadata: Metadata(

@@ -19,6 +19,10 @@ class LoginRepo {
         key: kAccessToken,
         value: response.accessToken,
       );
+      await CacheHelper.setSecureData(
+        key: kRefreshToken,
+        value: response.refreshToken,
+      );
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));

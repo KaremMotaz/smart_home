@@ -12,8 +12,8 @@ class DioFactory {
     dio = Dio(
       BaseOptions(
         baseUrl: ApiConstants.apiBaseUrl,
-        connectTimeout: const Duration(minutes: 1),
-        receiveTimeout: const Duration(minutes: 1),
+        connectTimeout: const Duration(minutes: 3),
+        receiveTimeout: const Duration(minutes: 3),
         sendTimeout: const Duration(minutes: 5),
       ),
     );

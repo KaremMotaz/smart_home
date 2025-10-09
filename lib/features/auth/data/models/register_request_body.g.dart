@@ -23,8 +23,8 @@ Map<String, dynamic> _$RegisterRequestBodyToJson(
   'first_name': instance.firstName,
   'last_name': instance.lastName,
   'email': instance.email,
-  'credentials': instance.credentials,
-  'metadata': instance.metadata,
+  'credentials': instance.credentials.toJson(),
+  'metadata': instance.metadata.toJson(),
 };
 
 Credentials _$CredentialsFromJson(Map<String, dynamic> json) => Credentials(

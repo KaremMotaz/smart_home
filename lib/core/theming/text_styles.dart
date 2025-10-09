@@ -3,17 +3,27 @@ import 'package:flutter/material.dart';
 import 'font_weight_helper.dart';
 
 abstract class TextStyles {
+  static const TextStyle extraBold28 = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeightHelper.extraBold,
+    fontFamily: 'Poppins',
+  );
   static const TextStyle semiBold26 = TextStyle(
     fontSize: 26,
     fontWeight: FontWeightHelper.semiBold,
     fontFamily: 'Poppins',
   );
-    static const TextStyle bold24 = TextStyle(
+  static const TextStyle bold24 = TextStyle(
     fontSize: 24,
     fontWeight: FontWeightHelper.bold,
     fontFamily: 'Poppins',
   );
-    static const TextStyle bold20 = TextStyle(
+  static const TextStyle bold22 = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: 'Poppins',
+  );
+  static const TextStyle bold20 = TextStyle(
     fontSize: 20,
     fontWeight: FontWeightHelper.bold,
     fontFamily: 'Poppins',
@@ -48,7 +58,7 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.regular,
     fontFamily: 'Poppins',
   );
-    static const TextStyle medium14 = TextStyle(
+  static const TextStyle medium14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.medium,
     fontFamily: 'Poppins',
@@ -59,7 +69,7 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.regular,
     fontFamily: 'Poppins',
   );
-  
+
   static const TextStyle regular12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeightHelper.regular,
