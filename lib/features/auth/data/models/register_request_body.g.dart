@@ -14,6 +14,7 @@ RegisterRequestBody _$RegisterRequestBodyFromJson(Map<String, dynamic> json) =>
       credentials: Credentials.fromJson(
         json['credentials'] as Map<String, dynamic>,
       ),
+      metadata: Metadata.fromJson(json['metadata'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$RegisterRequestBodyToJson(
@@ -22,7 +23,8 @@ Map<String, dynamic> _$RegisterRequestBodyToJson(
   'first_name': instance.firstName,
   'last_name': instance.lastName,
   'email': instance.email,
-  'credentials': instance.credentials.toJson(),
+  'credentials': instance.credentials,
+  'metadata': instance.metadata,
 };
 
 Credentials _$CredentialsFromJson(Map<String, dynamic> json) => Credentials(
@@ -35,3 +37,10 @@ Map<String, dynamic> _$CredentialsToJson(Credentials instance) =>
       'username': instance.userName,
       'secret': instance.password,
     };
+
+Metadata _$MetadataFromJson(Map<String, dynamic> json) =>
+    Metadata(phoneNumber: json['phoneNumber'] as String);
+
+Map<String, dynamic> _$MetadataToJson(Metadata instance) => <String, dynamic>{
+  'phoneNumber': instance.phoneNumber,
+};

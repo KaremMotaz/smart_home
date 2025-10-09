@@ -10,6 +10,12 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   final RegisterRepo registerRepo;
 
+  String? phoneNumber;
+
+  void setPhoneNumber(String number) {
+    phoneNumber = number;
+  }
+
   Future<void> register({
     required RegisterRequestBody registerRequestBody,
   }) async {

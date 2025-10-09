@@ -1,6 +1,8 @@
 class Routes {
+  static const String onboardingView = '/onboardingView';
   static const String fingerLoginView = '/fingerLoginView';
-  static const String registerView = '/';
-  static const String loginView = '/loginView';
+  static const String welcomeView = '/welcomeView';
+  static const String loginView = '/';
+  static const String registerView = '/registerView';
   static const String homeView = '/homeView';
 }

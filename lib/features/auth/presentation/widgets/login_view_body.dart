@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/features/auth/manager/register_cubit/register_cubit.dart';
+import 'package:smart_home/features/auth/manager/login_cubit/login_cubit.dart';
+import 'package:smart_home/features/auth/presentation/widgets/login_form.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import 'register_form.dart';
 
-class RegisterViewBody extends StatefulWidget {
-  const RegisterViewBody({super.key});
+class LoginViewBody extends StatefulWidget {
+  const LoginViewBody({super.key});
 
   @override
-  State<RegisterViewBody> createState() => _RegisterViewBodyState();
+  State<LoginViewBody> createState() => _LoginViewBodyState();
 }
 
-class _RegisterViewBodyState extends State<RegisterViewBody>
+class _LoginViewBodyState extends State<LoginViewBody>
     with SingleTickerProviderStateMixin {
   PersistentBottomSheetController? sheetController;
   late AnimationController _animationController;
@@ -54,12 +54,13 @@ class _RegisterViewBodyState extends State<RegisterViewBody>
   }
 
   void _showAnimatedPersistentSheet(BuildContext context) {
-    final registerCubit = context.read<RegisterCubit>();
+    final loginCubit = context.read<LoginCubit>();
     final height = MediaQuery.of(context).size.height * 0.72;
 
     sheetController = Scaffold.of(context).showBottomSheet(
       backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
+      constraints: BoxConstraints(maxHeight: height),
       (ctx) {
         _animationController.forward();
         return AnimatedBuilder(
@@ -74,13 +75,13 @@ class _RegisterViewBodyState extends State<RegisterViewBody>
             );
           },
           child: BlocProvider.value(
-            value: registerCubit,
+            value: loginCubit,
             child: Container(
               height: height,
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
               child: const SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
-                child: RegisterForm(),
+                child: LoginForm(),
               ),
             ),
           ),
@@ -104,7 +105,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                onTap: () => GoRouter.of(context).go(Routes.loginView),
+                onTap: () => GoRouter.of(context).go(Routes.welcomeView),
                 child: const Icon(
                   Icons.arrow_back_ios,
                   size: 20,
@@ -112,9 +113,9 @@ class _RegisterViewBodyState extends State<RegisterViewBody>
                 ),
               ),
               TextButton(
-                onPressed: () => GoRouter.of(context).go(Routes.loginView),
+                onPressed: () => GoRouter.of(context).push(Routes.registerView),
                 child: Text(
-                  "Login",
+                  "Register",
                   style: TextStyles.bold16.copyWith(
                     color: ColorsManager.darkerBlue,
                   ),
@@ -124,12 +125,12 @@ class _RegisterViewBodyState extends State<RegisterViewBody>
           ),
           const SizedBox(height: 20),
           Text(
-            "Register",
+            "Login",
             style: TextStyles.bold24.copyWith(color: ColorsManager.darkerBlue),
           ),
           const SizedBox(height: 10),
           Text(
-            "Register now and experience the comfort of a connected home at your fingertips",
+            "Login now and take control of your smart home effortlessly, all from the palm of your hand.",
             style: TextStyles.medium14.copyWith(
               color: ColorsManager.darkerBlue,
             ),
