@@ -30,7 +30,7 @@ class MembersSection extends StatelessWidget {
         children: [
           MembersListView(),
           Padding(
-            padding: const EdgeInsets.all(6),
+            padding: const EdgeInsets.symmetric(horizontal: 12.5, vertical: 6),
             child: GestureDetector(
               onTap: () {},
               child: CircleAvatar(

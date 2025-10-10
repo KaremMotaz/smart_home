@@ -71,6 +71,11 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.regular,
     fontFamily: 'Poppins',
   );
+  static const TextStyle extraBold14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeightHelper.extraBold,
+    fontFamily: 'Poppins',
+  );
   static const TextStyle medium14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.medium,
