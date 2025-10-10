@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/auth/presentation/widgets/login_form.dart';
+import 'login_form.dart';
 
 class LoginFormContainer extends StatelessWidget {
   const LoginFormContainer({super.key});

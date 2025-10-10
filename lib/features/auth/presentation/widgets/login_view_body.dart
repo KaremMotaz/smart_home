@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/auth/presentation/widgets/login_form_container.dart';
-import 'package:smart_home/features/auth/presentation/widgets/login_header.dart';
+import 'login_form_container.dart';
+import 'login_header.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});

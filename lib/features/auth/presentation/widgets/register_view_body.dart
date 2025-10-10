@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/auth/presentation/widgets/register_form_container.dart';
-import 'package:smart_home/features/auth/presentation/widgets/register_header.dart';
+import 'register_form_container.dart';
+import 'register_header.dart';
 
 class RegisterViewBody extends StatelessWidget {
   const RegisterViewBody({super.key});

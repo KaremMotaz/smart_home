@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/features/home/presentation/widgets/members_list_view.dart';
+import '../../../../core/theming/colors_manager.dart';
+import 'members_list_view.dart';
 
 class MembersSection extends StatelessWidget {
   const MembersSection({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/app_text_button.dart';
+import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
 
 class UserAccount extends StatelessWidget {
   const UserAccount({super.key});

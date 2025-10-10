@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/home/data/models/rooms_model.dart';
-import 'package:smart_home/features/home/presentation/widgets/room_card.dart';
+import '../../data/models/rooms_model.dart';
+import 'room_card.dart';
 
 class AllRoomsListView extends StatelessWidget {
   const AllRoomsListView({super.key});

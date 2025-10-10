@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/features/home/data/models/rooms_model.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../data/models/rooms_model.dart';
 
 class RoomCard extends StatelessWidget {
   const RoomCard({super.key, required this.roomsModel});

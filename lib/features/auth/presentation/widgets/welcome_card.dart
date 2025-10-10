@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/app_text_button.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
 
 class WelcomeCard extends StatelessWidget {
   const WelcomeCard({super.key});

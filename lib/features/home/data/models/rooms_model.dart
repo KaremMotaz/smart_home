@@ -1,4 +1,4 @@
-import 'package:smart_home/core/theming/assets_data.dart';
+import '../../../../core/theming/assets_data.dart';
 
 class RoomsModel {
   final String roomName;

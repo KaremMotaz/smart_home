@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/helpers/app_validators.dart';
-import 'package:smart_home/features/auth/manager/register_cubit/register_cubit.dart';
-import 'package:smart_home/features/auth/presentation/widgets/phone_field.dart';
+import '../../../../core/helpers/app_validators.dart';
+import '../../manager/register_cubit/register_cubit.dart';
+import 'phone_field.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';

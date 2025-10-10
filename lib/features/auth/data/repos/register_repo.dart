@@ -1,8 +1,8 @@
-import 'package:smart_home/core/networking/api_error_handler.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/features/auth/data/models/register_request_body.dart';
-import 'package:smart_home/features/auth/data/models/register_response_body.dart';
-import 'package:smart_home/features/auth/data/services/auth_service.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../models/register_request_body.dart';
+import '../models/register_response_body.dart';
+import '../services/auth_service.dart';
 
 class RegisterRepo {
   final AuthService authService;

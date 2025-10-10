@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 class AddDeviceSection extends StatelessWidget {
   const AddDeviceSection({super.key});

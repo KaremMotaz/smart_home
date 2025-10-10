@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/features/home/presentation/widgets/all_rooms_list_view.dart';
+import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/text_styles.dart';
+import 'all_rooms_list_view.dart';
 
 class AllRoomsSection extends StatelessWidget {
   const AllRoomsSection({super.key});

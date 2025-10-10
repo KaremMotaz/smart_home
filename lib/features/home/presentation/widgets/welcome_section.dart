@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
+import '../../../../core/theming/text_styles.dart';
 
 class WelcomeSection extends StatelessWidget {
   const WelcomeSection({super.key});

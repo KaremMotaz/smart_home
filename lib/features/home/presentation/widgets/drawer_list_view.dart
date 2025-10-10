@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/features/home/presentation/widgets/custom_drawer_option.dart';
+import '../../../../core/theming/assets_data.dart';
+import 'custom_drawer_option.dart';
 
 class DrawerListView extends StatelessWidget {
   const DrawerListView({super.key});

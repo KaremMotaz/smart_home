@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import '../widgets/finger_login_view_body.dart';
 
 class FingerLoginView extends StatelessWidget {

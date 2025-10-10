@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/features/home/presentation/widgets/all_rooms_section.dart';
-import 'package:smart_home/features/home/presentation/widgets/custom_drawer.dart';
-import 'package:smart_home/features/home/presentation/widgets/home_menu.dart';
-import 'package:smart_home/features/home/presentation/widgets/members_section.dart';
-import 'package:smart_home/features/home/presentation/widgets/temp_and_devices_section.dart';
-import 'package:smart_home/features/home/presentation/widgets/welcome_section.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../widgets/all_rooms_section.dart';
+import '../widgets/custom_drawer.dart';
+import '../widgets/home_menu.dart';
+import '../widgets/members_section.dart';
+import '../widgets/temp_and_devices_section.dart';
+import '../widgets/welcome_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

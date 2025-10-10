@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:smart_home/core/networking/api_constants.dart';
-import 'package:smart_home/features/auth/data/models/login_request_body.dart';
-import 'package:smart_home/features/auth/data/models/login_response_body.dart';
-import 'package:smart_home/features/auth/data/models/register_request_body.dart';
-import 'package:smart_home/features/auth/data/models/register_response_body.dart';
+import '../../../../core/networking/api_constants.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response_body.dart';
+import '../models/register_request_body.dart';
+import '../models/register_response_body.dart';
 part 'auth_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)

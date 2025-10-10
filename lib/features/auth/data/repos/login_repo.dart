@@ -1,10 +1,10 @@
-import 'package:smart_home/core/helpers/constants.dart';
-import 'package:smart_home/core/networking/api_error_handler.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/core/services/cache_helper.dart';
-import 'package:smart_home/features/auth/data/models/login_request_body.dart';
-import 'package:smart_home/features/auth/data/models/login_response_body.dart';
-import 'package:smart_home/features/auth/data/services/auth_service.dart';
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../../../core/services/cache_helper.dart';
+import '../models/login_request_body.dart';
+import '../models/login_response_body.dart';
+import '../services/auth_service.dart';
 
 class LoginRepo {
   final AuthService authService;

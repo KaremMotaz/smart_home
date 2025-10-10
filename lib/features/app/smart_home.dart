@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/theme_manager.dart';
+import '../../core/theming/theme_manager.dart';
 
 import '../../core/routing/app_router.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/auth/presentation/widgets/register_form.dart';
+import 'register_form.dart';
 
 class RegisterFormContainer extends StatelessWidget {
   const RegisterFormContainer({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/features/home/data/models/members_model.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../data/models/members_model.dart';
 
 class MembersListView extends StatelessWidget {
   const MembersListView({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/features/auth/presentation/widgets/auth_app_bar.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import 'auth_app_bar.dart';
 
 class RegisterHeader extends StatelessWidget {
   const RegisterHeader({super.key});
