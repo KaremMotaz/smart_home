@@ -37,6 +37,11 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.bold,
     fontFamily: 'Poppins',
   );
+  static const TextStyle semiBold20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: 'Poppins',
+  );
   static const TextStyle bold18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.bold,
@@ -74,6 +79,11 @@ abstract class TextStyles {
   static const TextStyle extraBold14 = TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.extraBold,
+    fontFamily: 'Poppins',
+  );
+  static const TextStyle semiBold14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeightHelper.semiBold,
     fontFamily: 'Poppins',
   );
   static const TextStyle medium14 = TextStyle(

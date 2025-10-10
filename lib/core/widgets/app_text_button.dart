@@ -17,6 +17,7 @@ class AppTextButton extends StatelessWidget {
     this.buttonHeight,
     this.borderColor,
     this.child,
+    this.borderWidth,
   });
   final String? buttonText;
   final TextStyle? textStyle;
@@ -29,6 +30,7 @@ class AppTextButton extends StatelessWidget {
   final double? buttonWidth;
   final double? buttonHeight;
   final Widget? child;
+  final double? borderWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,10 @@ class AppTextButton extends StatelessWidget {
           ),
         ),
         side: WidgetStatePropertyAll<BorderSide>(
-          BorderSide(color: borderColor ?? Colors.white, width: 1),
+          BorderSide(
+            color: borderColor ?? Colors.white,
+            width: borderWidth ?? 1,
+          ),
         ),
         backgroundColor: WidgetStatePropertyAll<Color>(
           backgroundColor ?? ColorsManager.darkerBlue,
