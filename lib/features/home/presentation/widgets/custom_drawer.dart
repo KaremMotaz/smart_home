@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/core/theming/assets_data.dart';
 import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/app_text_button.dart';
 import 'package:smart_home/features/home/presentation/widgets/custom_drawer_option.dart';
+import 'package:smart_home/features/home/presentation/widgets/drawer_list_view.dart';
+import 'package:smart_home/features/home/presentation/widgets/user_account.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -12,97 +12,41 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       width: 270,
-      child: Container(
-        padding: const EdgeInsets.only(top: 64, bottom: 64),
-        color: ColorsManager.darkbrown,
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                    backgroundColor: ColorsManager.lighterGrey,
-                    backgroundImage: const AssetImage(AssetsData.member3),
-                  ),
-                  SizedBox(width: 8),
-                  Container(
-                    color: Colors.red,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Hi Dakolo',
-                          style: TextStyles.semiBold20.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: 4),
-                        AppTextButton(
-                          onPressed: () {},
-                          buttonText: 'Edit Profile',
-                          buttonHeight: 24,
-                          backgroundColor: ColorsManager.darkbrown,
-                          borderRadius: 40,
-                          borderWidth: 4,
-                          verticalPadding: 0,
-                          textStyle: TextStyles.semiBold14.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+      backgroundColor: Colors.transparent,
+      child: Align(
+        alignment: Alignment.center,
+        child: SizedBox(
+          height: 702,
+          child: Container(
+            padding: const EdgeInsets.only(top: 64, bottom: 64),
+            decoration: BoxDecoration(
+              color: ColorsManager.darkbrown,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(40),
+                bottomRight: Radius.circular(40),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-              child: const Divider(color: Colors.white, thickness: 1),
+            child: Column(
+              children: [
+                const UserAccount(),
+                const SizedBox(height: 24),
+                const Divider(
+                  color: Colors.white,
+                  thickness: 0.3,
+                  height: 0,
+                  indent: 20,
+                  endIndent: 20,
+                ),
+                const SizedBox(height: 7),
+                const Expanded(child: DrawerListView()),
+                CustomDrawerOption(
+                  icon: AssetsData.logoutIcon,
+                  title: 'Logout',
+                  onTap: () {},
+                ),
+              ],
             ),
-            Expanded(
-              child: Column(
-                children: [
-                  CustomDrawerOption(
-                    icon: AssetsData.usersIcon,
-                    title: 'Manage Users',
-                    onTap: () {},
-                  ),
-                  CustomDrawerOption(
-                    icon: AssetsData.devicesIcon,
-                    title: 'Devices',
-                    onTap: () {},
-                  ),
-                  CustomDrawerOption(
-                    icon: AssetsData.roomsIcon,
-                    title: 'Rooms',
-                    onTap: () {},
-                  ),
-                  CustomDrawerOption(
-                    icon: AssetsData.soundIcon,
-                    title: 'Sound',
-                    onTap: () {},
-                  ),
-                  CustomDrawerOption(
-                    icon: AssetsData.settingsIcon,
-                    title: 'Settings',
-                    onTap: () {},
-                  ),
-                  CustomDrawerOption(
-                    icon: AssetsData.helpIcon,
-                    title: 'Help',
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-            CustomDrawerOption(
-              icon: AssetsData.logoutIcon,
-              title: 'Logout',
-              onTap: () {},
-            ),
-          ],
+          ),
         ),
       ),
     );

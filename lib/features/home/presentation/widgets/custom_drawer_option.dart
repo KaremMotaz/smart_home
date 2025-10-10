@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_home/core/theming/text_styles.dart';
 
 class CustomDrawerOption extends StatelessWidget {
@@ -22,16 +21,10 @@ class CustomDrawerOption extends StatelessWidget {
         splashColor: Colors.white.withAlpha(5),
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          padding: const EdgeInsets.only(left: 30, bottom: 18, top: 18),
           child: Row(
             children: [
-              SvgPicture.asset(
-                icon,
-                colorFilter: const ColorFilter.mode(
-                  Colors.white,
-                  BlendMode.srcIn,
-                ),
-              ),
+              Image.asset(icon, width: 24),
               const SizedBox(width: 16),
               Text(
                 title,
