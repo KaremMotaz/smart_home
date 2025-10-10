@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:smart_home/core/networking/api_error_model.dart';
 import 'package:smart_home/core/networking/api_result.dart';
 import 'package:smart_home/features/auth/data/models/login_request_body.dart';
 import 'package:smart_home/features/auth/data/repos/login_repo.dart';
@@ -16,10 +17,8 @@ class LoginCubit extends Cubit<LoginState> {
       success: (data) {
         emit(LoginSuccessState());
       },
-      failure: (error) async {
-        emit(
-          LoginFailureState(error: error.error ?? "", message: error.message),
-        );
+      failure: (apiErrorModel) async {
+        emit(LoginFailureState(apiErrorModel: apiErrorModel));
       },
     );
   }

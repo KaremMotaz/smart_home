@@ -14,8 +14,7 @@ final class RegisterLoadingState extends RegisterState {}
 final class RegisterSuccessState extends RegisterState {}
 
 final class RegisterFailureState extends RegisterState {
-  final String error;
-  final String message;
+  final ApiErrorModel apiErrorModel;
 
-  const RegisterFailureState({required this.error, required this.message});
+  const RegisterFailureState({required this.apiErrorModel});
 }

@@ -21,8 +21,8 @@ class LoginViewBodyBlocListener extends StatelessWidget {
         if (state is LoginFailureState) {
           errorDialog(
             context: context,
-            message: state.message,
-            error: state.error,
+            message: state.apiErrorModel.message,
+            error: state.apiErrorModel.error ?? "",
           );
         }
       },

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:smart_home/core/networking/api_error_model.dart';
 import 'package:smart_home/core/networking/api_result.dart';
 import 'package:smart_home/features/auth/data/models/register_request_body.dart';
 import 'package:smart_home/features/auth/data/repos/register_repo.dart';
@@ -27,13 +28,8 @@ class RegisterCubit extends Cubit<RegisterState> {
       success: (data) {
         emit(RegisterSuccessState());
       },
-      failure: (error) async {
-        emit(
-          RegisterFailureState(
-            error: error.error ?? "",
-            message: error.message,
-          ),
-        );
+      failure: (apiErrorModel) async {
+        emit(RegisterFailureState(apiErrorModel: apiErrorModel));
       },
     );
   }

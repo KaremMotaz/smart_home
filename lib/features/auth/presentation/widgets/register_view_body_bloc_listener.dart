@@ -21,8 +21,8 @@ class RegisterViewBodyBlocListener extends StatelessWidget {
         if (state is RegisterFailureState) {
           errorDialog(
             context: context,
-            message: state.message,
-            error: state.error,
+            message: state.apiErrorModel.message,
+            error: state.apiErrorModel.error ?? "",
           );
         }
       },

@@ -14,8 +14,7 @@ final class LoginLoadingState extends LoginState {}
 final class LoginSuccessState extends LoginState {}
 
 final class LoginFailureState extends LoginState {
-  final String error;
-  final String message;
+  final ApiErrorModel apiErrorModel;
 
-  const LoginFailureState({required this.error, required this.message});
+  const LoginFailureState({required this.apiErrorModel});
 }

@@ -1,141 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/features/auth/manager/register_cubit/register_cubit.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
-import 'register_form.dart';
+import 'package:smart_home/features/auth/presentation/widgets/register_form_container.dart';
+import 'package:smart_home/features/auth/presentation/widgets/register_header.dart';
 
-class RegisterViewBody extends StatefulWidget {
+class RegisterViewBody extends StatelessWidget {
   const RegisterViewBody({super.key});
 
   @override
-  State<RegisterViewBody> createState() => _RegisterViewBodyState();
-}
-
-class _RegisterViewBodyState extends State<RegisterViewBody>
-    with SingleTickerProviderStateMixin {
-  PersistentBottomSheetController? sheetController;
-  late AnimationController _animationController;
-  late Animation<Offset> _slideAnimation;
-  late Animation<double> _fadeAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 300),
-    );
-
-    _slideAnimation = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero)
-        .animate(
-          CurvedAnimation(
-            parent: _animationController,
-            curve: Curves.easeOutCubic,
-          ),
-        );
-
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeOut),
-    );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _showAnimatedPersistentSheet(context);
-    });
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  void _showAnimatedPersistentSheet(BuildContext context) {
-    final registerCubit = context.read<RegisterCubit>();
-    final height = MediaQuery.of(context).size.height * 0.72;
-
-    sheetController = Scaffold.of(context).showBottomSheet(
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
-      (ctx) {
-        _animationController.forward();
-        return AnimatedBuilder(
-          animation: _animationController,
-          builder: (context, child) {
-            return Opacity(
-              opacity: _fadeAnimation.value,
-              child: FractionalTranslation(
-                translation: _slideAnimation.value,
-                child: child,
-              ),
-            );
-          },
-          child: BlocProvider.value(
-            value: registerCubit,
-            child: Container(
-              height: height,
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
-              child: const SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: RegisterForm(),
-              ),
-            ),
-          ),
-        );
-      },
-      enableDrag: false,
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final topPadding = MediaQuery.of(context).padding.top;
-
-    return Padding(
-      padding: EdgeInsets.only(top: topPadding + 20, left: 20, right: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // AppBar row
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                onTap: () => GoRouter.of(context).go(Routes.loginView),
-                child: const Icon(
-                  Icons.arrow_back_ios,
-                  size: 20,
-                  color: ColorsManager.darkerBlue,
-                ),
-              ),
-              TextButton(
-                onPressed: () => GoRouter.of(context).go(Routes.loginView),
-                child: Text(
-                  "Login",
-                  style: TextStyles.bold16.copyWith(
-                    color: ColorsManager.darkerBlue,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Text(
-            "Register",
-            style: TextStyles.bold24.copyWith(color: ColorsManager.darkerBlue),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            "Register now and experience the comfort of a connected home at your fingertips",
-            style: TextStyles.medium14.copyWith(
-              color: ColorsManager.darkerBlue,
-            ),
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        RegisterHeader(),
+        Expanded(child: RegisterFormContainer()),
+      ],
     );
   }
 }
