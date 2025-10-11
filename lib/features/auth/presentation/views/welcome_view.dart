@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../widgets/logo_card.dart';
 import '../widgets/welcome_card.dart';
 
@@ -7,7 +8,7 @@ class WelcomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Column(
           children: [Spacer(), LogoCard(), Spacer(), WelcomeCard()],

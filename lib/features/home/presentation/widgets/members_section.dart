@@ -13,7 +13,7 @@ class MembersSection extends StatelessWidget {
       padding: const EdgeInsets.only(left: 16, top: 10, bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(50),
           bottomLeft: Radius.circular(50),
         ),
@@ -22,21 +22,28 @@ class MembersSection extends StatelessWidget {
             color: Colors.black.withAlpha(100),
             spreadRadius: 0,
             blurRadius: 4,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
       child: Row(
         children: [
-          MembersListView(),
+          const MembersListView(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.5, vertical: 6),
-            child: GestureDetector(
-              onTap: () {},
-              child: CircleAvatar(
-                radius: 22.5,
-                backgroundColor: ColorsManager.lighterGrey,
-                child: Icon(Icons.add, color: ColorsManager.grey, size: 35),
+            child: Material(
+              color: Colors.transparent,
+              shape: const CircleBorder(),
+              child: InkWell(
+                onTap: () {},
+                customBorder: const CircleBorder(),
+                splashColor: Colors.white70,
+                highlightColor: Colors.white10,
+                child: const CircleAvatar(
+                  radius: 22.5,
+                  backgroundColor: ColorsManager.lighterGrey,
+                  child: Icon(Icons.add, color: ColorsManager.grey, size: 35),
+                ),
               ),
             ),
           ),

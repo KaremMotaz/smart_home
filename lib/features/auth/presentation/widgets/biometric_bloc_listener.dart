@@ -27,7 +27,7 @@ class BiometricBlocListener extends StatelessWidget {
         onTap: () {
           context.read<BiometricCubit>().authenticate();
         },
-        child: FingerprintShape(),
+        child: const FingerprintShape(),
       ),
     );
   }

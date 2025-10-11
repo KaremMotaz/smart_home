@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../core/theming/theme_manager.dart';
 
 import '../../core/routing/app_router.dart';
+import '../../core/theming/theme_manager.dart';
 
 class SmartHome extends StatelessWidget {
   const SmartHome({super.key});

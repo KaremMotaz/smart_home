@@ -11,12 +11,12 @@ class FingerLoginContainer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 16),
       decoration: BoxDecoration(
         color: Colors.white.withAlpha(130),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(50),
           topRight: Radius.circular(50),
         ),
       ),
-      child: BiometricBlocListener(),
+      child: const BiometricBlocListener(),
     );
   }
 }

@@ -13,7 +13,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<LoginCubit>(
       create: (context) => LoginCubit(loginRepo: getIt.get<LoginRepo>()),
-      child: Scaffold(
+      child: const Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: ColorsManager.orange2,
         body: LoginViewBodyBlocListener(),

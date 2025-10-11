@@ -18,11 +18,11 @@ class FingerLoginViewBody extends StatelessWidget {
         SizedBox.expand(
           child: Image.asset(AssetsData.fingerLoginBg, fit: BoxFit.cover),
         ),
-        ShadowContainer(),
-        TextBody(),
+        const ShadowContainer(),
+        const TextBody(),
         BlocProvider(
           create: (context) => getIt<BiometricCubit>(),
-          child: Positioned(
+          child: const Positioned(
             bottom: 0,
             right: 0,
             left: 0,

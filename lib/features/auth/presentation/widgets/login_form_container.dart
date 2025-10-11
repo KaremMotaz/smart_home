@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'login_form.dart';
 
 class LoginFormContainer extends StatelessWidget {
@@ -8,7 +9,7 @@ class LoginFormContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50),

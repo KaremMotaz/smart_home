@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/text_styles.dart';
+import 'package:smart_home/features/home/presentation/widgets/all_rooms_header.dart';
 import 'all_rooms_list_view.dart';
 
 class AllRoomsSection extends StatelessWidget {
@@ -9,24 +7,8 @@ class AllRoomsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text("All Rooms", style: TextStyles.medium18),
-            Padding(
-              padding: const EdgeInsets.only(right: 30),
-              child: GestureDetector(
-                onTap: () {},
-                child: SvgPicture.asset(AssetsData.arrowRightIcon),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 38),
-        AllRoomsListView(),
-      ],
+    return const Column(
+      children: [AllRoomsHeader(), SizedBox(height: 20), AllRoomsListView()],
     );
   }
 }

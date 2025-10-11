@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/colors_manager.dart';
 
 class AddDeviceSection extends StatelessWidget {
@@ -11,7 +12,7 @@ class AddDeviceSection extends StatelessWidget {
       height: 60,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(50),
           bottomLeft: Radius.circular(50),
         ),
@@ -20,7 +21,7 @@ class AddDeviceSection extends StatelessWidget {
             color: Colors.black.withAlpha(62),
             spreadRadius: 0,
             blurRadius: 4,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -28,12 +29,20 @@ class AddDeviceSection extends StatelessWidget {
         padding: const EdgeInsets.all(6),
         child: Align(
           alignment: Alignment.centerLeft,
-          child: GestureDetector(
-            onTap: () {},
-            child: CircleAvatar(
-              radius: 25,
-              backgroundColor: ColorsManager.brown,
-              child: Icon(Icons.add, color: Colors.white, size: 35),
+          child: Material(
+            color: Colors.transparent,
+            shape: const CircleBorder(),
+            child: InkWell(
+              onTap: () {},
+              customBorder: const CircleBorder(),
+              splashColor: Colors.white70,
+              highlightColor: Colors.white10,
+              radius: 60,
+              child: const CircleAvatar(
+                radius: 25,
+                backgroundColor: ColorsManager.brown,
+                child: Icon(Icons.add, color: Colors.white, size: 35),
+              ),
             ),
           ),
         ),

@@ -13,7 +13,7 @@ class WelcomeCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
       height: 310,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: ColorsManager.orange2,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
@@ -36,7 +36,7 @@ class WelcomeCard extends StatelessWidget {
               color: ColorsManager.darkerBlue,
             ),
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

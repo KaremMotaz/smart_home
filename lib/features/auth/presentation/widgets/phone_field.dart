@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+
 import '../../../../core/theming/colors_manager.dart';
 import '../../manager/register_cubit/register_cubit.dart';
 
@@ -48,7 +49,7 @@ class _PhoneFieldState extends State<PhoneField> {
         enabledBorder: buildOutLineInputBorder(
           borderColor: ColorsManager.lightGrey,
         ),
-        prefixIcon: Icon(Icons.search, color: ColorsManager.grey),
+        prefixIcon: const Icon(Icons.search, color: ColorsManager.grey),
         filled: true,
         fillColor: Colors.white,
       ),

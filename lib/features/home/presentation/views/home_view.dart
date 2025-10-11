@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
     GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: scaffoldKey,
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       backgroundColor: ColorsManager.homeBackground,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -22,9 +22,9 @@ class HomeView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HomeMenu(scaffoldKey: scaffoldKey),
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.only(left: 30),
+              const SizedBox(height: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
                     WelcomeSection(),
                     SizedBox(height: 32),
                     MembersSection(),
-                    SizedBox(height: 34),
+                    SizedBox(height: 32),
                     AllRoomsSection(),
                     SizedBox(height: 64),
                   ],

@@ -18,7 +18,7 @@ class LogoCard extends StatelessWidget {
             "SST",
             style: TextStyles.bold24.copyWith(color: ColorsManager.darkBlue),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             "Smart Solutions Technologies",
             style: TextStyles.semiBold16.copyWith(

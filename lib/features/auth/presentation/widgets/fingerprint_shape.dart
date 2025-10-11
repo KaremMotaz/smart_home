@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/theming/assets_data.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
@@ -13,16 +14,16 @@ class FingerprintShape extends StatelessWidget {
       children: [
         Text(
           "Place your finger to open",
-          style: TextStyles.regular14.copyWith(color: Color(0xff404344)),
+          style: TextStyles.regular14.copyWith(color: const Color(0xff404344)),
         ),
-        SizedBox(height: 16),
+        const SizedBox(height: 16),
         Stack(
           clipBehavior: Clip.none,
           alignment: Alignment.center,
           children: [
             Container(
               height: 78,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
@@ -32,8 +33,8 @@ class FingerprintShape extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(12),
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),

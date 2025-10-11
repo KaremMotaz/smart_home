@@ -9,11 +9,11 @@ class WelcomeSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Hi Dakolo", style: TextStyles.semiBold24),
-        SizedBox(height: 4),
+        const Text("Hi Dakolo", style: TextStyles.semiBold24),
+        const SizedBox(height: 4),
         Text(
           "Welcome to your smart home",
-          style: TextStyles.regular16.copyWith(color: Color(0xffC3C3C3)),
+          style: TextStyles.regular16.copyWith(color: const Color(0xffC3C3C3)),
         ),
       ],
     );

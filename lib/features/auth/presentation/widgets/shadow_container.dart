@@ -12,7 +12,7 @@ class ShadowContainer extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Colors.black, Color(0xffEFF1F5).withAlpha(0)],
+          colors: [Colors.black, const Color(0xffEFF1F5).withAlpha(0)],
         ),
       ),
     );

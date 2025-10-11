@@ -1,10 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+
 import '../../../../core/networking/api_constants.dart';
 import '../models/login_request_body.dart';
 import '../models/login_response_body.dart';
 import '../models/register_request_body.dart';
 import '../models/register_response_body.dart';
+
 part 'auth_service.g.dart';
 
 @RestApi(baseUrl: ApiConstants.apiBaseUrl)

@@ -5,8 +5,8 @@ class Routes {
   static const String welcomeView = '/welcomeView';
   static const String loginView = '/loginView';
   static const String registerView = '/registerView';
-  static const String homeView = '/homeView';
-  // static const String homeView = '/';
-  // static const String roomView = '/roomView';
-  static const String roomView = '/';
+  // static const String homeView = '/homeView';
+  static const String homeView = '/';
+  static const String roomView = '/roomView';
+  // static const String roomView = '/';
 }

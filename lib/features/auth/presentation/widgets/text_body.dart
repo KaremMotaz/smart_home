@@ -17,11 +17,11 @@ class TextBody extends StatelessWidget {
           children: [
             Text(
               "Configure Your \nMoments",
-              style: TextStyles.semiBold26.copyWith(color: Color(0xffFFDEDE)),
+              style: TextStyles.semiBold26.copyWith(color: const Color(0xffFFDEDE)),
             ),
             Text(
               "Manage your home from anytime,\nanywhere.",
-              style: TextStyles.regular14.copyWith(color: Color(0xffCFEDFF)),
+              style: TextStyles.regular14.copyWith(color: const Color(0xffCFEDFF)),
             ),
           ],
         ),

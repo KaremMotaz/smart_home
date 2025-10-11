@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import '../../../../core/theming/text_styles.dart';
+import 'custom_switch.dart';
+
+class RoomDetailsSection extends StatelessWidget {
+  const RoomDetailsSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 33),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Living room",
+                style: TextStyles.bold30.copyWith(color: Colors.white),
+              ),
+              const CustomSwitch(),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            "Your living room is connected with 5 devices and 2 users have access to the livng room.",
+            style: TextStyles.regular16.copyWith(
+              color: const Color(0xffC3C3C3),
+            ),
+          ),
+          const SizedBox(height: 24),
+          Text(
+            "28º",
+            style: TextStyles.semiBold24.copyWith(
+              color: Colors.white,
+              fontFamily: "OpenSans",
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

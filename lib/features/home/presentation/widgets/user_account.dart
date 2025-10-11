@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/assets_data.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
@@ -13,17 +14,17 @@ class UserAccount extends StatelessWidget {
       padding: const EdgeInsets.only(left: 30),
       child: Row(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 30,
             backgroundColor: ColorsManager.lighterGrey,
-            backgroundImage: const AssetImage(AssetsData.member3),
+            backgroundImage: AssetImage(AssetsData.member3),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Transform.translate(
-                offset: Offset(0, 6),
+                offset: const Offset(0, 6),
                 child: Text(
                   'Hi Dakolo',
                   style: TextStyles.semiBold20.copyWith(color: Colors.white),

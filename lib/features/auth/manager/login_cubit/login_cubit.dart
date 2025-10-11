@@ -1,9 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/login_request_body.dart';
 import '../../data/repos/login_repo.dart';
+
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {

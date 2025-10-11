@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/text_styles.dart';
 
 class CustomDrawerOption extends StatelessWidget {
   final String icon;
   final String title;
   final VoidCallback onTap;
+  final TextStyle? textStyle;
 
   const CustomDrawerOption({
     super.key,
     required this.icon,
     required this.title,
     required this.onTap,
+    this.textStyle,
   });
 
   @override
@@ -28,7 +31,9 @@ class CustomDrawerOption extends StatelessWidget {
               const SizedBox(width: 16),
               Text(
                 title,
-                style: TextStyles.semiBold16.copyWith(color: Colors.white),
+                style:
+                    textStyle ??
+                    TextStyles.semiBold16.copyWith(color: Colors.white),
               ),
             ],
           ),
