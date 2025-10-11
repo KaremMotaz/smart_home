@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'register_request_body.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class RegisterRequestBody {
   @JsonKey(name: 'first_name')
   final String firstName;
