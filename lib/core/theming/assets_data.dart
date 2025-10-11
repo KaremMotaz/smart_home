@@ -5,10 +5,10 @@ class AssetsData {
   static const String fingerShape = 'assets/svgs/finger_shape.svg';
   static const String menuIcon = 'assets/svgs/menu.svg';
   static const String arrowRightIcon = 'assets/svgs/arrow_right.svg';
-  static const String wifiIcon = 'assets/svgs/wifi.svg';
-  static const String lightIcon = 'assets/svgs/light.svg';
-  static const String tempIcon = 'assets/svgs/temp.svg';
-  static const String fanIcon = 'assets/svgs/fan.svg';
+  static const String wifiIcon = 'assets/images/icons/wifi.png';
+  static const String lightIcon = 'assets/images/icons/light.png';
+  static const String tempIcon = 'assets/images/icons/temp.png';
+  static const String fanIcon = 'assets/images/icons/fan.png';
   static const String usersIcon = 'assets/images/icons/users.png';
   static const String devicesIcon = 'assets/images/icons/devices.png';
   static const String roomsIcon = 'assets/images/icons/rooms.png';
