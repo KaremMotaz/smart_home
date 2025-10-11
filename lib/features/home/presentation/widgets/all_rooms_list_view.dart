@@ -7,7 +7,7 @@ class AllRoomsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<RoomsModel> roomsList = RoomsModel.roomsList;
+    final List<RoomsModel> roomsList = RoomsModel.roomsList;
 
     return SizedBox(
       height: 280,

@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:smart_home/features/home/data/models/rooms_model.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/register_view.dart';
 import '../../features/auth/presentation/views/welcome_view.dart';
@@ -38,7 +39,10 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.roomView,
-          builder: (context, state) => const RoomView(),
+          builder: (context, state) {
+            final room = state.extra as RoomsModel;
+            return RoomView(room: room);
+          },
         ),
       ],
     );

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/features/home/data/models/rooms_model.dart';
 import 'custom_divider.dart';
 import 'device_section.dart';
 import 'room_details_section.dart';
 import '../../../../core/theming/colors_manager.dart';
 
 class SelectedRoomCard extends StatelessWidget {
-  const SelectedRoomCard({super.key});
+  const SelectedRoomCard({super.key, required this.room});
+  final RoomsModel room;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +19,14 @@ class SelectedRoomCard extends StatelessWidget {
           topRight: Radius.circular(20),
         ),
       ),
-      child: const Column(
+      child: Column(
         children: [
-          RoomDetailsSection(),
-          SizedBox(height: 32),
-          CustomDivider(horizontalPadding: 30),
-          SizedBox(height: 28),
-          DeviceSection(),
-          SizedBox(height: 33),
+          RoomDetailsSection(room: room),
+          const SizedBox(height: 32),
+          const CustomDivider(horizontalPadding: 30),
+          const SizedBox(height: 28),
+          const DeviceSection(),
+          const SizedBox(height: 33),
         ],
       ),
     );

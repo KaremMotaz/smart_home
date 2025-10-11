@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/theming/assets_data.dart';
+import 'package:smart_home/features/home/data/models/rooms_model.dart';
 import '../widgets/selected_room_card.dart';
 
 class RoomView extends StatelessWidget {
-  const RoomView({super.key});
+  const RoomView({super.key, required this.room});
+  final RoomsModel room;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class RoomView extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
-            AssetsData.livingRoom,
+            room.roomImage,
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
@@ -32,11 +33,11 @@ class RoomView extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 0,
             left: 0,
             right: 0,
-            child: SelectedRoomCard(),
+            child: SelectedRoomCard(room: room),
           ),
         ],
       ),

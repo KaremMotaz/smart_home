@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/features/home/data/models/rooms_model.dart';
 import '../../../../core/theming/text_styles.dart';
 import 'custom_switch.dart';
 
 class RoomDetailsSection extends StatelessWidget {
-  const RoomDetailsSection({super.key});
+  const RoomDetailsSection({super.key, required this.room});
+  final RoomsModel room;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class RoomDetailsSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Living room",
+                room.roomName,
                 style: TextStyles.bold30.copyWith(color: Colors.white),
               ),
               const CustomSwitch(),
@@ -25,7 +27,7 @@ class RoomDetailsSection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           Text(
-            "Your living room is connected with 5 devices and 2 users have access to the livng room.",
+            "Your ${room.roomName.toLowerCase()} is connected with 5 devices and 2 users have access to the livng room.",
             style: TextStyles.regular16.copyWith(
               color: const Color(0xffC3C3C3),
             ),
