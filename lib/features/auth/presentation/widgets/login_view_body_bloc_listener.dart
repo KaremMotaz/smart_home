@@ -13,6 +13,9 @@ class LoginViewBodyBlocListener extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
+      listenWhen: (previous, current) {
+        return current is LoginSuccess || current is LoginFailure;
+      },
       listener: (context, state) {
         state.whenOrNull(
           loginSuccess: () {

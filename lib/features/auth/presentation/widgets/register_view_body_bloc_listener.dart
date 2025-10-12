@@ -13,6 +13,9 @@ class RegisterViewBodyBlocListener extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<RegisterCubit, RegisterState>(
+      listenWhen: (previous, current) {
+        return current is RegisterSuccess || current is RegisterFailure;
+      },
       listener: (context, state) {
         state.whenOrNull(
           registerSuccess: () {

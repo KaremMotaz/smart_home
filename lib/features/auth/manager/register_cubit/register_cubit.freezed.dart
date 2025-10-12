@@ -55,13 +55,13 @@ extension RegisterStatePatterns on RegisterState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _RegisterInitial value)?  registerInitial,TResult Function( _RegisterLoading value)?  registerLoading,TResult Function( _RegisterSuccess value)?  registerSuccess,TResult Function( _RegisterFailure value)?  registerFailure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _RegisterInitial value)?  registerInitial,TResult Function( RegisterLoading value)?  registerLoading,TResult Function( RegisterSuccess value)?  registerSuccess,TResult Function( RegisterFailure value)?  registerFailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _RegisterInitial() when registerInitial != null:
-return registerInitial(_that);case _RegisterLoading() when registerLoading != null:
-return registerLoading(_that);case _RegisterSuccess() when registerSuccess != null:
-return registerSuccess(_that);case _RegisterFailure() when registerFailure != null:
+return registerInitial(_that);case RegisterLoading() when registerLoading != null:
+return registerLoading(_that);case RegisterSuccess() when registerSuccess != null:
+return registerSuccess(_that);case RegisterFailure() when registerFailure != null:
 return registerFailure(_that);case _:
   return orElse();
 
@@ -80,13 +80,13 @@ return registerFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _RegisterInitial value)  registerInitial,required TResult Function( _RegisterLoading value)  registerLoading,required TResult Function( _RegisterSuccess value)  registerSuccess,required TResult Function( _RegisterFailure value)  registerFailure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _RegisterInitial value)  registerInitial,required TResult Function( RegisterLoading value)  registerLoading,required TResult Function( RegisterSuccess value)  registerSuccess,required TResult Function( RegisterFailure value)  registerFailure,}){
 final _that = this;
 switch (_that) {
 case _RegisterInitial():
-return registerInitial(_that);case _RegisterLoading():
-return registerLoading(_that);case _RegisterSuccess():
-return registerSuccess(_that);case _RegisterFailure():
+return registerInitial(_that);case RegisterLoading():
+return registerLoading(_that);case RegisterSuccess():
+return registerSuccess(_that);case RegisterFailure():
 return registerFailure(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -104,13 +104,13 @@ return registerFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _RegisterInitial value)?  registerInitial,TResult? Function( _RegisterLoading value)?  registerLoading,TResult? Function( _RegisterSuccess value)?  registerSuccess,TResult? Function( _RegisterFailure value)?  registerFailure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _RegisterInitial value)?  registerInitial,TResult? Function( RegisterLoading value)?  registerLoading,TResult? Function( RegisterSuccess value)?  registerSuccess,TResult? Function( RegisterFailure value)?  registerFailure,}){
 final _that = this;
 switch (_that) {
 case _RegisterInitial() when registerInitial != null:
-return registerInitial(_that);case _RegisterLoading() when registerLoading != null:
-return registerLoading(_that);case _RegisterSuccess() when registerSuccess != null:
-return registerSuccess(_that);case _RegisterFailure() when registerFailure != null:
+return registerInitial(_that);case RegisterLoading() when registerLoading != null:
+return registerLoading(_that);case RegisterSuccess() when registerSuccess != null:
+return registerSuccess(_that);case RegisterFailure() when registerFailure != null:
 return registerFailure(_that);case _:
   return null;
 
@@ -131,9 +131,9 @@ return registerFailure(_that);case _:
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  registerInitial,TResult Function()?  registerLoading,TResult Function()?  registerSuccess,TResult Function( ApiErrorModel apiErrorModel)?  registerFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RegisterInitial() when registerInitial != null:
-return registerInitial();case _RegisterLoading() when registerLoading != null:
-return registerLoading();case _RegisterSuccess() when registerSuccess != null:
-return registerSuccess();case _RegisterFailure() when registerFailure != null:
+return registerInitial();case RegisterLoading() when registerLoading != null:
+return registerLoading();case RegisterSuccess() when registerSuccess != null:
+return registerSuccess();case RegisterFailure() when registerFailure != null:
 return registerFailure(_that.apiErrorModel);case _:
   return orElse();
 
@@ -155,9 +155,9 @@ return registerFailure(_that.apiErrorModel);case _:
 @optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  registerInitial,required TResult Function()  registerLoading,required TResult Function()  registerSuccess,required TResult Function( ApiErrorModel apiErrorModel)  registerFailure,}) {final _that = this;
 switch (_that) {
 case _RegisterInitial():
-return registerInitial();case _RegisterLoading():
-return registerLoading();case _RegisterSuccess():
-return registerSuccess();case _RegisterFailure():
+return registerInitial();case RegisterLoading():
+return registerLoading();case RegisterSuccess():
+return registerSuccess();case RegisterFailure():
 return registerFailure(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
@@ -178,9 +178,9 @@ return registerFailure(_that.apiErrorModel);case _:
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  registerInitial,TResult? Function()?  registerLoading,TResult? Function()?  registerSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  registerFailure,}) {final _that = this;
 switch (_that) {
 case _RegisterInitial() when registerInitial != null:
-return registerInitial();case _RegisterLoading() when registerLoading != null:
-return registerLoading();case _RegisterSuccess() when registerSuccess != null:
-return registerSuccess();case _RegisterFailure() when registerFailure != null:
+return registerInitial();case RegisterLoading() when registerLoading != null:
+return registerLoading();case RegisterSuccess() when registerSuccess != null:
+return registerSuccess();case RegisterFailure() when registerFailure != null:
 return registerFailure(_that.apiErrorModel);case _:
   return null;
 
@@ -224,8 +224,8 @@ String toString() {
 /// @nodoc
 
 
-class _RegisterLoading implements RegisterState {
-  const _RegisterLoading();
+class RegisterLoading implements RegisterState {
+  const RegisterLoading();
   
 
 
@@ -235,7 +235,7 @@ class _RegisterLoading implements RegisterState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterLoading);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterLoading);
 }
 
 
@@ -256,8 +256,8 @@ String toString() {
 /// @nodoc
 
 
-class _RegisterSuccess implements RegisterState {
-  const _RegisterSuccess();
+class RegisterSuccess implements RegisterState {
+  const RegisterSuccess();
   
 
 
@@ -267,7 +267,7 @@ class _RegisterSuccess implements RegisterState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterSuccess);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterSuccess);
 }
 
 
@@ -288,8 +288,8 @@ String toString() {
 /// @nodoc
 
 
-class _RegisterFailure implements RegisterState {
-  const _RegisterFailure({required this.apiErrorModel});
+class RegisterFailure implements RegisterState {
+  const RegisterFailure({required this.apiErrorModel});
   
 
  final  ApiErrorModel apiErrorModel;
@@ -298,13 +298,13 @@ class _RegisterFailure implements RegisterState {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$RegisterFailureCopyWith<_RegisterFailure> get copyWith => __$RegisterFailureCopyWithImpl<_RegisterFailure>(this, _$identity);
+$RegisterFailureCopyWith<RegisterFailure> get copyWith => _$RegisterFailureCopyWithImpl<RegisterFailure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterFailure&&(identical(other.apiErrorModel, apiErrorModel) || other.apiErrorModel == apiErrorModel));
 }
 
 
@@ -320,8 +320,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$RegisterFailureCopyWith<$Res> implements $RegisterStateCopyWith<$Res> {
-  factory _$RegisterFailureCopyWith(_RegisterFailure value, $Res Function(_RegisterFailure) _then) = __$RegisterFailureCopyWithImpl;
+abstract mixin class $RegisterFailureCopyWith<$Res> implements $RegisterStateCopyWith<$Res> {
+  factory $RegisterFailureCopyWith(RegisterFailure value, $Res Function(RegisterFailure) _then) = _$RegisterFailureCopyWithImpl;
 @useResult
 $Res call({
  ApiErrorModel apiErrorModel
@@ -332,17 +332,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$RegisterFailureCopyWithImpl<$Res>
-    implements _$RegisterFailureCopyWith<$Res> {
-  __$RegisterFailureCopyWithImpl(this._self, this._then);
+class _$RegisterFailureCopyWithImpl<$Res>
+    implements $RegisterFailureCopyWith<$Res> {
+  _$RegisterFailureCopyWithImpl(this._self, this._then);
 
-  final _RegisterFailure _self;
-  final $Res Function(_RegisterFailure) _then;
+  final RegisterFailure _self;
+  final $Res Function(RegisterFailure) _then;
 
 /// Create a copy of RegisterState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? apiErrorModel = null,}) {
-  return _then(_RegisterFailure(
+  return _then(RegisterFailure(
 apiErrorModel: null == apiErrorModel ? _self.apiErrorModel : apiErrorModel // ignore: cast_nullable_to_non_nullable
 as ApiErrorModel,
   ));
