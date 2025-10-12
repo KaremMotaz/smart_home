@@ -12,7 +12,6 @@ class RegisterCubit extends Cubit<RegisterState> {
     : super(const RegisterState.registerInitial());
 
   final RegisterRepo registerRepo;
-
   String? phoneNumber;
 
   void setPhoneNumber(String number) {

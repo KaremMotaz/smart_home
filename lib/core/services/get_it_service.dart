@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:smart_home/features/domain/data/repos/add_domain_repo.dart';
+import 'package:smart_home/features/domain/data/services/domain_service.dart';
 import '../networking/dio_factory.dart';
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/data/repos/register_repo.dart';
@@ -30,5 +32,10 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<LoginRepo>(
     () => LoginRepo(authService: getIt.get()),
+  );
+
+  getIt.registerLazySingleton<DomainService>(() => DomainService(getIt.get()));
+  getIt.registerLazySingleton<AddDomainRepo>(
+    () => AddDomainRepo(domainService: getIt.get()),
   );
 }
