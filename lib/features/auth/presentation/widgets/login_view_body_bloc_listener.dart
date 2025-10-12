@@ -14,17 +14,19 @@ class LoginViewBodyBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
-        if (state is LoginSuccessState) {
-          successSnackBar(context: context, message: "Login Success");
-          GoRouter.of(context).pushReplacement(Routes.homeView);
-        }
-        if (state is LoginFailureState) {
-          errorDialog(
-            context: context,
-            message: state.apiErrorModel.message,
-            error: state.apiErrorModel.error ?? "",
-          );
-        }
+        state.whenOrNull(
+          loginSuccess: () {
+            successSnackBar(context: context, message: "Login Success");
+            GoRouter.of(context).pushReplacement(Routes.homeView);
+          },
+          loginFailure: (apiErrorModel) {
+            errorDialog(
+              context: context,
+              message: apiErrorModel.message,
+              error: apiErrorModel.error ?? "",
+            );
+          },
+        );
       },
       child: const LoginViewBody(),
     );

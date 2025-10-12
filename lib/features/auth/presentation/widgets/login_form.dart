@@ -69,7 +69,12 @@ class _LoginFormState extends State<LoginForm> {
             label: "Login",
             borderRadius: 50,
             buttonHeight: 60,
-            isLoading: (state) => state is LoginLoadingState,
+            isLoading: (state) {
+              return state.maybeWhen(
+                loginLoading: () => true,
+                orElse: () => false,
+              );
+            },
             onPressed: () {
               validateThenLogin(context);
             },

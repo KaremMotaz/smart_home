@@ -101,7 +101,10 @@ class _RegisterFormState extends State<RegisterForm> {
             label: "Register",
             borderRadius: 50,
             buttonHeight: 60,
-            isLoading: (state) => state is RegisterLoadingState,
+            isLoading: (state) => state.maybeWhen(
+              registerLoading: () => true,
+              orElse: () => false,
+            ),
             onPressed: () {
               validateThenRegister(context);
             },
