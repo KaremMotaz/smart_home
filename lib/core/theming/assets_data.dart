@@ -22,4 +22,5 @@ class AssetsData {
   static const String member1 = 'assets/images/member1.png';
   static const String member2 = 'assets/images/member2.png';
   static const String member3 = 'assets/images/member3.png';
+  static const String error = 'assets/images/error.jpg';
 }

@@ -14,7 +14,9 @@ class ManageDomainsView extends StatelessWidget {
       create: (context) =>
           GetAllDomainsCubit(getAllDomainsRepo: getIt.get<GetAllDomainsRepo>())
             ..getAllDomains(),
-      child: const Scaffold(body: GetAllDomainsViewBodyBlocConsumer()),
+      child: const SafeArea(
+        child: Scaffold(body: GetAllDomainsViewBodyBlocConsumer()),
+      ),
     );
   }
 }

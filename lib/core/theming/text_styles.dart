@@ -48,6 +48,11 @@ abstract class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     fontFamily: 'Inter',
   );
+  static const TextStyle semiBold18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: 'Inter',
+  );
   static const TextStyle bold18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.bold,

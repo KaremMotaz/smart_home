@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-
 import 'api_error_model.dart';
 
 class ApiErrorHandler {
@@ -31,7 +30,19 @@ class ApiErrorHandler {
                 "The server took too long to respond. Please try again later.",
           );
         case DioExceptionType.badResponse:
+          final response = error.response;
+
+          if (response?.statusCode == 502 ||
+              (response?.data is String &&
+                  response!.data.toString().contains('<html'))) {
+            return ApiErrorModel(
+              message:
+                  "The server is temporarily unavailable (502 Bad Gateway). Please try again later.",
+            );
+          }
+
           return _handleError(error.response?.data);
+
         case DioExceptionType.sendTimeout:
           return ApiErrorModel(
             message:
