@@ -1,93 +1,88 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:smart_home/core/functions/build_snack_bar.dart';
+import 'package:smart_home/core/helpers/constants.dart';
+import 'package:smart_home/core/routing/routes.dart';
+import 'package:smart_home/core/services/cache_helper.dart';
+import 'package:smart_home/core/theming/colors_manager.dart';
+import 'package:smart_home/core/theming/text_styles.dart';
+import 'package:smart_home/core/widgets/app_text_button.dart';
 import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domain/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
+import 'package:smart_home/features/domain/presentation/widgets/domain_card.dart';
 
 class GetAllDomainsViewBody extends StatelessWidget {
   const GetAllDomainsViewBody({
     super.key,
     required this.getAllDomainsResponseBody,
+    required this.selectedIndex,
   });
 
   final GetAllDomainsResponseBody getAllDomainsResponseBody;
+  final int selectedIndex;
 
   @override
   Widget build(BuildContext context) {
-    final domains = getAllDomainsResponseBody.domains;
+    final List<Domain> domains = getAllDomainsResponseBody.domains;
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: GridView.builder(
-        itemCount: domains.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, 
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 1.1,
-        ),
-        itemBuilder: (context, index) {
-          final domain = domains[index];
-          return DomainCard(
-            name: domain.name,
-            alias: domain.alias,
-          );
-        },
-      ),
-    );
-  }
-}
-
-class DomainCard extends StatelessWidget {
-  const DomainCard({
-    super.key,
-    required this.name,
-    required this.alias,
-  });
-
-  final String name;
-  final String alias;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(16),
-        onTap: () {
-          
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.home_rounded,
-                size: 48,
-                color: Colors.blue,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("Your Domains", style: TextStyles.bold18),
+          const SizedBox(height: 20),
+          Expanded(
+            child: GridView.builder(
+              itemCount: domains.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                childAspectRatio: 1.1,
               ),
-              const SizedBox(height: 12),
-              Text(
-                name,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                alias,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.grey[600],
-                ),
-              ),
-            ],
+              itemBuilder: (context, index) {
+                final domain = domains[index];
+                return DomainCard(
+                  name: domain.name,
+                  alias: domain.alias,
+                  isSelected: selectedIndex == index,
+                  onTap: () {
+                    context.read<GetAllDomainsCubit>().selectDomain(index);
+                  },
+                );
+              },
+            ),
           ),
-        ),
+          const SizedBox(height: 20),
+          AppTextButton(
+            onPressed: selectedIndex == -1
+                ? () {
+                    errorSnackBar(
+                      context: context,
+                      message: "Please select a domain",
+                    );
+                  }
+                : () {
+                    CacheHelper.setSecureData(
+                      key: kSelectedDomainId,
+                      value: domains[selectedIndex].id,
+                    );
+                    successSnackBar(
+                      context: context,
+                      message: "Domain Selected Successfully",
+                    );
+                    GoRouter.of(context).pushReplacement(Routes.homeView);
+                  },
+            buttonText: "Submit",
+            buttonWidth: double.infinity,
+            backgroundColor: ColorsManager.darkerbrown,
+            borderRadius: 25,
+            textStyle: TextStyles.bold16.copyWith(color: Colors.white),
+          ),
+          const SizedBox(height: 20),
+        ],
       ),
     );
   }

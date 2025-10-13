@@ -1,4 +1,5 @@
 import 'package:smart_home/core/helpers/logger.dart';
+import 'package:smart_home/features/domain/data/mock_get_all_domains_data.dart';
 import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
 import 'package:smart_home/features/domain/data/services/domain_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
@@ -10,9 +11,11 @@ class GetAllDomainsRepo {
   GetAllDomainsRepo({required this.domainService});
   Future<ApiResult<GetAllDomainsResponseBody>> getAllDomains() async {
     try {
-      final GetAllDomainsResponseBody response = await domainService
-          .getAllDomains();
-      return ApiResult.success(response);
+      // final GetAllDomainsResponseBody response = await domainService
+      //     .getAllDomains();
+      // return ApiResult.success(response);
+      final mockData = MockGetAllDomainsData.mockResponse;
+      return ApiResult.success(mockData);
     } catch (error) {
       Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));

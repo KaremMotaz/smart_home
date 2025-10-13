@@ -23,4 +23,5 @@ class AssetsData {
   static const String member2 = 'assets/images/member2.png';
   static const String member3 = 'assets/images/member3.png';
   static const String error = 'assets/images/error.jpg';
+  static const String smartHome1 = 'assets/images/smart_home_1.jpg';
 }

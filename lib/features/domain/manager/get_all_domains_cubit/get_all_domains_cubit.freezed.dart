@@ -125,11 +125,11 @@ return getAllDomainsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getAllDomainsLoading,TResult Function( GetAllDomainsResponseBody getAllDomainsResponseBody)?  getAllDomainsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getAllDomainsLoading,TResult Function( GetAllDomainsResponseBody getAllDomainsResponseBody,  int selectedIndex)?  getAllDomainsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case GetAllDomainsLoading() when getAllDomainsLoading != null:
 return getAllDomainsLoading();case GetAllDomainsSuccess() when getAllDomainsSuccess != null:
-return getAllDomainsSuccess(_that.getAllDomainsResponseBody);case GetAllDomainsFailure() when getAllDomainsFailure != null:
+return getAllDomainsSuccess(_that.getAllDomainsResponseBody,_that.selectedIndex);case GetAllDomainsFailure() when getAllDomainsFailure != null:
 return getAllDomainsFailure(_that.apiErrorModel);case _:
   return orElse();
 
@@ -148,11 +148,11 @@ return getAllDomainsFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getAllDomainsLoading,required TResult Function( GetAllDomainsResponseBody getAllDomainsResponseBody)  getAllDomainsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getAllDomainsFailure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getAllDomainsLoading,required TResult Function( GetAllDomainsResponseBody getAllDomainsResponseBody,  int selectedIndex)  getAllDomainsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getAllDomainsFailure,}) {final _that = this;
 switch (_that) {
 case GetAllDomainsLoading():
 return getAllDomainsLoading();case GetAllDomainsSuccess():
-return getAllDomainsSuccess(_that.getAllDomainsResponseBody);case GetAllDomainsFailure():
+return getAllDomainsSuccess(_that.getAllDomainsResponseBody,_that.selectedIndex);case GetAllDomainsFailure():
 return getAllDomainsFailure(_that.apiErrorModel);case _:
   throw StateError('Unexpected subclass');
 
@@ -170,11 +170,11 @@ return getAllDomainsFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getAllDomainsLoading,TResult? Function( GetAllDomainsResponseBody getAllDomainsResponseBody)?  getAllDomainsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getAllDomainsLoading,TResult? Function( GetAllDomainsResponseBody getAllDomainsResponseBody,  int selectedIndex)?  getAllDomainsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,}) {final _that = this;
 switch (_that) {
 case GetAllDomainsLoading() when getAllDomainsLoading != null:
 return getAllDomainsLoading();case GetAllDomainsSuccess() when getAllDomainsSuccess != null:
-return getAllDomainsSuccess(_that.getAllDomainsResponseBody);case GetAllDomainsFailure() when getAllDomainsFailure != null:
+return getAllDomainsSuccess(_that.getAllDomainsResponseBody,_that.selectedIndex);case GetAllDomainsFailure() when getAllDomainsFailure != null:
 return getAllDomainsFailure(_that.apiErrorModel);case _:
   return null;
 
@@ -219,10 +219,11 @@ String toString() {
 
 
 class GetAllDomainsSuccess implements GetAllDomainsState {
-  const GetAllDomainsSuccess({required this.getAllDomainsResponseBody});
+  const GetAllDomainsSuccess({required this.getAllDomainsResponseBody, this.selectedIndex = -1});
   
 
  final  GetAllDomainsResponseBody getAllDomainsResponseBody;
+@JsonKey() final  int selectedIndex;
 
 /// Create a copy of GetAllDomainsState
 /// with the given fields replaced by the non-null parameter values.
@@ -234,16 +235,16 @@ $GetAllDomainsSuccessCopyWith<GetAllDomainsSuccess> get copyWith => _$GetAllDoma
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllDomainsSuccess&&(identical(other.getAllDomainsResponseBody, getAllDomainsResponseBody) || other.getAllDomainsResponseBody == getAllDomainsResponseBody));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GetAllDomainsSuccess&&(identical(other.getAllDomainsResponseBody, getAllDomainsResponseBody) || other.getAllDomainsResponseBody == getAllDomainsResponseBody)&&(identical(other.selectedIndex, selectedIndex) || other.selectedIndex == selectedIndex));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,getAllDomainsResponseBody);
+int get hashCode => Object.hash(runtimeType,getAllDomainsResponseBody,selectedIndex);
 
 @override
 String toString() {
-  return 'GetAllDomainsState.getAllDomainsSuccess(getAllDomainsResponseBody: $getAllDomainsResponseBody)';
+  return 'GetAllDomainsState.getAllDomainsSuccess(getAllDomainsResponseBody: $getAllDomainsResponseBody, selectedIndex: $selectedIndex)';
 }
 
 
@@ -254,7 +255,7 @@ abstract mixin class $GetAllDomainsSuccessCopyWith<$Res> implements $GetAllDomai
   factory $GetAllDomainsSuccessCopyWith(GetAllDomainsSuccess value, $Res Function(GetAllDomainsSuccess) _then) = _$GetAllDomainsSuccessCopyWithImpl;
 @useResult
 $Res call({
- GetAllDomainsResponseBody getAllDomainsResponseBody
+ GetAllDomainsResponseBody getAllDomainsResponseBody, int selectedIndex
 });
 
 
@@ -271,10 +272,11 @@ class _$GetAllDomainsSuccessCopyWithImpl<$Res>
 
 /// Create a copy of GetAllDomainsState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? getAllDomainsResponseBody = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? getAllDomainsResponseBody = null,Object? selectedIndex = null,}) {
   return _then(GetAllDomainsSuccess(
 getAllDomainsResponseBody: null == getAllDomainsResponseBody ? _self.getAllDomainsResponseBody : getAllDomainsResponseBody // ignore: cast_nullable_to_non_nullable
-as GetAllDomainsResponseBody,
+as GetAllDomainsResponseBody,selectedIndex: null == selectedIndex ? _self.selectedIndex : selectedIndex // ignore: cast_nullable_to_non_nullable
+as int,
   ));
 }
 

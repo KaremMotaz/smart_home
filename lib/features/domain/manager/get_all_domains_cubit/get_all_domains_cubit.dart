@@ -30,4 +30,18 @@ class GetAllDomainsCubit extends Cubit<GetAllDomainsState> {
       },
     );
   }
+
+  void selectDomain(int index) {
+    state.maybeWhen(
+      getAllDomainsSuccess: (body, selectedIndex) {
+        emit(
+          GetAllDomainsState.getAllDomainsSuccess(
+            getAllDomainsResponseBody: body,
+            selectedIndex: index,
+          ),
+        );
+      },
+      orElse: () {},
+    );
+  }
 }
