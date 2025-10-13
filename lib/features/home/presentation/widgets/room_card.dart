@@ -11,7 +11,7 @@ class RoomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(Routes.roomView, extra: roomsModel);
+        GoRouter.of(context).push(Routes.selectedroomView, extra: roomsModel);
       },
       child: SizedBox(
         width: 120,

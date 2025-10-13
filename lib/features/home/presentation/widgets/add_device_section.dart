@@ -36,7 +36,7 @@ class AddDeviceSection extends StatelessWidget {
             shape: const CircleBorder(),
             child: InkWell(
               onTap: () {
-                GoRouter.of(context).push(Routes.domainView);
+                GoRouter.of(context).push(Routes.addDomainView);
               },
               customBorder: const CircleBorder(),
               splashColor: Colors.white70,

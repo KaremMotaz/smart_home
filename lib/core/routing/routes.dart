@@ -1,14 +1,18 @@
 class Routes {
   static const String onboardingView = '/onboardingView';
   static const String fingerLoginView = '/fingerLoginView';
-  // static const String welcomeView = '/';
   static const String welcomeView = '/welcomeView';
   static const String loginView = '/loginView';
-  // static const String loginView = '/';
   static const String registerView = '/registerView';
-  // static const String homeView = '/homeView';
-  static const String homeView = '/';
-  static const String roomView = '/roomView';
-  // static const String roomView = '/';
-  static const String domainView = '/domainView';
+  static const String homeView = '/homeView';
+  static const String allRoomsView = '/allRoomsView';
+  static const String selectedroomView = '/selectedroomView';
+  static const String addDomainView = '/addDomainView';
+  static const String manageDomainsView = '/manageDomainsView';
+  static const String manageUsersView = '/manageUsersView';
+  static const String devicesView = '/devicesView';
+  static const String soundView = '/soundView';
+  static const String settingsView = '/settingsView';
+  static const String profileView = '/profileView';
+  static const String helpView = '/helpView';
 }

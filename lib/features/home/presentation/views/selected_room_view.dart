@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:smart_home/features/home/data/models/rooms_model.dart';
 import '../widgets/selected_room_card.dart';
 
-class RoomView extends StatelessWidget {
-  const RoomView({super.key, required this.room});
+class SelectedRoomView extends StatelessWidget {
+  const SelectedRoomView({super.key, required this.room});
   final RoomsModel room;
 
   @override

@@ -1,8 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:smart_home/core/functions/get_initial_route.dart';
 import 'core/services/cache_helper.dart';
 import 'core/services/get_it_service.dart';
 import 'features/app/smart_home.dart';
@@ -26,5 +25,6 @@ void main() async {
     overlays: [SystemUiOverlay.top],
   );
   HttpOverrides.global = MyHttpOverrides();
-  runApp(const SmartHome());
+  final String initialRoute = await getInitialRoute();
+  runApp(SmartHome(initialRoute: initialRoute));
 }

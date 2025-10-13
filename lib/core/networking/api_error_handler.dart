@@ -50,6 +50,6 @@ class ApiErrorHandler {
   }
 
   static ApiErrorModel _handleError(dynamic response) {
-    return ApiErrorModel.fromJson(response ?? {});
+    return ApiErrorModel.fromJson(response);
   }
 }

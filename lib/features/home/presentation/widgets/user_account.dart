@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:smart_home/core/routing/routes.dart';
 
 import '../../../../core/theming/assets_data.dart';
 import '../../../../core/theming/colors_manager.dart';
@@ -31,7 +33,10 @@ class UserAccount extends StatelessWidget {
                 ),
               ),
               AppTextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).pop();
+                  GoRouter.of(context).push(Routes.profileView);
+                },
                 buttonText: 'Edit Profile',
                 buttonHeight: 25,
                 buttonWidth: 103,
