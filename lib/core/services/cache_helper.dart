@@ -33,8 +33,8 @@ class CacheHelper {
     return _prefs.getBool(key) ?? false;
   }
 
-  static int getInt({required String key}) {
-    return _prefs.getInt(key) ?? 0;
+  static int? getInt({required String key}) {
+    return _prefs.getInt(key);
   }
 
   static double getDouble({required String key}) {

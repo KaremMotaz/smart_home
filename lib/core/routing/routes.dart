@@ -15,5 +15,4 @@ class Routes {
   static const String settingsView = '/settingsView';
   static const String profileView = '/profileView';
   static const String helpView = '/helpView';
-  static const String tryView = '/tryView';
 }

@@ -9,7 +9,6 @@ import 'package:smart_home/features/domain/presentation/views/add_domain_view.da
 import 'package:smart_home/features/domain/presentation/views/manage_domains_view.dart';
 import 'package:smart_home/features/home/data/models/rooms_model.dart';
 import 'package:smart_home/features/manage_users/presentation/views/manage_users_view.dart';
-import 'package:smart_home/try_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/register_view.dart';
 import '../../features/auth/presentation/views/welcome_view.dart';
@@ -24,10 +23,6 @@ abstract class AppRouter {
     return GoRouter(
       initialLocation: Routes.manageDomainsView,
       routes: [
-        GoRoute(
-          path: Routes.tryView,
-          builder: (context, state) => const TryView(),
-        ),
         GoRoute(
           path: Routes.onboardingView,
           builder: (context, state) => const OnboardingView(),

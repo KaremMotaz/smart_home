@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 
@@ -12,14 +13,27 @@ class AddDomainHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              "Add Domain",
-              style: TextStyles.semiBold14.copyWith(
-                color: ColorsManager.darkerBlue,
+          Row(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  GoRouter.of(context).pop();
+                },
+                child: const Icon(
+                  Icons.arrow_back_ios,
+                  size: 20,
+                  color: ColorsManager.darkerBlue,
+                ),
               ),
-            ),
+              const Spacer(),
+              Text(
+                "Add Domain",
+                style: TextStyles.bold18.copyWith(
+                  color: ColorsManager.darkerBlue,
+                ),
+              ),
+              const Spacer(),
+            ],
           ),
           const SizedBox(height: 20),
           Text(

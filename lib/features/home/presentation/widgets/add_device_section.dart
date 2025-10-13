@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/routing/routes.dart';
-
 import '../../../../core/theming/colors_manager.dart';
 
 class AddDeviceSection extends StatelessWidget {
@@ -35,9 +32,7 @@ class AddDeviceSection extends StatelessWidget {
             color: Colors.transparent,
             shape: const CircleBorder(),
             child: InkWell(
-              onTap: () {
-                GoRouter.of(context).push(Routes.addDomainView);
-              },
+              onTap: () {},
               customBorder: const CircleBorder(),
               splashColor: Colors.white70,
               highlightColor: Colors.white10,

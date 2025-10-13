@@ -69,6 +69,10 @@ class GetAllDomainsViewBody extends StatelessWidget {
                       key: kSelectedDomainId,
                       value: domains[selectedIndex].id,
                     );
+                    CacheHelper.set(
+                      key: kSelectedDomainIndex,
+                      value: selectedIndex,
+                    );
                     successSnackBar(
                       context: context,
                       message: "Domain Selected Successfully",

@@ -5,7 +5,6 @@ import 'package:smart_home/features/domain/manager/add_domain_cubit/add_domain_c
 import 'package:smart_home/features/domain/presentation/widgets/adda_domain_view_body.dart';
 import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/functions/error_dialog.dart';
-import '../../../../core/routing/routes.dart';
 
 class AddDomainViewBodyBlocListener extends StatelessWidget {
   const AddDomainViewBodyBlocListener({super.key});
@@ -23,7 +22,7 @@ class AddDomainViewBodyBlocListener extends StatelessWidget {
               context: context,
               message: "Domain Added Successfully",
             );
-            GoRouter.of(context).pushReplacement(Routes.homeView);
+            GoRouter.of(context).pop();
           },
           addDomainFailure: (apiErrorModel) {
             errorDialog(

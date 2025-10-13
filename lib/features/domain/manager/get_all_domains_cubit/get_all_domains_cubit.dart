@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:smart_home/core/functions/load_saved_domain_index.dart';
 import 'package:smart_home/core/networking/api_error_model.dart';
 import 'package:smart_home/core/networking/api_result.dart';
 import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
@@ -17,9 +18,11 @@ class GetAllDomainsCubit extends Cubit<GetAllDomainsState> {
     final ApiResult result = await getAllDomainsRepo.getAllDomains();
     result.when(
       success: (getAllDomainsResponseBody) {
+        final savedIndex = loadSavedDomainIndex();
         emit(
           GetAllDomainsState.getAllDomainsSuccess(
             getAllDomainsResponseBody: getAllDomainsResponseBody,
+            selectedIndex: savedIndex ?? -1,
           ),
         );
       },

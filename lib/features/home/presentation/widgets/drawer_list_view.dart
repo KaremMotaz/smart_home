@@ -13,6 +13,14 @@ class DrawerListView extends StatelessWidget {
       padding: EdgeInsets.zero,
       children: [
         CustomDrawerOption(
+          icon: AssetsData.domainIcon,
+          title: 'Manage Domains',
+          onTap: () {
+            GoRouter.of(context).pop();
+            GoRouter.of(context).push(Routes.manageDomainsView);
+          },
+        ),
+        CustomDrawerOption(
           icon: AssetsData.usersIcon,
           title: 'Manage Users',
           onTap: () {

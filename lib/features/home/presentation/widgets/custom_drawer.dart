@@ -20,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
         alignment: Alignment.center,
         child: Container(
           margin: const EdgeInsets.symmetric(vertical: 50),
-          padding: const EdgeInsets.only(top: 64, bottom: 64),
+          padding: const EdgeInsets.only(top: 30, bottom: 30),
           decoration: const BoxDecoration(
             color: ColorsManager.darkbrown,
             borderRadius: BorderRadius.only(
