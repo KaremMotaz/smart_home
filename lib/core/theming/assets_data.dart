@@ -26,4 +26,5 @@ class AssetsData {
   static const String smartHome1 = 'assets/images/smart_home_1.jpg';
   static const String domainIcon = 'assets/images/icons/domain.png';
   static const String noData = 'assets/images/no_data.png';
+  static const String bgOnboarding = 'assets/images/bg_onboarding.jpg';
 }
