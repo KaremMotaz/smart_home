@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/features/onboarding/presentation/widgets/onboarding_device_grid.dart';
-import 'package:smart_home/features/onboarding/presentation/widgets/custom_onboarding_widget_2.dart';
+import 'package:smart_home/features/onboarding/presentation/widgets/custom_onboardin_widget2.dart';
 import '../../../../../core/theming/text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -22,9 +22,17 @@ class PageViewItem extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
           Text(title, textAlign: TextAlign.center, style: TextStyles.bold22),
-          const SizedBox(height: 10),
-          if (currentPageIndex == 0) const OnboardingDeviceGrid(),
-          if (currentPageIndex == 1) const CustomOnboardingWidget2(),
+          if (currentPageIndex == 0) ...[
+            const Spacer(flex: 3),
+            const OnboardingDeviceGrid(),
+            const Spacer(flex: 3),
+          ],
+          if (currentPageIndex == 1) ...[
+            const Spacer(flex: 3),
+            const CustomOnboardingWidget2(),
+            const Spacer(flex: 3),
+          ],
+          if (currentPageIndex == 2) const SizedBox(height: 10),
           Text(
             description,
             textAlign: TextAlign.center,

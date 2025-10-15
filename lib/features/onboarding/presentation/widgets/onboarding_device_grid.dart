@@ -9,93 +9,90 @@ class OnboardingDeviceGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double radius = 35;
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 50),
-      child: SizedBox(
-        height: 270,
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 30),
-                    child: DeviceIconCard(
-                      iconPath: AssetsData.bulb,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(radius),
-                        topLeft: Radius.circular(radius),
-                        bottomLeft: Radius.circular(radius),
-                      ),
+    return const SizedBox(
+      height: 270,
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: DeviceIconCard(
+                    iconPath: AssetsData.bulb,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(radius),
+                      topLeft: Radius.circular(radius),
+                      bottomLeft: Radius.circular(radius),
                     ),
                   ),
-                  DeviceIconCard(
-                    iconPath: AssetsData.screen,
-                    rotationAngle: 45,
+                ),
+                DeviceIconCard(
+                  iconPath: AssetsData.screen,
+                  rotationAngle: 45,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(radius),
+                    topLeft: Radius.circular(radius),
+                    bottomLeft: Radius.circular(radius),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: DeviceIconCard(
+                    iconPath: AssetsData.fan,
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(radius),
                       topLeft: Radius.circular(radius),
                       bottomLeft: Radius.circular(radius),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 30),
-                    child: DeviceIconCard(
-                      iconPath: AssetsData.fan,
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(radius),
-                        topLeft: Radius.circular(radius),
-                        bottomLeft: Radius.circular(radius),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Onboarding1CenterCard(),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(right: 30),
-                    child: DeviceIconCard(
-                      iconPath: AssetsData.speaker,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(radius),
-                        topLeft: Radius.circular(radius),
-                        bottomRight: Radius.circular(radius),
-                      ),
+          ),
+          Onboarding1CenterCard(),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: DeviceIconCard(
+                    iconPath: AssetsData.speaker,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(radius),
+                      topLeft: Radius.circular(radius),
+                      bottomRight: Radius.circular(radius),
                     ),
                   ),
-                  DeviceIconCard(
-                    iconPath: AssetsData.airPurifier,
-                    rotationAngle: -45,
+                ),
+                DeviceIconCard(
+                  iconPath: AssetsData.airPurifier,
+                  rotationAngle: -45,
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(radius),
+                    topRight: Radius.circular(radius),
+                    bottomLeft: Radius.circular(radius),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(right: 30),
+                  child: DeviceIconCard(
+                    iconPath: AssetsData.cameraVideo,
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(radius),
                       topRight: Radius.circular(radius),
                       bottomLeft: Radius.circular(radius),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 30),
-                    child: DeviceIconCard(
-                      iconPath: AssetsData.cameraVideo,
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(radius),
-                        topRight: Radius.circular(radius),
-                        bottomLeft: Radius.circular(radius),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
