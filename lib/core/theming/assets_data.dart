@@ -27,4 +27,16 @@ class AssetsData {
   static const String domainIcon = 'assets/images/icons/domain.png';
   static const String noData = 'assets/images/no_data.png';
   static const String bgOnboarding = 'assets/images/bg_onboarding.jpg';
+  static const String home = 'assets/svgs/home_fill.svg';
+  static const String bulb = 'assets/svgs/bulb.svg';
+  static const String screen = 'assets/svgs/screen.svg';
+  static const String fan = 'assets/svgs/fan_outline.svg';
+  static const String speaker = 'assets/svgs/speaker.svg';
+  static const String airPurifier = 'assets/svgs/air_purifier.svg';
+  static const String cameraVideo = 'assets/svgs/camera_video.svg';
+  static const String snow = 'assets/svgs/snow.svg';
+  static const String sun = 'assets/svgs/sun.svg';
+  static const String volume = 'assets/svgs/volume.svg';
+  static const String exp = 'assets/svgs/exp.svg';
+  static const String offOn = 'assets/svgs/off_on.svg';
 }

@@ -48,24 +48,24 @@ class _OnboardingViewState extends State<OnboardingView> {
     super.dispose();
   }
 
-  List<PageViewItem> get pages => [
-    PageViewItem(
+  List<PageViewItem> pages = [
+    const PageViewItem(
       title: "Control\nYour Devices",
       description:
           "Take charge of your devices\nwith ease. Simplify your\ncontrol experience.",
-      currentPageIndex: currentPageIndex,
+      currentPageIndex: 0,
     ),
-    PageViewItem(
+    const PageViewItem(
       title: "Add Smart Service\nto Your Home",
       description:
           "Elevate your home with new services.\nEnhance convenience and comfort\neffortlessly.",
-      currentPageIndex: currentPageIndex,
+      currentPageIndex: 1,
     ),
-    PageViewItem(
+    const PageViewItem(
       title: "Experience the\nultimate in home\ncontrol",
       description:
           "Simplify your life and transform your\nhome into a smart sanctuary today.",
-      currentPageIndex: currentPageIndex,
+      currentPageIndex: 2,
     ),
   ];
 
