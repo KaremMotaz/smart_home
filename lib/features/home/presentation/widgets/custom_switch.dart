@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/colors_manager.dart';
 
 class CustomSwitch extends StatelessWidget {

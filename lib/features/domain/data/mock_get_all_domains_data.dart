@@ -1,4 +1,4 @@
-import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
+import 'models/get_all_domains_response_body.dart';
 
 class MockGetAllDomainsData {
   static final GetAllDomainsResponseBody mockResponse =

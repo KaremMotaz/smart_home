@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/home/data/models/rooms_model.dart';
+import '../../data/models/rooms_model.dart';
 import '../../../../core/theming/text_styles.dart';
 import 'custom_switch.dart';
 

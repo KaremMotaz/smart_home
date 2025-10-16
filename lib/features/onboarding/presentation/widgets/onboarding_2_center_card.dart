@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/features/onboarding/presentation/widgets/custom_icon_card.dart';
-import 'package:smart_home/features/onboarding/presentation/widgets/exp_card.dart';
+import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/colors_manager.dart';
+import 'custom_icon_card.dart';
+import 'exp_card.dart';
 
 class Onboarding2CenterCard extends StatelessWidget {
   const Onboarding2CenterCard({super.key});

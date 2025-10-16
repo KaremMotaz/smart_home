@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/functions/build_snack_bar.dart';
-import 'package:smart_home/core/helpers/constants.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/services/cache_helper.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/app_text_button.dart';
-import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
-import 'package:smart_home/features/domain/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
-import 'package:smart_home/features/domain/presentation/widgets/domain_card.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/helpers/constants.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/services/cache_helper.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/app_text_button.dart';
+import '../../data/models/get_all_domains_response_body.dart';
+import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
+import 'domain_card.dart';
 
 class GetAllDomainsViewBody extends StatelessWidget {
   const GetAllDomainsViewBody({

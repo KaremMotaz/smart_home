@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/features/domain/data/models/add_domain_request_body.dart';
-import 'package:smart_home/features/domain/manager/add_domain_cubit/add_domain_cubit.dart';
+import '../../data/models/add_domain_request_body.dart';
+import '../../manager/add_domain_cubit/add_domain_cubit.dart';
 import '../../../../core/widgets/app_text_form_field.dart';
 import '../../../../core/widgets/bloc_button.dart';
 

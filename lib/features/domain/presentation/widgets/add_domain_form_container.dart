@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/domain/presentation/widgets/add_domain_form.dart';
+import 'add_domain_form.dart';
 
 class AddDomainFormContainer extends StatelessWidget {
   const AddDomainFormContainer({super.key});

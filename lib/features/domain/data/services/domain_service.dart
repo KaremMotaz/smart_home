@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:smart_home/features/domain/data/models/add_domain_request_body.dart';
-import 'package:smart_home/features/domain/data/models/add_domain_response_body.dart';
-import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
+import '../models/add_domain_request_body.dart';
+import '../models/add_domain_response_body.dart';
+import '../models/get_all_domains_response_body.dart';
 import '../../../../core/networking/api_constants.dart';
 part 'domain_service.g.dart';
 

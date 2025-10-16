@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/features/onboarding/presentation/widgets/device_icon_card.dart';
-import 'package:smart_home/features/onboarding/presentation/widgets/onboarding_1_center_card.dart';
+import '../../../../core/theming/assets_data.dart';
+import 'device_icon_card.dart';
+import 'onboarding_1_center_card.dart';
 
 class OnboardingDeviceGrid extends StatelessWidget {
   const OnboardingDeviceGrid({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/features/auth/data/models/login_request_body.dart';
-import 'package:smart_home/features/auth/data/repos/login_repo.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../data/models/login_request_body.dart';
+import '../../data/repos/login_repo.dart';
 part 'login_state.dart';
 part 'login_cubit.freezed.dart';
 

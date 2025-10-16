@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/features/home/data/models/rooms_model.dart';
+import '../../data/models/rooms_model.dart';
 import '../widgets/selected_room_card.dart';
 
 class SelectedRoomView extends StatelessWidget {

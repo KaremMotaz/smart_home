@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/custom_error_widget.dart';
-import 'package:smart_home/features/domain/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
-import 'package:smart_home/features/domain/presentation/widgets/get_all_domains_view_body.dart';
+import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../../core/widgets/custom_error_widget.dart';
+import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
+import 'get_all_domains_view_body.dart';
 
 class GetAllDomainsViewBodyBlocBuilder extends StatelessWidget {
   const GetAllDomainsViewBodyBlocBuilder({super.key});

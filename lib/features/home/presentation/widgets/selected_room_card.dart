@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/home/data/models/rooms_model.dart';
+import '../../data/models/rooms_model.dart';
 import 'custom_divider.dart';
 import 'device_section.dart';
 import 'room_details_section.dart';

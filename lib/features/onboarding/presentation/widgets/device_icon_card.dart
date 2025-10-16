@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:smart_home/core/functions/degrees_to_radians.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
+import '../../../../core/functions/degrees_to_radians.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 class DeviceIconCard extends StatelessWidget {
   const DeviceIconCard({

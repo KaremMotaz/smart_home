@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/home/presentation/widgets/all_rooms_header.dart';
+import 'all_rooms_header.dart';
 import 'all_rooms_list_view.dart';
 
 class AllRoomsSection extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/features/domain/data/models/add_domain_request_body.dart';
-import 'package:smart_home/features/domain/data/repos/add_domain_repo.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../data/models/add_domain_request_body.dart';
+import '../../data/repos/add_domain_repo.dart';
 part 'add_domain_state.dart';
 part 'add_domain_cubit.freezed.dart';
 

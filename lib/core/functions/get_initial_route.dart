@@ -1,5 +1,5 @@
-import 'package:smart_home/core/functions/check_if_logged_in_user.dart';
-import 'package:smart_home/core/routing/routes.dart';
+import 'check_if_logged_in_user.dart';
+import '../routing/routes.dart';
 
 Future<String> getInitialRoute() async {
   final bool isLoggedInUser = await checkIfLoggedInUser();

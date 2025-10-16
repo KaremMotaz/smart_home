@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
+import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/colors_manager.dart';
 
 class OffOnCard extends StatelessWidget {
   const OffOnCard({super.key});

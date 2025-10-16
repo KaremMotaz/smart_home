@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/app_text_button.dart';
+import '../networking/api_error_model.dart';
+import '../theming/assets_data.dart';
+import '../theming/colors_manager.dart';
+import '../theming/text_styles.dart';
+import 'app_text_button.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   const CustomErrorWidget({

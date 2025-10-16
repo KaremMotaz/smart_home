@@ -1,7 +1,7 @@
-import 'package:smart_home/core/helpers/logger.dart';
-import 'package:smart_home/features/domain/data/mock_get_all_domains_data.dart';
-import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
-import 'package:smart_home/features/domain/data/services/domain_service.dart';
+import '../../../../core/helpers/logger.dart';
+import '../mock_get_all_domains_data.dart';
+import '../models/get_all_domains_response_body.dart';
+import '../services/domain_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 
