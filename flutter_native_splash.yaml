@@ -1,0 +1,11 @@
+flutter_native_splash:
+
+  color: "#ffffff"
+
+  # Ios & Android below android 12
+  image: assets/logo/smart_home_logo_splash.png
+  
+  # Ios & Android above android 12
+  android_12:
+    image: assets/logo/smart_home_logo_splash.png
+    color: "#ffffff"
