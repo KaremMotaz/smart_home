@@ -13,42 +13,45 @@ class FingerLoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: const SystemUiOverlayStyle(
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light,
-      ),
-      child: Scaffold(
-        body: Stack(
-          children: [
-            SizedBox.expand(
-              child: Image.asset(AssetsData.fingerLoginBg, fit: BoxFit.cover),
-            ),
-            const ShadowContainer(),
-            const TextBody(),
-            BlocProvider(
-              create: (context) => getIt<BiometricCubit>(),
-              child: Positioned(
-                bottom: 0,
-                right: 0,
-                left: 0,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 80,
-                    vertical: 16,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withAlpha(130),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50),
+    return PopScope(
+      canPop: false,
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: const SystemUiOverlayStyle(
+          statusBarIconBrightness: Brightness.light,
+          statusBarBrightness: Brightness.light,
+        ),
+        child: Scaffold(
+          body: Stack(
+            children: [
+              SizedBox.expand(
+                child: Image.asset(AssetsData.fingerLoginBg, fit: BoxFit.cover),
+              ),
+              const ShadowContainer(),
+              const TextBody(),
+              BlocProvider(
+                create: (context) => getIt<BiometricCubit>(),
+                child: Positioned(
+                  bottom: 0,
+                  right: 0,
+                  left: 0,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 80,
+                      vertical: 16,
                     ),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withAlpha(130),
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        topRight: Radius.circular(50),
+                      ),
+                    ),
+                    child: const BiometricBlocListener(),
                   ),
-                  child: const BiometricBlocListener(),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

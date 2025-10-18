@@ -23,7 +23,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<BiometricRepo>(
     () => BiometricRepo(auth: getIt<LocalAuthentication>()),
   );
-  getIt.registerLazySingleton<BiometricCubit>(
+  getIt.registerFactory<BiometricCubit>(
     () => BiometricCubit(biometricRepo: getIt<BiometricRepo>()),
   );
   getIt.registerLazySingleton<AuthService>(() => AuthService(getIt.get()));

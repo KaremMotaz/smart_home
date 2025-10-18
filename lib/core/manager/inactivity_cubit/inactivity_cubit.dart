@@ -1,15 +1,13 @@
 import 'dart:async';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/routing/routes.dart';
 part 'inactivity_state.dart';
 part 'inactivity_cubit.freezed.dart';
 
 class InactivityCubit extends Cubit<InactivityState> {
   Timer? _timer;
   static const inactivityDuration = Duration(minutes: 10);
-  String? _lastVisitedRoute;
+
   InactivityCubit() : super(const InactivityState.unlocked()) {
     _startTimer();
   }
@@ -22,10 +20,7 @@ class InactivityCubit extends Cubit<InactivityState> {
     emit(const InactivityState.locked());
   }
 
-  void resetTimer({String? currentRoute}) {
-    if (currentRoute != null) {
-      _lastVisitedRoute = currentRoute;
-    }
+  void resetTimer() {
     if (!state.isLocked) {
       _startTimer();
     }
@@ -36,8 +31,6 @@ class InactivityCubit extends Cubit<InactivityState> {
     _startTimer();
   }
 
-  String get lastVisitedRoute => _lastVisitedRoute ?? Routes.homeView;
-  
   @override
   Future<void> close() {
     _timer?.cancel();
