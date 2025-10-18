@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/helpers/app_regex.dart';
-import '../../../../core/helpers/app_validators.dart';
-import '../../../../core/widgets/app_text_form_field.dart';
-import '../../../../core/widgets/bloc_button.dart';
-import '../../data/models/register_request_body.dart';
-import '../../manager/register_cubit/register_cubit.dart';
+import '../../../../../core/helpers/app_regex.dart';
+import '../../../../../core/helpers/app_validators.dart';
+import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../../core/widgets/bloc_button.dart';
+import '../../../data/models/register_request_body.dart';
+import '../../../manager/register_cubit/register_cubit.dart';
 import 'phone_field.dart';
 
 class RegisterForm extends StatefulWidget {

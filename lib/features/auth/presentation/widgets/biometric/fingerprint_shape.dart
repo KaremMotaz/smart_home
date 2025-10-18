@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/assets_data.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class FingerprintShape extends StatelessWidget {
   const FingerprintShape({super.key});

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
-import 'auth_app_bar.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/text_styles.dart';
+import '../auth_app_bar.dart';
 
 class RegisterHeader extends StatelessWidget {
   const RegisterHeader({super.key});
