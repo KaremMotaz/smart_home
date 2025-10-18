@@ -6,7 +6,7 @@ part 'inactivity_cubit.freezed.dart';
 
 class InactivityCubit extends Cubit<InactivityState> {
   Timer? _timer;
-  static const inactivityDuration = Duration(minutes: 10);
+  static const inactivityDuration = Duration(minutes: 10000);
 
   InactivityCubit() : super(const InactivityState.unlocked()) {
     _startTimer();

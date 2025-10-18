@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/helpers/constants.dart';
-import 'package:smart_home/core/services/cache_helper.dart';
+// import 'package:smart_home/core/helpers/constants.dart';
+// import 'package:smart_home/core/services/cache_helper.dart';
 import '../../features/Devices/presentation/views/devices_view.dart';
 import '../../features/Rooms/presentation/views/all_rooms_view.dart';
 import '../../features/Settings/presentation/views/help_view.dart';
@@ -23,7 +23,7 @@ import 'routes.dart';
 abstract class AppRouter {
   static GoRouter createRouter({required String initialRoute}) {
     return GoRouter(
-      initialLocation: initialRoute,
+      initialLocation: Routes.profileView,
       routes: [
         GoRoute(
           path: Routes.onboardingView,
@@ -94,14 +94,14 @@ abstract class AppRouter {
           },
         ),
       ],
-      redirect: (context, state) async {
-        final String? fullPath = state.fullPath;
+      // redirect: (context, state) async {
+      //   final String? fullPath = state.fullPath;
 
-        if (fullPath != null && fullPath.isNotEmpty) {
-          await CacheHelper.set(key: kLastVisitedRoute, value: fullPath);
-        }
-        return null;
-      },
+      //   if (fullPath != null && fullPath.isNotEmpty) {
+      //     await CacheHelper.set(key: kLastVisitedRoute, value: fullPath);
+      //   }
+      //   return null;
+      // },
     );
   }
 }
