@@ -3,6 +3,7 @@ class ApiConstants {
   static const register = "users";
   static const login = "users/tokens/issue";
   static const refreshToken = "users/tokens/refresh";
+  static const getUserData = "users/profile";
   static const addDomain = "domains";
   static const getAllDomains = "domains";
 }
