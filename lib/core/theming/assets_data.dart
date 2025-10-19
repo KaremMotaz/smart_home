@@ -40,4 +40,6 @@ class AssetsData {
   static const String exp = 'assets/svgs/exp.svg';
   static const String offOn = 'assets/svgs/off_on.svg';
   static const String shape = 'assets/svgs/shape.svg';
+  static const String bubbles = 'assets/svgs/bubbles.svg';
+  static const String checkMark = 'assets/svgs/check_mark.svg';
 }

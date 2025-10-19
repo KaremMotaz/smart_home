@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_home/core/functions/profile_updated_show_dialog.dart';
 import 'package:smart_home/features/Settings/presentation/widgets/custom_edit_profile_widget.dart';
 
 class EditProfileSection extends StatelessWidget {
@@ -11,22 +12,7 @@ class EditProfileSection extends StatelessWidget {
         CustomEditProfileWidget(
           onPressed: () {
             // GoRouter.of(context).push(Routes.fingerLoginView);
-            showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: const Text("Success"),
-                  actions: [
-                    TextButton(
-                      child: const Text("OK"),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    ),
-                  ],
-                );
-              },
-            );
+            profileUpdatedShowDialog(context);
           },
           title: "First name",
           data: "Sarah",
