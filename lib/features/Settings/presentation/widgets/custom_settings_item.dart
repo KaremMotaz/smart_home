@@ -17,30 +17,29 @@ class CustomSettingsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white54,
+      color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        splashColor: Colors.white54,
-        highlightColor: Colors.white54,
-        child: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              decoration: BoxDecoration(
-                color: ColorsManager.lightGrey,
-                borderRadius: BorderRadius.circular(8),
+        splashColor: ColorsManager.lighterGrey,
+        highlightColor: ColorsManager.lighterGrey,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: ColorsManager.darkbrown,
+                ),
+                child: Icon(icon, size: 20, color: Colors.white),
               ),
-              child: Icon(icon, size: 22),
-            ),
-            const SizedBox(width: 15),
-            Text(title, style: TextStyles.semiBold16),
-            const Spacer(),
-            const CircleAvatar(
-              radius: 16,
-              backgroundColor: ColorsManager.lightGrey,
-              child: Icon(Icons.arrow_forward_ios, size: 18),
-            ),
-          ],
+              const SizedBox(width: 15),
+              Text(title, style: TextStyles.semiBold16),
+              const Spacer(),
+              const Icon(Icons.arrow_forward_ios, size: 18),
+            ],
+          ),
         ),
       ),
     );

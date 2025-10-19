@@ -13,7 +13,7 @@ class SettingsView extends StatelessWidget {
       appBar: AppBar(backgroundColor: ColorsManager.orange2, elevation: 0),
       backgroundColor: ColorsManager.orange2,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 25),
         margin: const EdgeInsets.only(top: 20),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -25,9 +25,13 @@ class SettingsView extends StatelessWidget {
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProfileSection(),
-            SizedBox(height: 20),
-            CustomDivider(color: ColorsManager.darkbrown),
+            Column(
+              children: [
+                ProfileSection(),
+                SizedBox(height: 10),
+                CustomDivider(color: ColorsManager.darkbrown),
+              ],
+            ),
             SizedBox(height: 20),
             SettingsSection(),
             Spacer(),

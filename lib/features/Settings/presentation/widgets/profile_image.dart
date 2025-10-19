@@ -38,7 +38,11 @@ class ProfileImage extends StatelessWidget {
             backgroundColor: ColorsManager.grey,
             child: IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.edit, color: Colors.white, size: 18),
+              icon: const Icon(
+                Icons.camera_alt_rounded,
+                color: Colors.white,
+                size: 18,
+              ),
             ),
           ),
         ),

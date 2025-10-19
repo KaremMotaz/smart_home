@@ -10,16 +10,11 @@ class SettingsSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text("Settings", style: TextStyles.bold22),
-        const SizedBox(height: 25),
-        CustomSettingsItem(
-          onTap: () {},
-          title: 'Change Password',
-          icon: Icons.lock,
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12),
+          child: Text("Settings", style: TextStyles.bold22),
         ),
-        const SizedBox(height: 25),
         CustomSettingsItem(onTap: () {}, title: 'About App', icon: Icons.info),
-        const SizedBox(height: 25),
         CustomSettingsItem(onTap: () {}, title: 'Logout', icon: Icons.logout),
       ],
     );
