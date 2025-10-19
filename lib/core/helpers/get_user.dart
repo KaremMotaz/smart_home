@@ -4,7 +4,7 @@ import '../services/cache_helper.dart';
 import 'constants.dart';
 
 UserDataResponse getUser() {
-  String jsonString = CacheHelper.getString(key: kUserData) ?? '';
+  String jsonString = CacheHelper.getString(key: kUserData) ?? "";
   UserDataResponse userDataResponse = UserDataResponse.fromJson(
     jsonDecode(jsonString),
   );

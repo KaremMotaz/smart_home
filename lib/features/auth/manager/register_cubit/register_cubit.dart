@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:smart_home/core/helpers/get_user.dart';
 
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
@@ -28,7 +29,8 @@ class RegisterCubit extends Cubit<RegisterState> {
       body: registerRequestBody,
     );
     result.when(
-      success: (data) {
+      success: (userDataResponse) async {
+        await saveUser(userDataResponse: userDataResponse);
         emit(const RegisterState.registerSuccess());
       },
       failure: (apiErrorModel) async {

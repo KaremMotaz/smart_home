@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/manager/user_data_cubit/user_data_cubit.dart';
 
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/colors_manager.dart';
@@ -13,7 +14,10 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LoginCubit>(
-      create: (context) => LoginCubit(loginRepo: getIt.get<LoginRepo>()),
+      create: (context) => LoginCubit(
+        loginRepo: getIt.get<LoginRepo>(),
+        userDataCubit: getIt.get<UserDataCubit>(),
+      ),
       child: const Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: ColorsManager.orange2,

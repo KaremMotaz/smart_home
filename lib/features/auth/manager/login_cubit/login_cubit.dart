@@ -1,6 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:smart_home/core/helpers/constants.dart';
+import 'package:smart_home/core/helpers/extensions.dart';
 import 'package:smart_home/core/manager/user_data_cubit/user_data_cubit.dart';
+import 'package:smart_home/core/services/cache_helper.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/login_request_body.dart';
@@ -19,12 +22,19 @@ class LoginCubit extends Cubit<LoginState> {
     final ApiResult loginResult = await loginRepo.login(body: loginRequestBody);
     loginResult.when(
       success: (userDataResponse) async {
-        userDataCubit.getUserData();
+        checkToGetUserDataAfterLogin();
         emit(const LoginState.loginSuccess());
       },
       failure: (apiErrorModel) async {
         emit(LoginState.loginFailure(apiErrorModel: apiErrorModel));
       },
     );
+  }
+
+  void checkToGetUserDataAfterLogin() {
+    String? jsonString = CacheHelper.getString(key: kUserData);
+    if (jsonString.isNullOrEmpty()) {
+      userDataCubit.getUserData();
+    }
   }
 }
