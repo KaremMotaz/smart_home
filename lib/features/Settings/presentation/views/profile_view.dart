@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
-import '../widgets/edit_profile_section.dart';
-import '../widgets/profile_image.dart';
+import '../widgets/profile/edit_profile_section.dart';
+import '../widgets/profile/profile_image.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -13,7 +13,7 @@ class ProfileView extends StatelessWidget {
       appBar: AppBar(backgroundColor: ColorsManager.orange2, elevation: 0),
       backgroundColor: ColorsManager.orange2,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+        padding: const EdgeInsets.symmetric(vertical: 30),
         margin: const EdgeInsets.only(top: 20),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -22,23 +22,19 @@ class ProfileView extends StatelessWidget {
             topRight: Radius.circular(50),
           ),
         ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height - 182,
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ProfileImage(),
-                SizedBox(height: 10),
-                Text('Sarah Doe', style: TextStyles.bold22),
-                SizedBox(height: 5),
-                Text('SarahDoe2020@gmail.com', style: TextStyles.regular14),
-                SizedBox(height: 25),
-                EditProfileSection(),
-                // Spacer(),
-              ],
-            ),
+        child: const SizedBox(
+          height: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ProfileImage(),
+              SizedBox(height: 10),
+              Text('Sarah Doe', style: TextStyles.bold22),
+              SizedBox(height: 5),
+              Text('SarahDoe2020@gmail.com', style: TextStyles.regular14),
+              SizedBox(height: 25),
+              EditProfileSection(),
+            ],
           ),
         ),
       ),

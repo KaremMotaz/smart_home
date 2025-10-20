@@ -33,10 +33,10 @@ class _LoginFormState extends State<AddDomainForm> {
         children: [
           AppTextFormField(
             textInputType: TextInputType.name,
-            hintText: "Domain Name",
+            hintText: "Project Name",
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return "Please enter your domain name";
+                return "Please enter your project name";
               }
               return null;
             },
@@ -45,11 +45,11 @@ class _LoginFormState extends State<AddDomainForm> {
           const SizedBox(height: 18),
           AppTextFormField(
             textInputType: TextInputType.name,
-            hintText: "Domain Alias",
+            hintText: "Project Alias",
             controller: aliasController,
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return "Please enter your domain alias";
+                return "Please enter your project alias";
               }
               return null;
             },

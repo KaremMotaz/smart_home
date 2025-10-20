@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/assets_data.dart';
+import '../../../../../core/theming/colors_manager.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({super.key});

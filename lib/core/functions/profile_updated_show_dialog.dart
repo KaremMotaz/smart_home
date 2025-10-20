@@ -5,7 +5,10 @@ import '../theming/assets_data.dart';
 import '../theming/text_styles.dart';
 import '../widgets/app_text_button.dart';
 
-Future<dynamic> profileUpdatedShowDialog(BuildContext context) {
+Future<dynamic> profileUpdatedShowDialog(
+  BuildContext context, {
+  required String fieldName,
+}) {
   return showDialog(
     context: context,
     builder: (context) {
@@ -64,8 +67,8 @@ Future<dynamic> profileUpdatedShowDialog(BuildContext context) {
               ),
               const Text("Profile Updated", style: TextStyles.semiBold20),
               const SizedBox(height: 5),
-              const Text(
-                "Congratulations your profile has been successfully updated. Enjoy your next trip on our app",
+              Text(
+                "Congratulations your $fieldName has been successfully updated. Enjoy your next trip on our app",
                 textAlign: TextAlign.center,
                 style: TextStyles.regular14,
               ),

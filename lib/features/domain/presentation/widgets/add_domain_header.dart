@@ -27,7 +27,7 @@ class AddDomainHeader extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                "Add Domain",
+                "Add Project",
                 style: TextStyles.bold18.copyWith(
                   color: ColorsManager.darkerBlue,
                 ),
@@ -37,12 +37,12 @@ class AddDomainHeader extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            "Add Domain",
+            "Add Project",
             style: TextStyles.bold24.copyWith(color: ColorsManager.darkerBlue),
           ),
           const SizedBox(height: 10),
           Text(
-            "Add a new domain to organize, connect, and control your smart devices effortlessly.",
+            "Add a new project to organize, connect, and control your smart devices effortlessly.",
             style: TextStyles.medium14.copyWith(
               color: ColorsManager.darkerBlue,
             ),

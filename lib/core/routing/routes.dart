@@ -14,10 +14,6 @@ class Routes {
   static const String soundView = '/soundView';
   static const String settingsView = '/settingsView';
   static const String profileView = '/profileView';
-  static const String changeFirstNameView = '/changeFirstNameView';
-  static const String changeLastNameView = '/changeLastNameView';
-  static const String changeEmailView = '/changeEmailView';
-  static const String changePhoneView = '/changePhoneView';
-  static const String changePasswordView = '/changePasswordView';
+  static const String editProfileView = '/editProfileView';
   static const String helpView = '/helpView';
 }

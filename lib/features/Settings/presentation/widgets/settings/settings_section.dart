@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 import 'custom_settings_item.dart';
 
 class SettingsSection extends StatelessWidget {

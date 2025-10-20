@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
-import '../../../home/presentation/widgets/custom_divider.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/text_styles.dart';
+import '../../../../home/presentation/widgets/custom_divider.dart';
 
-class CustomEditProfileWidget extends StatelessWidget {
-  const CustomEditProfileWidget({
+class CustomEditFieldWidget extends StatelessWidget {
+  const CustomEditFieldWidget({
     super.key,
     required this.title,
     required this.data,
-    required this.route,
   });
   final String title;
   final String data;
-  final String route;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +22,10 @@ class CustomEditProfileWidget extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {
-              GoRouter.of(context).push(route);
-              GoRouter.of(context).push(Routes.fingerLoginView);
+              GoRouter.of(
+                context,
+              ).push(Routes.editProfileView, extra: {"title": title});
+              // GoRouter.of(context).push(Routes.fingerLoginView);
             },
             splashColor: ColorsManager.lighterGrey,
             highlightColor: ColorsManager.lighterGrey,
@@ -33,7 +33,7 @@ class CustomEditProfileWidget extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
+                    horizontal: 30,
                     vertical: 7.5,
                   ),
                   child: Row(
@@ -59,16 +59,10 @@ class CustomEditProfileWidget extends StatelessWidget {
                           ],
                         ),
                       ),
-                      IconButton(
-                        onPressed: () {
-                          GoRouter.of(context).push(route);
-                          GoRouter.of(context).push(Routes.fingerLoginView);
-                        },
-                        icon: const Icon(
-                          Icons.edit,
-                          size: 22,
-                          color: ColorsManager.grey,
-                        ),
+                      const Icon(
+                        Icons.edit,
+                        size: 22,
+                        color: ColorsManager.grey,
                       ),
                     ],
                   ),
