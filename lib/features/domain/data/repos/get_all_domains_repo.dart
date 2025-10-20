@@ -1,9 +1,9 @@
 import '../../../../core/helpers/logger.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
 import '../mock_get_all_domains_data.dart';
 import '../models/get_all_domains_response_body.dart';
 import '../services/domain_service.dart';
-import '../../../../core/networking/api_error_handler.dart';
-import '../../../../core/networking/api_result.dart';
 
 class GetAllDomainsRepo {
   final DomainService domainService;

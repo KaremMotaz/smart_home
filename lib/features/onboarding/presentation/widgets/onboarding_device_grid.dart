@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/assets_data.dart';
 import 'device_icon_card.dart';
 import 'onboarding_1_center_card.dart';

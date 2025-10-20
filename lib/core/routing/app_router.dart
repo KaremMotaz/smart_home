@@ -1,4 +1,9 @@
 import 'package:go_router/go_router.dart';
+import '../../features/Settings/presentation/views/change_email_view.dart';
+import '../../features/Settings/presentation/views/change_first_name_view.dart';
+import '../../features/Settings/presentation/views/change_last_name_view.dart';
+import '../../features/Settings/presentation/views/change_password_view.dart';
+import '../../features/Settings/presentation/views/change_phone_view.dart';
 // import 'package:smart_home/core/helpers/constants.dart';
 // import 'package:smart_home/core/services/cache_helper.dart';
 import '../../features/Devices/presentation/views/devices_view.dart';
@@ -91,6 +96,36 @@ abstract class AppRouter {
           builder: (context, state) {
             final room = state.extra as RoomsModel;
             return SelectedRoomView(room: room);
+          },
+        ),
+        GoRoute(
+          path: Routes.changeFirstNameView,
+          builder: (context, state) {
+            return const ChangeFirstNameView();
+          },
+        ),
+        GoRoute(
+          path: Routes.changeLastNameView,
+          builder: (context, state) {
+            return const ChangeLastNameView();
+          },
+        ),
+        GoRoute(
+          path: Routes.changeEmailView,
+          builder: (context, state) {
+            return const ChangeEmailView();
+          },
+        ),
+        GoRoute(
+          path: Routes.changePhoneView,
+          builder: (context, state) {
+            return const ChangePhoneView();
+          },
+        ),
+        GoRoute(
+          path: Routes.changePasswordView,
+          builder: (context, state) {
+            return const ChangePasswordView();
           },
         ),
       ],

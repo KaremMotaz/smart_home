@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:smart_home/core/models/user_data_response.dart';
+import '../models/user_data_response.dart';
 import '../services/cache_helper.dart';
 import 'constants.dart';
 

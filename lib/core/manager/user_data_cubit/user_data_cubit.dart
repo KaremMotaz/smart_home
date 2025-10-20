@@ -1,10 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/helpers/get_user.dart';
-import 'package:smart_home/core/models/user_data_response.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/core/repos/user_data_repo.dart';
+import '../../helpers/get_user.dart';
+import '../../models/user_data_response.dart';
+import '../../networking/api_error_model.dart';
+import '../../networking/api_result.dart';
+import '../../repos/user_data_repo.dart';
 part 'user_data_state.dart';
 part 'user_data_cubit.freezed.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/custom_settings_item.dart';
+import '../../../../core/theming/text_styles.dart';
+import 'custom_settings_item.dart';
 
 class SettingsSection extends StatelessWidget {
   const SettingsSection({super.key});

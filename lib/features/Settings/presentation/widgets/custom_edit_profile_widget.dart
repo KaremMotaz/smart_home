@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/features/home/presentation/widgets/custom_divider.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../../../home/presentation/widgets/custom_divider.dart';
 
 class CustomEditProfileWidget extends StatelessWidget {
   const CustomEditProfileWidget({
     super.key,
-    required this.onPressed,
     required this.title,
     required this.data,
+    required this.route,
   });
-  final void Function() onPressed;
   final String title;
   final String data;
+  final String route;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,10 @@ class CustomEditProfileWidget extends StatelessWidget {
         Material(
           color: Colors.transparent,
           child: InkWell(
-            onTap: onPressed,
+            onTap: () {
+              GoRouter.of(context).push(route);
+              GoRouter.of(context).push(Routes.fingerLoginView);
+            },
             splashColor: ColorsManager.lighterGrey,
             highlightColor: ColorsManager.lighterGrey,
             child: Column(
@@ -55,7 +60,10 @@ class CustomEditProfileWidget extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        onPressed: onPressed,
+                        onPressed: () {
+                          GoRouter.of(context).push(route);
+                          GoRouter.of(context).push(Routes.fingerLoginView);
+                        },
                         icon: const Icon(
                           Icons.edit,
                           size: 22,

@@ -1,7 +1,7 @@
-import 'package:smart_home/core/helpers/get_user.dart';
-import 'package:smart_home/core/networking/api_error_handler.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/features/Settings/data/services/settings_service.dart';
+import '../../../../core/helpers/get_user.dart';
+import '../../../../core/networking/api_error_handler.dart';
+import '../../../../core/networking/api_result.dart';
+import '../services/settings_service.dart';
 
 class SettingsRepo {
   final SettingsService settingsService;

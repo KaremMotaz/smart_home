@@ -1,39 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/functions/profile_updated_show_dialog.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/custom_edit_profile_widget.dart';
+import '../../../../core/routing/routes.dart';
+import 'custom_edit_profile_widget.dart';
 
 class EditProfileSection extends StatelessWidget {
   const EditProfileSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         CustomEditProfileWidget(
-          onPressed: () {
-            // GoRouter.of(context).push(Routes.fingerLoginView);
-            profileUpdatedShowDialog(context);
-          },
+          route: Routes.changeFirstNameView,
           title: "First name",
           data: "Sarah",
         ),
         CustomEditProfileWidget(
-          onPressed: () {},
+          route: Routes.changeLastNameView,
           title: "Last name",
           data: "Doe",
         ),
         CustomEditProfileWidget(
-          onPressed: () {},
+          route: Routes.changeEmailView,
           title: "Email",
           data: "SarahDoe2020@gmail.com",
         ),
         CustomEditProfileWidget(
-          onPressed: () {},
+          route: Routes.changePhoneView,
           title: "Phone",
           data: "01023454678",
         ),
         CustomEditProfileWidget(
-          onPressed: () {},
+          route: Routes.changePasswordView,
           title: "Password",
           data: "********",
         ),

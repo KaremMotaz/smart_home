@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../networking/api_error_model.dart';
 import '../theming/assets_data.dart';
 import '../theming/colors_manager.dart';

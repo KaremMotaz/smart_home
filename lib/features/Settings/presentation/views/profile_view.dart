@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/edit_profile_section.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/profile_image.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/text_styles.dart';
+import '../widgets/edit_profile_section.dart';
+import '../widgets/profile_image.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});

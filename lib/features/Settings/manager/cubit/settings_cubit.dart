@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/features/Settings/data/repos/settings_repo.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../data/repos/settings_repo.dart';
 part 'settings_state.dart';
 part 'settings_cubit.freezed.dart';
 

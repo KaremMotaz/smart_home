@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../models/onboarding_model.dart';
-import 'onboarding_device_grid.dart';
-import 'custom_onboardin_shape.dart';
+
 import '../../../../../core/theming/text_styles.dart';
+import '../../models/onboarding_model.dart';
+import 'custom_onboardin_shape.dart';
+import 'onboarding_device_grid.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({super.key, required this.onboardingModel});

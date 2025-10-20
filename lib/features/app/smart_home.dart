@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/manager/inactivity_cubit/inactivity_cubit.dart';
-import 'package:smart_home/core/routing/routes.dart';
+import '../../core/manager/inactivity_cubit/inactivity_cubit.dart';
+import '../../core/routing/routes.dart';
 import '../../core/routing/app_router.dart';
 import '../../core/theming/theme_manager.dart';
 

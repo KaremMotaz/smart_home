@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/services/get_it_service.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/features/auth/manager/biometric_cubit/biometric_cubit.dart';
-import 'package:smart_home/features/auth/presentation/widgets/biometric/biometric_bloc_listener.dart';
-import 'package:smart_home/features/auth/presentation/widgets/biometric/text_body.dart';
-import 'package:smart_home/features/auth/presentation/widgets/welcome/shadow_container.dart';
+import '../../../../core/services/get_it_service.dart';
+import '../../../../core/theming/assets_data.dart';
+import '../../manager/biometric_cubit/biometric_cubit.dart';
+import '../widgets/biometric/biometric_bloc_listener.dart';
+import '../widgets/biometric/text_body.dart';
+import '../widgets/welcome/shadow_container.dart';
 
 class FingerLoginView extends StatelessWidget {
   const FingerLoginView({super.key});

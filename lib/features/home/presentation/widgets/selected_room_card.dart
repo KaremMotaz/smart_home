@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
+import '../../../../core/theming/colors_manager.dart';
 import '../../data/models/rooms_model.dart';
 import 'custom_divider.dart';
 import 'device_section.dart';
 import 'room_details_section.dart';
-import '../../../../core/theming/colors_manager.dart';
 
 class SelectedRoomCard extends StatelessWidget {
   const SelectedRoomCard({super.key, required this.room});

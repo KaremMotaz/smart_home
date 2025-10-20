@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/profile_section.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/settings_section.dart';
-import 'package:smart_home/features/home/presentation/widgets/custom_divider.dart';
+import '../../../../core/theming/colors_manager.dart';
+import '../widgets/profile_section.dart';
+import '../widgets/settings_section.dart';
+import '../../../home/presentation/widgets/custom_divider.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

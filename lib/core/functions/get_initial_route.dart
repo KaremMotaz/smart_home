@@ -1,6 +1,6 @@
-import 'package:smart_home/core/helpers/constants.dart';
-import 'package:smart_home/core/helpers/extensions.dart';
-import 'package:smart_home/core/services/cache_helper.dart';
+import '../helpers/constants.dart';
+import '../helpers/extensions.dart';
+import '../services/cache_helper.dart';
 
 import 'check_if_logged_in_user.dart';
 import '../routing/routes.dart';

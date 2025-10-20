@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/theming/assets_data.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
-import 'package:smart_home/core/theming/text_styles.dart';
-import 'package:smart_home/core/widgets/app_text_button.dart';
+import '../theming/assets_data.dart';
+import '../theming/text_styles.dart';
+import '../widgets/app_text_button.dart';
 
 Future<dynamic> profileUpdatedShowDialog(BuildContext context) {
   return showDialog(
@@ -66,7 +65,7 @@ Future<dynamic> profileUpdatedShowDialog(BuildContext context) {
               const Text("Profile Updated", style: TextStyles.semiBold20),
               const SizedBox(height: 5),
               const Text(
-                "Congratulations has been updated successfully updated enjoy your next trip on our app",
+                "Congratulations your profile has been successfully updated. Enjoy your next trip on our app",
                 textAlign: TextAlign.center,
                 style: TextStyles.regular14,
               ),

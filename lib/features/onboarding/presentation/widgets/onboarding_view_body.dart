@@ -1,11 +1,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../core/theming/assets_data.dart';
 import '../../../../core/theming/colors_manager.dart';
 import '../../../../core/theming/text_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
-import 'onboarding_page_view.dart';
 import '../widgets/page_view_item.dart';
+import 'onboarding_page_view.dart';
 
 class OnboardingViewBody extends StatelessWidget {
   final int currentPageIndex;

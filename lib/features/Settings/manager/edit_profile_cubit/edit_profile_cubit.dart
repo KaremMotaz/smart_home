@@ -1,13 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/core/networking/api_result.dart';
-import 'package:smart_home/features/Settings/data/models/change_secret_request_body.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_email.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_profile_picture.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_request_body.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_username.dart';
-import 'package:smart_home/features/Settings/data/repos/profile_repo.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../../../core/networking/api_result.dart';
+import '../../data/models/change_secret_request_body.dart';
+import '../../data/models/update_user_email.dart';
+import '../../data/models/update_user_profile_picture.dart';
+import '../../data/models/update_user_request_body.dart';
+import '../../data/models/update_user_username.dart';
+import '../../data/repos/profile_repo.dart';
 part 'edit_profile_state.dart';
 part 'edit_profile_cubit.freezed.dart';
 

@@ -1,10 +1,10 @@
-import 'package:smart_home/core/helpers/get_user.dart';
-import 'package:smart_home/features/Settings/data/models/change_secret_request_body.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_email.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_profile_picture.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_request_body.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_username.dart';
-import 'package:smart_home/features/Settings/data/services/settings_service.dart';
+import '../../../../core/helpers/get_user.dart';
+import '../models/change_secret_request_body.dart';
+import '../models/update_user_email.dart';
+import '../models/update_user_profile_picture.dart';
+import '../models/update_user_request_body.dart';
+import '../models/update_user_username.dart';
+import '../services/settings_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 

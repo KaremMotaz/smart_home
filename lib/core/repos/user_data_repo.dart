@@ -1,5 +1,5 @@
-import 'package:smart_home/core/models/user_data_response.dart';
-import 'package:smart_home/core/networking/api_service.dart';
+import '../models/user_data_response.dart';
+import '../networking/api_service.dart';
 
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
