@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:smart_home/core/functions/logout.dart';
+
 import '../../../../core/helpers/get_user.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
@@ -11,6 +14,15 @@ class SettingsRepo {
   Future<ApiResult<void>> deleteUser() async {
     try {
       await settingsService.deleteUser(userId: getUser()!.id);
+      return const ApiResult.success(null);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
+    }
+  }
+
+  Future<ApiResult<void>> logout({required BuildContext context}) async {
+    try {
+      appLogout(context);
       return const ApiResult.success(null);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
