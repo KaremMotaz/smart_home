@@ -3,12 +3,17 @@ import '../models/user_data_response.dart';
 import '../services/cache_helper.dart';
 import 'constants.dart';
 
-UserDataResponse getUser() {
-  String jsonString = CacheHelper.getString(key: kUserData) ?? "";
-  UserDataResponse userDataResponse = UserDataResponse.fromJson(
-    jsonDecode(jsonString),
-  );
-  return userDataResponse;
+UserDataResponse? getUser() {
+  final jsonString = CacheHelper.getString(key: kUserData);
+  if (jsonString == null || jsonString.isEmpty) {
+    return null;
+  }
+  try {
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    return UserDataResponse.fromJson(jsonMap);
+  } catch (e) {
+    return null;
+  }
 }
 
 Future<void> saveUser({required UserDataResponse userDataResponse}) async {

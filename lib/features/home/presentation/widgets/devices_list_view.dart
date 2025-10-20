@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/app_assets.dart';
 import 'device_card.dart';
 
 class DevicesListView extends StatelessWidget {
@@ -17,25 +17,25 @@ class DevicesListView extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: const [
             DeviceCard(
-              deviceIcon: AssetsData.wifiIcon,
+              deviceIcon: AppAssets.wifiIcon,
               deviceName: "WiFi",
               deviceStatus: "on",
             ),
             SizedBox(width: 16),
             DeviceCard(
-              deviceIcon: AssetsData.lightIcon,
+              deviceIcon: AppAssets.lightIcon,
               deviceName: "Light",
               deviceStatus: "on",
             ),
             SizedBox(width: 16),
             DeviceCard(
-              deviceIcon: AssetsData.tempIcon,
+              deviceIcon: AppAssets.tempIcon,
               deviceName: "Temp",
               deviceStatus: "28ºC",
             ),
             SizedBox(width: 16),
             DeviceCard(
-              deviceIcon: AssetsData.fanIcon,
+              deviceIcon: AppAssets.fanIcon,
               deviceName: "Fan",
               deviceStatus: "off",
             ),

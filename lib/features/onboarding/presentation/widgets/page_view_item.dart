@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../models/onboarding_model.dart';
 import 'custom_onboardin_shape.dart';
 import 'onboarding_device_grid.dart';
@@ -19,7 +19,7 @@ class PageViewItem extends StatelessWidget {
           Text(
             onboardingModel.title,
             textAlign: TextAlign.center,
-            style: TextStyles.bold22,
+            style: AppStyles.bold22,
           ),
           if (onboardingModel.currentPageIndex == 0) ...[
             const Spacer(flex: 3),
@@ -35,7 +35,7 @@ class PageViewItem extends StatelessWidget {
           Text(
             onboardingModel.description,
             textAlign: TextAlign.center,
-            style: TextStyles.regular12,
+            style: AppStyles.regular12,
           ),
           const Spacer(),
         ],

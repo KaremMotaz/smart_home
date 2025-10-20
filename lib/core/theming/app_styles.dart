@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'font_weight_helper.dart';
 
-abstract class TextStyles {
+abstract class AppStyles {
   static const TextStyle semiBold32 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeightHelper.semiBold,

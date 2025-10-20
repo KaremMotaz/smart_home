@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/functions/degrees_to_radians.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class DeviceIconCard extends StatelessWidget {
   const DeviceIconCard({
@@ -20,7 +20,7 @@ class DeviceIconCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-          color: ColorsManager.darkerbrown,
+          color: AppColors.darkerbrown,
           borderRadius: borderRadius,
         ),
         child: Transform.rotate(
@@ -29,7 +29,7 @@ class DeviceIconCard extends StatelessWidget {
             iconPath,
             width: 28,
             colorFilter: const ColorFilter.mode(
-              ColorsManager.lighterGrey,
+              AppColors.lighterGrey,
               BlendMode.srcIn,
             ),
           ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../networking/api_error_model.dart';
-import '../theming/assets_data.dart';
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_assets.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 import 'app_text_button.dart';
 
 class CustomErrorWidget extends StatelessWidget {
@@ -24,34 +24,34 @@ class CustomErrorWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(AssetsData.error, width: 120),
+            Image.asset(AppAssets.error, width: 120),
             const SizedBox(height: 20),
             Text(
               "Oops !!",
-              style: TextStyles.bold22.copyWith(color: ColorsManager.darkRed),
+              style: AppStyles.bold22.copyWith(color: AppColors.darkRed),
             ),
             if (apiErrorModel.error != null) ...[
               const SizedBox(height: 20),
               Text(
                 apiErrorModel.error!,
                 textAlign: TextAlign.center,
-                style: TextStyles.semiBold16,
+                style: AppStyles.semiBold16,
               ),
             ],
             const SizedBox(height: 20),
             Text(
               apiErrorModel.message,
               textAlign: TextAlign.center,
-              style: TextStyles.semiBold16,
+              style: AppStyles.semiBold16,
             ),
             const SizedBox(height: 40),
             AppTextButton(
               onPressed: onTryAgain,
               buttonText: "Try Again",
-              backgroundColor: ColorsManager.darkRed,
+              backgroundColor: AppColors.darkRed,
               borderRadius: 50,
               horizontalPadding: 60,
-              textStyle: TextStyles.semiBold18.copyWith(color: Colors.white),
+              textStyle: AppStyles.semiBold18.copyWith(color: Colors.white),
             ),
           ],
         ),

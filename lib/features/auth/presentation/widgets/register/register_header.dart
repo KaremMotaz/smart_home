@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../auth_app_bar.dart';
 
 class RegisterHeader extends StatelessWidget {
@@ -28,14 +28,12 @@ class RegisterHeader extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             "Register",
-            style: TextStyles.bold24.copyWith(color: ColorsManager.darkerBlue),
+            style: AppStyles.bold24.copyWith(color: AppColors.darkerBlue),
           ),
           const SizedBox(height: 10),
           Text(
             "Register now and experience the comfort of a connected home at your fingertips",
-            style: TextStyles.medium14.copyWith(
-              color: ColorsManager.darkerBlue,
-            ),
+            style: AppStyles.medium14.copyWith(color: AppColors.darkerBlue),
           ),
         ],
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import 'members_list_view.dart';
 
 class MembersSection extends StatelessWidget {
@@ -41,8 +41,8 @@ class MembersSection extends StatelessWidget {
                 highlightColor: Colors.white10,
                 child: const CircleAvatar(
                   radius: 22.5,
-                  backgroundColor: ColorsManager.lighterGrey,
-                  child: Icon(Icons.add, color: ColorsManager.grey, size: 35),
+                  backgroundColor: AppColors.lighterGrey,
+                  child: Icon(Icons.add, color: AppColors.grey, size: 35),
                 ),
               ),
             ),

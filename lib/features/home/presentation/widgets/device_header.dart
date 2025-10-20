@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class DeviceHeader extends StatelessWidget {
   const DeviceHeader({super.key});
@@ -16,7 +16,7 @@ class DeviceHeader extends StatelessWidget {
         children: [
           Text(
             "Devices",
-            style: TextStyles.medium16.copyWith(color: Colors.white),
+            style: AppStyles.medium16.copyWith(color: Colors.white),
           ),
           Material(
             color: Colors.transparent,
@@ -28,7 +28,7 @@ class DeviceHeader extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SvgPicture.asset(
-                  AssetsData.arrowRightIcon,
+                  AppAssets.arrowRightIcon,
                   colorFilter: const ColorFilter.mode(
                     Colors.white,
                     BlendMode.srcIn,

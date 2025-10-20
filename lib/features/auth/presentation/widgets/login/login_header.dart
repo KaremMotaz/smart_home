@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../auth_app_bar.dart';
 
 class LoginHeader extends StatelessWidget {
@@ -28,14 +28,12 @@ class LoginHeader extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             "Login",
-            style: TextStyles.bold24.copyWith(color: ColorsManager.darkerBlue),
+            style: AppStyles.bold24.copyWith(color: AppColors.darkerBlue),
           ),
           const SizedBox(height: 10),
           Text(
             "Login now and take control of your smart home effortlessly, all from the palm of your hand.",
-            style: TextStyles.medium14.copyWith(
-              color: ColorsManager.darkerBlue,
-            ),
+            style: AppStyles.medium14.copyWith(color: AppColors.darkerBlue),
           ),
         ],
       ),

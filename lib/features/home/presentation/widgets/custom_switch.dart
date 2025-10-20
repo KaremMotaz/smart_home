@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class CustomSwitch extends StatelessWidget {
   const CustomSwitch({super.key});
@@ -14,7 +14,7 @@ class CustomSwitch extends StatelessWidget {
         onChanged: (value) {},
         activeTrackColor: Colors.white,
         inactiveTrackColor: Colors.white,
-        activeColor: ColorsManager.brown,
+        activeColor: AppColors.brown,
         inactiveThumbColor: Colors.brown,
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/app_assets.dart';
 
 class HomeMenu extends StatelessWidget {
   const HomeMenu({super.key, required this.scaffoldKey});
@@ -22,7 +22,7 @@ class HomeMenu extends StatelessWidget {
           },
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: SvgPicture.asset(AssetsData.menuIcon),
+            child: SvgPicture.asset(AppAssets.menuIcon),
           ),
         ),
       ),

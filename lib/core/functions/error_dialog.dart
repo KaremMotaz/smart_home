@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 
 void errorDialog({
   required BuildContext context,
@@ -51,22 +51,20 @@ class ErrorDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.error_outline, color: ColorsManager.red, size: 48),
+          const Icon(Icons.error_outline, color: AppColors.red, size: 48),
           const SizedBox(height: 16),
-          Text(message, style: TextStyles.bold20, textAlign: TextAlign.center),
+          Text(message, style: AppStyles.bold20, textAlign: TextAlign.center),
           const SizedBox(height: 12),
-          Text(error, style: TextStyles.medium16, textAlign: TextAlign.center),
+          Text(error, style: AppStyles.medium16, textAlign: TextAlign.center),
           const SizedBox(height: 20),
           OutlinedButton(
             onPressed: () => GoRouter.of(context).pop(),
             style: OutlinedButton.styleFrom(
-              side: const BorderSide(color: ColorsManager.darkerBlue),
+              side: const BorderSide(color: AppColors.darkerBlue),
             ),
             child: Text(
               "Dismiss",
-              style: TextStyles.medium16.copyWith(
-                color: ColorsManager.darkerBlue,
-              ),
+              style: AppStyles.medium16.copyWith(color: AppColors.darkerBlue),
             ),
           ),
         ],

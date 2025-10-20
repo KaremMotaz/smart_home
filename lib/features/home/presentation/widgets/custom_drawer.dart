@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/text_styles.dart';
-
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 import 'custom_divider.dart';
 import 'custom_drawer_option.dart';
 import 'drawer_list_view.dart';
@@ -22,7 +21,7 @@ class CustomDrawer extends StatelessWidget {
           margin: const EdgeInsets.symmetric(vertical: 50),
           padding: const EdgeInsets.only(top: 30, bottom: 30),
           decoration: const BoxDecoration(
-            color: ColorsManager.darkbrown,
+            color: AppColors.darkbrown,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(40),
               bottomRight: Radius.circular(40),
@@ -36,10 +35,12 @@ class CustomDrawer extends StatelessWidget {
               const SizedBox(height: 7),
               const Expanded(child: DrawerListView()),
               CustomDrawerOption(
-                icon: AssetsData.logoutIcon,
+                icon: AppAssets.logoutIcon,
                 title: 'Logout',
-                textStyle: TextStyles.bold18.copyWith(color: Colors.white),
-                onTap: () {},
+                textStyle: AppStyles.bold18.copyWith(color: Colors.white),
+                onTap: () {
+                  // logout(context);
+                },
               ),
             ],
           ),

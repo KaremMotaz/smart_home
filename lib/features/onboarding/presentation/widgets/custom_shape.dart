@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class CustomShape extends StatelessWidget {
   const CustomShape({super.key});
@@ -9,10 +9,10 @@ class CustomShape extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SvgPicture.asset(
-      AssetsData.shape,
+      AppAssets.shape,
       width: 90,
       colorFilter: const ColorFilter.mode(
-        ColorsManager.darkerbrown,
+        AppColors.darkerbrown,
         BlendMode.srcIn,
       ),
     );

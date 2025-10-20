@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/app_assets.dart';
 import 'device_icon_card.dart';
 import 'onboarding_1_center_card.dart';
 
@@ -22,7 +22,7 @@ class OnboardingDeviceGrid extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 30),
                   child: DeviceIconCard(
-                    iconPath: AssetsData.bulb,
+                    iconPath: AppAssets.bulb,
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(radius),
                       topLeft: Radius.circular(radius),
@@ -31,7 +31,7 @@ class OnboardingDeviceGrid extends StatelessWidget {
                   ),
                 ),
                 DeviceIconCard(
-                  iconPath: AssetsData.screen,
+                  iconPath: AppAssets.screen,
                   rotationAngle: 45,
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(radius),
@@ -42,7 +42,7 @@ class OnboardingDeviceGrid extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 30),
                   child: DeviceIconCard(
-                    iconPath: AssetsData.fan,
+                    iconPath: AppAssets.fan,
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(radius),
                       topLeft: Radius.circular(radius),
@@ -62,7 +62,7 @@ class OnboardingDeviceGrid extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(right: 30),
                   child: DeviceIconCard(
-                    iconPath: AssetsData.speaker,
+                    iconPath: AppAssets.speaker,
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(radius),
                       topLeft: Radius.circular(radius),
@@ -71,7 +71,7 @@ class OnboardingDeviceGrid extends StatelessWidget {
                   ),
                 ),
                 DeviceIconCard(
-                  iconPath: AssetsData.airPurifier,
+                  iconPath: AppAssets.airPurifier,
                   rotationAngle: -45,
                   borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(radius),
@@ -82,7 +82,7 @@ class OnboardingDeviceGrid extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(right: 30),
                   child: DeviceIconCard(
-                    iconPath: AssetsData.cameraVideo,
+                    iconPath: AppAssets.cameraVideo,
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(radius),
                       topRight: Radius.circular(radius),

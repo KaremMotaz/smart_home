@@ -91,8 +91,8 @@ class _SettingsService implements SettingsService {
   }
 
   @override
-  Future<void> updateUserUsername({
-    required UpdateUserUsername body,
+  Future<void> updateUsername({
+    required UpdateUsername body,
     required String userId,
   }) async {
     final _extra = <String, dynamic>{};

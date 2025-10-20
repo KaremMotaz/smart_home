@@ -4,7 +4,7 @@ import '../models/change_secret_request_body.dart';
 import '../models/update_user_email.dart';
 import '../models/update_user_profile_picture.dart';
 import '../models/update_user_request_body.dart';
-import '../models/update_user_username.dart';
+import '../models/update_username.dart';
 import '../../../../core/networking/api_constants.dart';
 part 'settings_service.g.dart';
 
@@ -31,8 +31,8 @@ abstract class SettingsService {
   });
 
   @PATCH(ApiConstants.updateUserEmail)
-  Future<void> updateUserUsername({
-    @Body() required UpdateUserUsername body,
+  Future<void> updateUsername({
+    @Body() required UpdateUsername body,
     @Path("user_id") required String userId,
   });
 

@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/routing/routes.dart';
 import '../../../../core/services/get_it_service.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../data/repos/get_all_domains_repo.dart';
 import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 import '../widgets/get_all_domains_view_body_bloc_builder.dart';
@@ -21,8 +21,8 @@ class ManageDomainsView extends StatelessWidget {
             ..getAllDomains(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Domains", style: TextStyles.bold18),
-          backgroundColor: ColorsManager.homeBackground,
+          title: const Text("Domains", style: AppStyles.bold18),
+          backgroundColor: AppColors.homeBackground,
           actions: [
             TextButton(
               onPressed: () {
@@ -30,7 +30,7 @@ class ManageDomainsView extends StatelessWidget {
               },
               child: Text(
                 "Add Domin",
-                style: TextStyles.bold18.copyWith(color: ColorsManager.grey),
+                style: AppStyles.bold18.copyWith(color: AppColors.grey),
               ),
             ),
           ],
@@ -43,7 +43,7 @@ class ManageDomainsView extends StatelessWidget {
                 )
               : null,
         ),
-        backgroundColor: ColorsManager.homeBackground,
+        backgroundColor: AppColors.homeBackground,
         body: const SafeArea(child: GetAllDomainsViewBodyBlocBuilder()),
       ),
     );

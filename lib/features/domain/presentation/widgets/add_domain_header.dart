@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class AddDomainHeader extends StatelessWidget {
   const AddDomainHeader({super.key});
@@ -22,15 +22,13 @@ class AddDomainHeader extends StatelessWidget {
                 child: const Icon(
                   Icons.arrow_back_ios,
                   size: 20,
-                  color: ColorsManager.darkerBlue,
+                  color: AppColors.darkerBlue,
                 ),
               ),
               const Spacer(),
               Text(
                 "Add Project",
-                style: TextStyles.bold18.copyWith(
-                  color: ColorsManager.darkerBlue,
-                ),
+                style: AppStyles.bold18.copyWith(color: AppColors.darkerBlue),
               ),
               const Spacer(),
             ],
@@ -38,14 +36,12 @@ class AddDomainHeader extends StatelessWidget {
           const SizedBox(height: 20),
           Text(
             "Add Project",
-            style: TextStyles.bold24.copyWith(color: ColorsManager.darkerBlue),
+            style: AppStyles.bold24.copyWith(color: AppColors.darkerBlue),
           ),
           const SizedBox(height: 10),
           Text(
             "Add a new project to organize, connect, and control your smart devices effortlessly.",
-            style: TextStyles.medium14.copyWith(
-              color: ColorsManager.darkerBlue,
-            ),
+            style: AppStyles.medium14.copyWith(color: AppColors.darkerBlue),
           ),
         ],
       ),

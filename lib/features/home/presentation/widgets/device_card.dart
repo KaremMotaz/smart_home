@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class DeviceCard extends StatelessWidget {
   const DeviceCard({
@@ -36,7 +36,7 @@ class DeviceCard extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             deviceName,
-            style: TextStyles.semiBold16.copyWith(
+            style: AppStyles.semiBold16.copyWith(
               color: Colors.white,
               fontFamily: "OpenSans",
             ),
@@ -44,9 +44,7 @@ class DeviceCard extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             deviceStatus,
-            style: TextStyles.regular16.copyWith(
-              color: const Color(0xffC3C3C3),
-            ),
+            style: AppStyles.regular16.copyWith(color: const Color(0xffC3C3C3)),
           ),
         ],
       ),

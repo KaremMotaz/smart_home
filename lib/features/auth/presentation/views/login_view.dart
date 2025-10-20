@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/manager/user_data_cubit/user_data_cubit.dart';
 
 import '../../../../core/services/get_it_service.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../../data/repos/login_repo.dart';
 import '../../manager/login_cubit/login_cubit.dart';
 import '../widgets/login/login_view_body_bloc_listener.dart';
@@ -20,7 +20,7 @@ class LoginView extends StatelessWidget {
       ),
       child: const Scaffold(
         resizeToAvoidBottomInset: true,
-        backgroundColor: ColorsManager.orange2,
+        backgroundColor: AppColors.orange2,
         body: LoginViewBodyBlocListener(),
       ),
     );

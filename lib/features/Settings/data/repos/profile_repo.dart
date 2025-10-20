@@ -3,7 +3,7 @@ import '../models/change_secret_request_body.dart';
 import '../models/update_user_email.dart';
 import '../models/update_user_profile_picture.dart';
 import '../models/update_user_request_body.dart';
-import '../models/update_user_username.dart';
+import '../models/update_username.dart';
 import '../services/settings_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
@@ -16,7 +16,7 @@ class ProfileRepo {
     required UpdateUserRequestBody body,
   }) async {
     try {
-      await settingsService.updateUser(userId: getUser().id, body: body);
+      await settingsService.updateUser(userId: getUser()!.id, body: body);
       return const ApiResult.success(null);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
@@ -28,7 +28,7 @@ class ProfileRepo {
   }) async {
     try {
       await settingsService.updateUserProfilePicture(
-        userId: getUser().id,
+        userId: getUser()!.id,
         body: body,
       );
       return const ApiResult.success(null);
@@ -41,21 +41,16 @@ class ProfileRepo {
     required UpdateUserEmail body,
   }) async {
     try {
-      await settingsService.updateUserEmail(userId: getUser().id, body: body);
+      await settingsService.updateUserEmail(userId: getUser()!.id, body: body);
       return const ApiResult.success(null);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<ApiResult<void>> updateUserUsername({
-    required UpdateUserUsername body,
-  }) async {
+  Future<ApiResult<void>> updateUsername({required UpdateUsername body}) async {
     try {
-      await settingsService.updateUserUsername(
-        userId: getUser().id,
-        body: body,
-      );
+      await settingsService.updateUsername(userId: getUser()!.id, body: body);
       return const ApiResult.success(null);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));

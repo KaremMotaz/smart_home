@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 import 'custom_icon_card.dart';
 import 'exp_card.dart';
 
@@ -14,22 +14,19 @@ class Onboarding2CenterCard extends StatelessWidget {
       width: 111,
       padding: const EdgeInsets.all(10),
       decoration: const BoxDecoration(
-        color: ColorsManager.lighterGrey,
+        color: AppColors.lighterGrey,
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       child: const Column(
         children: [
           Row(
             children: [
-              CustomIconCard(iconPath: AssetsData.snow, iconColor: Colors.blue),
+              CustomIconCard(iconPath: AppAssets.snow, iconColor: Colors.blue),
+              SizedBox(width: 8),
+              CustomIconCard(iconPath: AppAssets.sun, iconColor: Colors.yellow),
               SizedBox(width: 8),
               CustomIconCard(
-                iconPath: AssetsData.sun,
-                iconColor: Colors.yellow,
-              ),
-              SizedBox(width: 8),
-              CustomIconCard(
-                iconPath: AssetsData.volume,
+                iconPath: AppAssets.volume,
                 iconColor: Colors.grey,
               ),
             ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../widgets/all_rooms_section.dart';
 import '../widgets/custom_drawer.dart';
 import '../widgets/home_menu.dart';
@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       drawer: const CustomDrawer(),
-      backgroundColor: ColorsManager.homeBackground,
+      backgroundColor: AppColors.homeBackground,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

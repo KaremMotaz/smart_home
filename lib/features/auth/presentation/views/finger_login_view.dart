@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/services/get_it_service.dart';
-import '../../../../core/theming/assets_data.dart';
+import '../../../../core/theming/app_assets.dart';
 import '../../manager/biometric_cubit/biometric_cubit.dart';
 import '../widgets/biometric/biometric_bloc_listener.dart';
 import '../widgets/biometric/text_body.dart';
@@ -24,7 +24,7 @@ class FingerLoginView extends StatelessWidget {
           body: Stack(
             children: [
               SizedBox.expand(
-                child: Image.asset(AssetsData.fingerLoginBg, fit: BoxFit.cover),
+                child: Image.asset(AppAssets.fingerLoginBg, fit: BoxFit.cover),
               ),
               const ShadowContainer(),
               const TextBody(),

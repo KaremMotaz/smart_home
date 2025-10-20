@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/models/rooms_model.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'custom_switch.dart';
 
 class RoomDetailsSection extends StatelessWidget {
@@ -20,7 +20,7 @@ class RoomDetailsSection extends StatelessWidget {
             children: [
               Text(
                 room.roomName,
-                style: TextStyles.bold30.copyWith(color: Colors.white),
+                style: AppStyles.bold30.copyWith(color: Colors.white),
               ),
               const CustomSwitch(),
             ],
@@ -28,14 +28,12 @@ class RoomDetailsSection extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             "Your ${room.roomName.toLowerCase()} is connected with 5 devices and 2 users have access to the livng room.",
-            style: TextStyles.regular16.copyWith(
-              color: const Color(0xffC3C3C3),
-            ),
+            style: AppStyles.regular16.copyWith(color: const Color(0xffC3C3C3)),
           ),
           const SizedBox(height: 24),
           Text(
             "28º",
-            style: TextStyles.semiBold24.copyWith(
+            style: AppStyles.semiBold24.copyWith(
               color: Colors.white,
               fontFamily: "OpenSans",
             ),

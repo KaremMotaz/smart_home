@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 
 void successSnackBar({required BuildContext context, required String message}) {
   ScaffoldMessenger.of(context).showSnackBar(
@@ -12,7 +12,7 @@ void successSnackBar({required BuildContext context, required String message}) {
       duration: const Duration(seconds: 4),
       content: customSnackbar(
         message: message,
-        color: ColorsManager.green,
+        color: AppColors.green,
         icon: Icons.check_circle,
         titleWord: "Success",
         context: context,
@@ -30,7 +30,7 @@ void errorSnackBar({required BuildContext context, required String message}) {
       duration: const Duration(seconds: 4),
       content: customSnackbar(
         message: message,
-        color: ColorsManager.darkRed,
+        color: AppColors.darkRed,
         icon: Icons.cancel,
         titleWord: "Error",
         context: context,
@@ -48,7 +48,7 @@ void warningSnackBar({required BuildContext context, required String message}) {
       duration: const Duration(seconds: 4),
       content: customSnackbar(
         message: message,
-        color: ColorsManager.yellow,
+        color: AppColors.yellow,
         icon: Icons.warning,
         titleWord: "Warning",
         context: context,
@@ -95,7 +95,7 @@ Widget customSnackbar({
               children: [
                 Text(
                   titleWord,
-                  style: TextStyles.semiBold16.copyWith(color: Colors.black),
+                  style: AppStyles.semiBold16.copyWith(color: Colors.black),
                 ),
                 const SizedBox(height: 5),
                 Text(

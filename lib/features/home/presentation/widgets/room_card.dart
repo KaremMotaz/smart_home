@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/routing/routes.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../data/models/rooms_model.dart';
 
 class RoomCard extends StatelessWidget {
@@ -39,7 +39,7 @@ class RoomCard extends StatelessWidget {
             ),
             Text(
               roomsModel.roomName,
-              style: TextStyles.extraBold14.copyWith(color: Colors.white),
+              style: AppStyles.extraBold14.copyWith(color: Colors.white),
             ),
           ],
         ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_home/core/helpers/extensions.dart';
+import 'package:smart_home/core/helpers/get_user.dart';
 import 'package:smart_home/features/Settings/data/models/update_user_request_body.dart';
+import 'package:smart_home/features/Settings/data/models/update_username.dart';
 import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/bloc_button.dart';
@@ -14,7 +16,9 @@ class EditLastNameForm extends StatefulWidget {
 }
 
 class _EditLastNameFormState extends State<EditLastNameForm> {
-  final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController lastNameController = TextEditingController(
+    text: getUser()?.lastName,
+  );
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
@@ -63,6 +67,11 @@ class _EditLastNameFormState extends State<EditLastNameForm> {
       context.read<EditProfileCubit>().updateUser(
         updateUserRequestBody: UpdateUserRequestBody(
           lastName: lastNameController.text,
+        ),
+      );
+      context.read<EditProfileCubit>().updateUsername(
+        updateUsername: UpdateUsername(
+          username: "${getUser()?.firstName}${lastNameController.text}",
         ),
       );
     }

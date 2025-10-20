@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/theming/assets_data.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class FingerprintShape extends StatelessWidget {
   const FingerprintShape({super.key});
@@ -14,7 +14,7 @@ class FingerprintShape extends StatelessWidget {
       children: [
         Text(
           "Place your finger to open",
-          style: TextStyles.regular14.copyWith(color: const Color(0xff404344)),
+          style: AppStyles.regular14.copyWith(color: const Color(0xff404344)),
         ),
         const SizedBox(height: 16),
         Stack(
@@ -28,7 +28,7 @@ class FingerprintShape extends StatelessWidget {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [ColorsManager.darkerBlue, ColorsManager.darkBlue],
+                  colors: [AppColors.darkerBlue, AppColors.darkBlue],
                 ),
               ),
             ),
@@ -38,11 +38,11 @@ class FingerprintShape extends StatelessWidget {
                 color: Colors.white,
                 shape: BoxShape.circle,
               ),
-              child: SvgPicture.asset(AssetsData.fingerIcon),
+              child: SvgPicture.asset(AppAssets.fingerIcon),
             ),
             Positioned(
               bottom: -16,
-              child: SvgPicture.asset(AssetsData.fingerShape, width: 220),
+              child: SvgPicture.asset(AppAssets.fingerShape, width: 220),
             ),
           ],
         ),

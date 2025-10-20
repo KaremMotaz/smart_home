@@ -10,7 +10,7 @@ class SettingsRepo {
 
   Future<ApiResult<void>> deleteUser() async {
     try {
-      await settingsService.deleteUser(userId: getUser().id);
+      await settingsService.deleteUser(userId: getUser()!.id);
       return const ApiResult.success(null);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));

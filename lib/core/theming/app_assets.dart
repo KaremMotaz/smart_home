@@ -1,4 +1,4 @@
-class AssetsData {
+class AppAssets {
   static const String smartHomeLogo = 'assets/logo/smart_home_logo.png';
   static const String fingerLoginBg = 'assets/images/finger_login_bg.jpg';
   static const String fingerIcon = 'assets/svgs/finger_icon.svg';

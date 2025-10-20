@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'text_styles.dart';
+import 'app_styles.dart';
 
 abstract class ThemeManager {
   static ThemeData getAppTheme() {
@@ -10,7 +10,7 @@ abstract class ThemeManager {
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.white,
         centerTitle: true,
-        titleTextStyle: TextStyles.bold22.copyWith(color: Colors.black),
+        titleTextStyle: AppStyles.bold22.copyWith(color: Colors.black),
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarColor: Colors.black,
         ),

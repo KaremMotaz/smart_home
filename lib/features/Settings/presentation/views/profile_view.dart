@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import 'package:smart_home/core/helpers/get_user.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../widgets/profile/edit_profile_section.dart';
 import '../widgets/profile/profile_image.dart';
 
@@ -10,8 +11,8 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: ColorsManager.orange2, elevation: 0),
-      backgroundColor: ColorsManager.orange2,
+      appBar: AppBar(backgroundColor: AppColors.orange2, elevation: 0),
+      backgroundColor: AppColors.orange2,
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 30),
         margin: const EdgeInsets.only(top: 20),
@@ -22,18 +23,21 @@ class ProfileView extends StatelessWidget {
             topRight: Radius.circular(50),
           ),
         ),
-        child: const SizedBox(
+        child: SizedBox(
           height: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ProfileImage(),
-              SizedBox(height: 10),
-              Text('Sarah Doe', style: TextStyles.bold22),
-              SizedBox(height: 5),
-              Text('SarahDoe2020@gmail.com', style: TextStyles.regular14),
-              SizedBox(height: 25),
-              EditProfileSection(),
+              const ProfileImage(),
+              const SizedBox(height: 10),
+              Text(
+                "${getUser()?.firstName ?? "Unknown"} ${getUser()?.lastName ?? "Unknown"}",
+                style: AppStyles.bold22,
+              ),
+              const SizedBox(height: 5),
+              Text(getUser()?.email ?? "Unknown", style: AppStyles.regular14),
+              const SizedBox(height: 25),
+              const EditProfileSection(),
             ],
           ),
         ),

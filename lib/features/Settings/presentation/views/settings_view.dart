@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../widgets/settings/profile_section.dart';
 import '../widgets/settings/settings_section.dart';
 import '../../../home/presentation/widgets/custom_divider.dart';
@@ -10,10 +10,10 @@ class SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: ColorsManager.orange2, elevation: 0),
-      backgroundColor: ColorsManager.orange2,
+      appBar: AppBar(backgroundColor: AppColors.orange2, elevation: 0),
+      backgroundColor: AppColors.orange2,
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 25),
+        padding: const EdgeInsets.symmetric(vertical: 25),
         margin: const EdgeInsets.only(top: 20),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -27,9 +27,13 @@ class SettingsView extends StatelessWidget {
           children: [
             Column(
               children: [
+                SizedBox(height: 10),
                 ProfileSection(),
                 SizedBox(height: 10),
-                CustomDivider(color: ColorsManager.darkbrown),
+                CustomDivider(
+                  color: AppColors.darkbrown,
+                  horizontalPadding: 25,
+                ),
               ],
             ),
             SizedBox(height: 20),

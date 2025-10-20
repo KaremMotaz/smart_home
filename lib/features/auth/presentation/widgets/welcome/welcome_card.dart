@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_text_button.dart';
 
 class WelcomeCard extends StatelessWidget {
@@ -15,7 +15,7 @@ class WelcomeCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 60),
       height: 310,
       decoration: const BoxDecoration(
-        color: ColorsManager.orange2,
+        color: AppColors.orange2,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -26,16 +26,12 @@ class WelcomeCard extends StatelessWidget {
         children: [
           Text(
             "Welcome",
-            style: TextStyles.extraBold28.copyWith(
-              color: ColorsManager.darkerBlue,
-            ),
+            style: AppStyles.extraBold28.copyWith(color: AppColors.darkerBlue),
           ),
           const SizedBox(height: 15),
           Text(
             "Welcome! Experience the comfort and convenience of a fully connected home.",
-            style: TextStyles.medium14.copyWith(
-              color: ColorsManager.darkerBlue,
-            ),
+            style: AppStyles.medium14.copyWith(color: AppColors.darkerBlue),
           ),
           const SizedBox(height: 40),
           Row(
@@ -57,7 +53,7 @@ class WelcomeCard extends StatelessWidget {
                     onPressed: () => GoRouter.of(context).go(Routes.loginView),
                     buttonText: "Login",
                     borderRadius: 25,
-                    borderColor: ColorsManager.darkerBlue,
+                    borderColor: AppColors.darkerBlue,
                   ),
                 ),
               ),
@@ -79,8 +75,8 @@ class WelcomeCard extends StatelessWidget {
                         GoRouter.of(context).go(Routes.registerView),
                     buttonText: "Register",
                     borderRadius: 25,
-                    textStyle: TextStyles.semiBold15.copyWith(
-                      color: ColorsManager.darkerBlue,
+                    textStyle: AppStyles.semiBold15.copyWith(
+                      color: AppColors.darkerBlue,
                     ),
                     backgroundColor: Colors.white,
                     borderColor: Colors.white,

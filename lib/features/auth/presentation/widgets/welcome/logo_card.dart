@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/assets_data.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class LogoCard extends StatelessWidget {
   const LogoCard({super.key});
@@ -14,17 +14,15 @@ class LogoCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(AssetsData.smartHomeLogo, width: 170),
+          Image.asset(AppAssets.smartHomeLogo, width: 170),
           Text(
             "SST",
-            style: TextStyles.bold24.copyWith(color: ColorsManager.darkBlue),
+            style: AppStyles.bold24.copyWith(color: AppColors.darkBlue),
           ),
           const SizedBox(height: 5),
           Text(
             "Smart Solutions Technologies",
-            style: TextStyles.semiBold16.copyWith(
-              color: ColorsManager.darkBlue,
-            ),
+            style: AppStyles.semiBold16.copyWith(color: AppColors.darkBlue),
           ),
         ],
       ),

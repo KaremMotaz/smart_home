@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class CustomSettingsItem extends StatelessWidget {
   const CustomSettingsItem({
@@ -20,22 +20,30 @@ class CustomSettingsItem extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        splashColor: ColorsManager.lighterGrey,
-        highlightColor: ColorsManager.lighterGrey,
+        splashColor: AppColors.lighterGrey,
+        highlightColor: AppColors.lighterGrey,
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 30,
+            top: 12,
+            bottom: 6,
+          ),
           child: Row(
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: ColorsManager.darkbrown,
+                  color: AppColors.darkbrown,
                 ),
                 child: Icon(icon, size: 20, color: Colors.white),
               ),
-              const SizedBox(width: 15),
-              Text(title, style: TextStyles.semiBold16),
+              const SizedBox(width: 10),
+              Text(title, style: AppStyles.semiBold16),
               const Spacer(),
               const Icon(Icons.arrow_forward_ios, size: 18),
             ],

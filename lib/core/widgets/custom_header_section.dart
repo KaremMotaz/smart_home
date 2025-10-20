@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../theming/colors_manager.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_colors.dart';
+import '../theming/app_styles.dart';
 
 class CustomHeaderSection extends StatelessWidget {
   const CustomHeaderSection({
@@ -9,7 +9,7 @@ class CustomHeaderSection extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.appBarTitle,
-    this.titleColor = ColorsManager.darkerBlue,
+    this.titleColor = AppColors.darkerBlue,
     this.onBack,
   });
 
@@ -35,18 +35,15 @@ class CustomHeaderSection extends StatelessWidget {
               const Spacer(),
               Text(
                 appBarTitle,
-                style: TextStyles.bold18.copyWith(color: titleColor),
+                style: AppStyles.bold18.copyWith(color: titleColor),
               ),
               const Spacer(),
             ],
           ),
           const SizedBox(height: 20),
-          Text(title, style: TextStyles.bold24.copyWith(color: titleColor)),
+          Text(title, style: AppStyles.bold24.copyWith(color: titleColor)),
           const SizedBox(height: 10),
-          Text(
-            subtitle,
-            style: TextStyles.medium14.copyWith(color: titleColor),
-          ),
+          Text(subtitle, style: AppStyles.medium14.copyWith(color: titleColor)),
         ],
       ),
     );

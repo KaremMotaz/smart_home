@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 import 'add_device_section.dart';
 
 class TempAndDevicesSection extends StatelessWidget {
@@ -11,7 +11,7 @@ class TempAndDevicesSection extends StatelessWidget {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text("28º", style: TextStyles.semiBold32),
+        Text("28º", style: AppStyles.semiBold32),
         AddDeviceSection(),
       ],
     );

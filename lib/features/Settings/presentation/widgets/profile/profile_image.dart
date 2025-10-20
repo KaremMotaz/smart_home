@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/theming/assets_data.dart';
-import '../../../../../core/theming/colors_manager.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({super.key});
@@ -13,7 +13,7 @@ class ProfileImage extends StatelessWidget {
           padding: const EdgeInsets.all(3),
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: ColorsManager.darkerbrown,
+            color: AppColors.darkerbrown,
           ),
           child: Container(
             width: 100,
@@ -24,7 +24,7 @@ class ProfileImage extends StatelessWidget {
                 BorderSide(color: Colors.white, width: 2),
               ),
               image: DecorationImage(
-                image: AssetImage(AssetsData.member1),
+                image: AssetImage(AppAssets.member1),
                 fit: BoxFit.cover,
               ),
             ),
@@ -35,7 +35,7 @@ class ProfileImage extends StatelessWidget {
           bottom: 0,
           child: CircleAvatar(
             radius: 18,
-            backgroundColor: ColorsManager.grey,
+            backgroundColor: AppColors.grey,
             child: IconButton(
               onPressed: () {},
               icon: const Icon(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorsManager {
+class AppColors {
   static const Color homeBackground = Color(0xffEDEDED);
   static const Color brown = Color(0xffbd7d00);
   static const Color darkerbrown = Color(0xff674F3F);

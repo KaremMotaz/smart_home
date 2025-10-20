@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class AddDeviceSection extends StatelessWidget {
   const AddDeviceSection({super.key});
@@ -40,7 +40,7 @@ class AddDeviceSection extends StatelessWidget {
               radius: 60,
               child: const CircleAvatar(
                 radius: 25,
-                backgroundColor: ColorsManager.brown,
+                backgroundColor: AppColors.brown,
                 child: Icon(Icons.add, color: Colors.white, size: 35),
               ),
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../../data/models/members_model.dart';
 
 class MembersListView extends StatelessWidget {
@@ -16,7 +16,7 @@ class MembersListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return CircleAvatar(
           radius: 30,
-          backgroundColor: ColorsManager.lighterGrey,
+          backgroundColor: AppColors.lighterGrey,
           backgroundImage: AssetImage(membersList[index].image),
         );
       },

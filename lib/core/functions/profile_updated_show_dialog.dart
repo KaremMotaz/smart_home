@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import '../theming/assets_data.dart';
-import '../theming/text_styles.dart';
+import '../theming/app_assets.dart';
+import '../theming/app_styles.dart';
 import '../widgets/app_text_button.dart';
 
 Future<dynamic> profileUpdatedShowDialog(
@@ -29,7 +29,7 @@ Future<dynamic> profileUpdatedShowDialog(
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  SvgPicture.asset(AssetsData.bubbles, height: 130),
+                  SvgPicture.asset(AppAssets.bubbles, height: 130),
                   Container(
                     padding: const EdgeInsets.all(7),
                     decoration: const BoxDecoration(
@@ -53,7 +53,7 @@ Future<dynamic> profileUpdatedShowDialog(
                           ),
                         ),
                         child: SvgPicture.asset(
-                          AssetsData.checkMark,
+                          AppAssets.checkMark,
                           width: 20,
                           colorFilter: const ColorFilter.mode(
                             Colors.white,
@@ -65,12 +65,12 @@ Future<dynamic> profileUpdatedShowDialog(
                   ),
                 ],
               ),
-              const Text("Profile Updated", style: TextStyles.semiBold20),
+              const Text("Profile Updated", style: AppStyles.semiBold20),
               const SizedBox(height: 5),
               Text(
                 "Congratulations your $fieldName has been successfully updated. Enjoy your next trip on our app",
                 textAlign: TextAlign.center,
-                style: TextStyles.regular14,
+                style: AppStyles.regular14,
               ),
               const SizedBox(height: 30),
               AppTextButton(

@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:smart_home/features/Settings/presentation/views/about_view.dart';
 import '../../features/Settings/presentation/views/edit_profile_view.dart';
 import '../../features/Devices/presentation/views/devices_view.dart';
 import '../../features/Rooms/presentation/views/all_rooms_view.dart';
@@ -22,7 +23,7 @@ import 'routes.dart';
 abstract class AppRouter {
   static GoRouter createRouter({required String initialRoute}) {
     return GoRouter(
-      initialLocation: Routes.profileView,
+      initialLocation: Routes.settingsView,
       routes: [
         GoRoute(
           path: Routes.onboardingView,
@@ -88,6 +89,10 @@ abstract class AppRouter {
         GoRoute(
           path: Routes.helpView,
           builder: (context, state) => const HelpView(),
+        ),
+        GoRoute(
+          path: Routes.aboutView,
+          builder: (context, state) => const AboutView(),
         ),
         GoRoute(
           path: Routes.allRoomsView,

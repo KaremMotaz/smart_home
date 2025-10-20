@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_home/core/services/get_it_service.dart';
-import 'package:smart_home/core/theming/colors_manager.dart';
+import 'package:smart_home/core/theming/app_colors.dart';
 import 'package:smart_home/features/Settings/data/repos/profile_repo.dart';
 import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:smart_home/features/Settings/presentation/helpers/edit_profile_listener_factory.dart';
@@ -17,7 +17,7 @@ class EditProfileView extends StatelessWidget {
       create: (context) =>
           EditProfileCubit(profileRepo: getIt.get<ProfileRepo>()),
       child: Scaffold(
-        backgroundColor: ColorsManager.orange2,
+        backgroundColor: AppColors.orange2,
         resizeToAvoidBottomInset: true,
         body: SafeArea(
           child: EditProfileListenerWrapper(

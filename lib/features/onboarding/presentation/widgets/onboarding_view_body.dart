@@ -1,9 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import '../widgets/page_view_item.dart';
 import 'onboarding_page_view.dart';
@@ -34,7 +34,7 @@ class OnboardingViewBody extends StatelessWidget {
           maintainAnimation: true,
           maintainSize: true,
           child: Image.asset(
-            AssetsData.bgOnboarding,
+            AppAssets.bgOnboarding,
             fit: BoxFit.fill,
             height: double.infinity,
             width: double.infinity,
@@ -54,14 +54,14 @@ class OnboardingViewBody extends StatelessWidget {
                   child: Text.rich(
                     TextSpan(
                       text: "One",
-                      style: TextStyles.bold20.copyWith(
-                        color: ColorsManager.darkerbrown,
+                      style: AppStyles.bold20.copyWith(
+                        color: AppColors.darkerbrown,
                       ),
                       children: [
                         TextSpan(
                           text: "touch",
-                          style: TextStyles.semiBold20.copyWith(
-                            color: ColorsManager.brown,
+                          style: AppStyles.semiBold20.copyWith(
+                            color: AppColors.brown,
                           ),
                         ),
                       ],
@@ -69,16 +69,13 @@ class OnboardingViewBody extends StatelessWidget {
                   ),
                 ),
               ),
-              OnboardingPageView(
-                pageController: pageController,
-                pages: pages,
-              ),
+              OnboardingPageView(pageController: pageController, pages: pages),
               DotsIndicator(
                 dotsCount: pages.length,
                 position: currentPageIndex.toDouble(),
                 decorator: DotsDecorator(
-                  color: ColorsManager.lightGrey,
-                  activeColor: ColorsManager.darkerbrown,
+                  color: AppColors.lightGrey,
+                  activeColor: AppColors.darkerbrown,
                   size: const Size.square(9),
                   activeSize: const Size(22, 9),
                   activeShape: RoundedRectangleBorder(
@@ -91,17 +88,15 @@ class OnboardingViewBody extends StatelessWidget {
               AppTextButton(
                 buttonWidth: double.infinity,
                 borderColor: Colors.transparent,
-                backgroundColor: ColorsManager.darkerbrown,
+                backgroundColor: AppColors.darkerbrown,
                 borderRadius: 50,
-                textStyle: TextStyles.bold18.copyWith(color: Colors.white),
+                textStyle: AppStyles.bold18.copyWith(color: Colors.white),
                 onPressed: currentPageIndex < pages.length - 1
                     ? onNextPressed
                     : onFinishPressed,
                 child: Text(
-                  currentPageIndex < pages.length - 1
-                      ? "Next"
-                      : "Get Started",
-                  style: TextStyles.medium18.copyWith(color: Colors.white),
+                  currentPageIndex < pages.length - 1 ? "Next" : "Get Started",
+                  style: AppStyles.medium18.copyWith(color: Colors.white),
                 ),
               ),
               Visibility(
@@ -116,8 +111,8 @@ class OnboardingViewBody extends StatelessWidget {
                   buttonWidth: double.infinity,
                   child: Text(
                     "Skip",
-                    style: TextStyles.bold16.copyWith(
-                      color: ColorsManager.darkerbrown,
+                    style: AppStyles.bold16.copyWith(
+                      color: AppColors.darkerbrown,
                     ),
                   ),
                 ),

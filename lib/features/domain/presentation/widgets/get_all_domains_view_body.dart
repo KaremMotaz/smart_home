@@ -6,8 +6,8 @@ import '../../../../core/functions/build_snack_bar.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/services/cache_helper.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
 import '../../data/models/get_all_domains_response_body.dart';
 import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
@@ -32,7 +32,7 @@ class GetAllDomainsViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Your Domains", style: TextStyles.bold18),
+          const Text("Your Domains", style: AppStyles.bold18),
           const SizedBox(height: 20),
           Expanded(
             child: GridView.builder(
@@ -82,9 +82,9 @@ class GetAllDomainsViewBody extends StatelessWidget {
                   },
             buttonText: "Submit",
             buttonWidth: double.infinity,
-            backgroundColor: ColorsManager.darkerbrown,
+            backgroundColor: AppColors.darkerbrown,
             borderRadius: 25,
-            textStyle: TextStyles.bold16.copyWith(color: Colors.white),
+            textStyle: AppStyles.bold16.copyWith(color: Colors.white),
           ),
           const SizedBox(height: 20),
         ],

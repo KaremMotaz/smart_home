@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class OffOnCard extends StatelessWidget {
   const OffOnCard({super.key});
@@ -15,14 +15,14 @@ class OffOnCard extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(10),
           decoration: const BoxDecoration(
-            color: ColorsManager.darkerbrown,
+            color: AppColors.darkerbrown,
             shape: BoxShape.circle,
             border: Border.fromBorderSide(
               BorderSide(color: Colors.white, width: 3),
             ),
           ),
           child: SvgPicture.asset(
-            AssetsData.offOn,
+            AppAssets.offOn,
             width: 70,
             colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),

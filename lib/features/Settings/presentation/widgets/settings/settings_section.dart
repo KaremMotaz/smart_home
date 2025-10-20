@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/theming/text_styles.dart';
+import 'package:go_router/go_router.dart';
+import 'package:smart_home/core/routing/routes.dart';
+import '../../../../../core/theming/app_styles.dart';
 import 'custom_settings_item.dart';
 
 class SettingsSection extends StatelessWidget {
@@ -11,11 +13,22 @@ class SettingsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-          child: Text("Settings", style: TextStyles.bold22),
+          padding: EdgeInsets.symmetric(horizontal: 25),
+          child: Text("Settings", style: AppStyles.bold22),
         ),
-        CustomSettingsItem(onTap: () {}, title: 'About App', icon: Icons.info),
+        CustomSettingsItem(
+          onTap: () {
+            GoRouter.of(context).push(Routes.aboutView);
+          },
+          title: 'About',
+          icon: Icons.info,
+        ),
         CustomSettingsItem(onTap: () {}, title: 'Logout', icon: Icons.logout),
+        CustomSettingsItem(
+          onTap: () {},
+          title: 'Delete Account',
+          icon: Icons.delete,
+        ),
       ],
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_colors.dart';
 import '../../data/models/rooms_model.dart';
 import 'custom_divider.dart';
 import 'device_section.dart';
@@ -14,7 +14,7 @@ class SelectedRoomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: ColorsManager.darkerbrown.withAlpha(242),
+        color: AppColors.darkerbrown.withAlpha(242),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_home/core/helpers/app_regex.dart';
 import 'package:smart_home/core/helpers/extensions.dart';
+import 'package:smart_home/core/helpers/get_user.dart';
 import 'package:smart_home/features/Settings/data/models/update_user_email.dart';
 import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
@@ -15,7 +16,9 @@ class EditEmailForm extends StatefulWidget {
 }
 
 class _EditEmailFormState extends State<EditEmailForm> {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController emailController = TextEditingController(
+    text: getUser()?.email,
+  );
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override

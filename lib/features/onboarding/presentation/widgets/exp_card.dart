@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class ExpCard extends StatelessWidget {
   const ExpCard({super.key});
@@ -18,7 +18,7 @@ class ExpCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset(AssetsData.exp, width: 10),
+          SvgPicture.asset(AppAssets.exp, width: 10),
           const SizedBox(height: 5),
           const SizedBox(
             width: 80,
@@ -26,7 +26,7 @@ class ExpCard extends StatelessWidget {
               value: 0.8,
               color: Colors.amberAccent,
               minHeight: 6,
-              backgroundColor: ColorsManager.lighterGrey,
+              backgroundColor: AppColors.lighterGrey,
             ),
           ),
           const SizedBox(height: 5),
@@ -36,7 +36,7 @@ class ExpCard extends StatelessWidget {
               value: 0.9,
               color: Colors.blue,
               minHeight: 6,
-              backgroundColor: ColorsManager.lighterGrey,
+              backgroundColor: AppColors.lighterGrey,
             ),
           ),
         ],

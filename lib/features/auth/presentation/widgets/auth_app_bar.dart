@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class AuthAppBar extends StatelessWidget {
   const AuthAppBar({
@@ -25,14 +25,14 @@ class AuthAppBar extends StatelessWidget {
           child: const Icon(
             Icons.arrow_back_ios,
             size: 20,
-            color: ColorsManager.darkerBlue,
+            color: AppColors.darkerBlue,
           ),
         ),
         TextButton(
           onPressed: onLabelPressed,
           child: Text(
             label,
-            style: TextStyles.bold16.copyWith(color: ColorsManager.darkerBlue),
+            style: AppStyles.bold16.copyWith(color: AppColors.darkerBlue),
           ),
         ),
       ],

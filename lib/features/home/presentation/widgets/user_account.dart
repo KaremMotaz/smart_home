@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smart_home/core/helpers/get_user.dart';
 import '../../../../core/routing/routes.dart';
 
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/colors_manager.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_styles.dart';
 import '../../../../core/widgets/app_text_button.dart';
 
 class UserAccount extends StatelessWidget {
@@ -18,8 +19,8 @@ class UserAccount extends StatelessWidget {
         children: [
           const CircleAvatar(
             radius: 30,
-            backgroundColor: ColorsManager.lighterGrey,
-            backgroundImage: AssetImage(AssetsData.member3),
+            backgroundColor: AppColors.lighterGrey,
+            backgroundImage: AssetImage(AppAssets.member3),
           ),
           const SizedBox(width: 8),
           Column(
@@ -28,8 +29,8 @@ class UserAccount extends StatelessWidget {
               Transform.translate(
                 offset: const Offset(0, 6),
                 child: Text(
-                  'Hi Dakolo',
-                  style: TextStyles.semiBold20.copyWith(color: Colors.white),
+                  'Hi ${getUser()?.firstName}',
+                  style: AppStyles.semiBold20.copyWith(color: Colors.white),
                 ),
               ),
               AppTextButton(
@@ -40,11 +41,11 @@ class UserAccount extends StatelessWidget {
                 buttonText: 'Edit Profile',
                 buttonHeight: 25,
                 buttonWidth: 103,
-                backgroundColor: ColorsManager.darkbrown,
+                backgroundColor: AppColors.darkbrown,
                 borderRadius: 40,
                 borderWidth: 2,
                 verticalPadding: 2,
-                textStyle: TextStyles.semiBold14.copyWith(color: Colors.white),
+                textStyle: AppStyles.semiBold14.copyWith(color: Colors.white),
               ),
             ],
           ),

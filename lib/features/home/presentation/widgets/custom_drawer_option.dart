@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class CustomDrawerOption extends StatelessWidget {
   final String icon;
@@ -33,7 +33,7 @@ class CustomDrawerOption extends StatelessWidget {
                 title,
                 style:
                     textStyle ??
-                    TextStyles.semiBold16.copyWith(color: Colors.white),
+                    AppStyles.semiBold16.copyWith(color: Colors.white),
               ),
             ],
           ),

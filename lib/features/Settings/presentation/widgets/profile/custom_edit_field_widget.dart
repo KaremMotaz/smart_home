@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theming/colors_manager.dart';
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 import '../../../../home/presentation/widgets/custom_divider.dart';
 
 class CustomEditFieldWidget extends StatelessWidget {
@@ -27,8 +27,8 @@ class CustomEditFieldWidget extends StatelessWidget {
               ).push(Routes.editProfileView, extra: {"title": title});
               // GoRouter.of(context).push(Routes.fingerLoginView);
             },
-            splashColor: ColorsManager.lighterGrey,
-            highlightColor: ColorsManager.lighterGrey,
+            splashColor: AppColors.lighterGrey,
+            highlightColor: AppColors.lighterGrey,
             child: Column(
               children: [
                 Padding(
@@ -46,24 +46,20 @@ class CustomEditFieldWidget extends StatelessWidget {
                           children: [
                             Text(
                               title,
-                              style: TextStyles.semiBold20.copyWith(
-                                color: ColorsManager.grey,
+                              style: AppStyles.semiBold20.copyWith(
+                                color: AppColors.grey,
                               ),
                             ),
                             const SizedBox(height: 5),
                             Text(
                               data,
-                              style: TextStyles.semiBold18,
+                              style: AppStyles.semiBold18,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ],
                         ),
                       ),
-                      const Icon(
-                        Icons.edit,
-                        size: 22,
-                        color: ColorsManager.grey,
-                      ),
+                      const Icon(Icons.edit, size: 22, color: AppColors.grey),
                     ],
                   ),
                 ),
@@ -72,7 +68,7 @@ class CustomEditFieldWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 7.5),
-        const CustomDivider(color: ColorsManager.grey, horizontalPadding: 20),
+        const CustomDivider(color: AppColors.grey, horizontalPadding: 20),
         const SizedBox(height: 7.5),
       ],
     );

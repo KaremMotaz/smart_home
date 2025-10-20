@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/theming/text_styles.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class TextBody extends StatelessWidget {
   const TextBody({super.key});
@@ -17,11 +17,15 @@ class TextBody extends StatelessWidget {
           children: [
             Text(
               "Configure Your \nMoments",
-              style: TextStyles.semiBold26.copyWith(color: const Color(0xffFFDEDE)),
+              style: AppStyles.semiBold26.copyWith(
+                color: const Color(0xffFFDEDE),
+              ),
             ),
             Text(
               "Manage your home from anytime,\nanywhere.",
-              style: TextStyles.regular14.copyWith(color: const Color(0xffCFEDFF)),
+              style: AppStyles.regular14.copyWith(
+                color: const Color(0xffCFEDFF),
+              ),
             ),
           ],
         ),

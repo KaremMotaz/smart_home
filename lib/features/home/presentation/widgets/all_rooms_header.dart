@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/theming/assets_data.dart';
-import '../../../../core/theming/text_styles.dart';
+import '../../../../core/theming/app_assets.dart';
+import '../../../../core/theming/app_styles.dart';
 
 class AllRoomsHeader extends StatelessWidget {
   const AllRoomsHeader({super.key});
@@ -11,7 +11,7 @@ class AllRoomsHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text("All Rooms", style: TextStyles.medium18),
+        const Text("All Rooms", style: AppStyles.medium18),
         Padding(
           padding: const EdgeInsets.only(right: 30),
           child: Material(
@@ -23,7 +23,7 @@ class AllRoomsHeader extends StatelessWidget {
               onTap: () {},
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset(AssetsData.arrowRightIcon),
+                child: SvgPicture.asset(AppAssets.arrowRightIcon),
               ),
             ),
           ),
