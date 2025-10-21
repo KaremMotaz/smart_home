@@ -5,7 +5,7 @@ import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../data/repos/register_repo.dart';
 import '../../manager/register_cubit/register_cubit.dart';
-import '../widgets/register/register_view_body_bloc_listener.dart';
+import '../widgets/register/register_bloc_listener.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -18,7 +18,7 @@ class RegisterView extends StatelessWidget {
       child: const Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: AppColors.orange2,
-        body: RegisterViewBodyBlocListener(),
+        body: RegisterBlocListener(),
       ),
     );
   }

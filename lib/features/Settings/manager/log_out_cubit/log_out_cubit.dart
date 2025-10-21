@@ -11,9 +11,9 @@ class LogOutCubit extends Cubit<LogOutState> {
     : super(const LogOutState.logOutInitial());
   final SettingsRepo settingsRepo;
 
-  Future<void> logOut(context) async {
+  Future<void> logOut() async {
     emit(const LogOutState.logOutLoading());
-    final ApiResult result = await settingsRepo.logout(context: context);
+    final ApiResult result = await settingsRepo.logout();
     result.when(
       success: (data) async {
         emit(const LogOutState.logOutSuccess());

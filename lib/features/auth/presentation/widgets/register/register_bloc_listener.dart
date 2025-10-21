@@ -8,8 +8,8 @@ import '../../../../../core/routing/routes.dart';
 import '../../../manager/register_cubit/register_cubit.dart';
 import 'register_view_body.dart';
 
-class RegisterViewBodyBlocListener extends StatelessWidget {
-  const RegisterViewBodyBlocListener({super.key});
+class RegisterBlocListener extends StatelessWidget {
+  const RegisterBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {

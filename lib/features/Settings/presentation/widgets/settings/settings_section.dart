@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
+import 'package:smart_home/features/Settings/presentation/helpers/log_out_show_dialog.dart';
 import 'package:smart_home/features/Settings/presentation/widgets/settings/delete_account_widget.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/settings/log_out_widget.dart';
 import '../../../../../core/theming/app_styles.dart';
 import 'custom_settings_item.dart';
 
@@ -25,7 +25,14 @@ class SettingsSection extends StatelessWidget {
           title: 'About',
           icon: Icons.info,
         ),
-        const LogOutWidget(),
+        CustomSettingsItem(
+          onTap: () {
+            GoRouter.of(context).push(Routes.fingerLoginView);
+            logOutShowDialog(context);
+          },
+          title: 'Logout',
+          icon: Icons.logout,
+        ),
         const DeleteAccountWidget(),
       ],
     );
