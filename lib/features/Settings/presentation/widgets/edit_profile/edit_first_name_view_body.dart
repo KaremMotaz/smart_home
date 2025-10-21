@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/widgets/custom_header_section.dart';
+import 'package:smart_home/core/widgets/custom_header.dart';
 import 'package:smart_home/core/widgets/form_container.dart';
 import 'package:smart_home/features/Settings/presentation/widgets/edit_profile/edit_first_name_form.dart';
 
@@ -10,7 +10,7 @@ class EditFirstNameViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        CustomHeaderSection(
+        CustomHeader(
           appBarTitle: "Edit first name",
           title: "Edit first name",
           subtitle: "Update your personal first name.",

@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
-import '../../../../home/presentation/widgets/custom_divider.dart';
+import '../../../../../core/widgets/custom_divider.dart';
 
 class CustomEditFieldWidget extends StatelessWidget {
   const CustomEditFieldWidget({
@@ -25,7 +25,7 @@ class CustomEditFieldWidget extends StatelessWidget {
               GoRouter.of(
                 context,
               ).push(Routes.editProfileView, extra: {"title": title});
-              // GoRouter.of(context).push(Routes.fingerLoginView);
+              GoRouter.of(context).push(Routes.fingerLoginView);
             },
             splashColor: AppColors.lighterGrey,
             highlightColor: AppColors.lighterGrey,

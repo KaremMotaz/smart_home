@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login_form_container.dart';
+import 'package:smart_home/core/widgets/form_container.dart';
+import 'package:smart_home/features/auth/presentation/widgets/login/login_form.dart';
 import 'login_header.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -10,7 +11,7 @@ class LoginViewBody extends StatelessWidget {
     return const Column(
       children: [
         LoginHeader(),
-        Expanded(child: LoginFormContainer()),
+        Expanded(child: FormContainer(child: LoginForm())),
       ],
     );
   }

@@ -8,7 +8,7 @@ import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_styles.dart';
 import '../../data/repos/get_all_domains_repo.dart';
 import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
-import '../widgets/get_domain/get_all_domains_view_body_bloc_builder.dart';
+import '../widgets/get_domain/get_all_domains_bloc_builder.dart';
 
 class ManageDomainsView extends StatelessWidget {
   const ManageDomainsView({super.key});
@@ -44,7 +44,7 @@ class ManageDomainsView extends StatelessWidget {
               : null,
         ),
         backgroundColor: AppColors.homeBackground,
-        body: const SafeArea(child: GetAllDomainsViewBodyBlocBuilder()),
+        body: const SafeArea(child: GetAllDomainsBlocBuilder()),
       ),
     );
   }

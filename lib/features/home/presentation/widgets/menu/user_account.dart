@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/helpers/get_user.dart';
-import '../../../../core/routing/routes.dart';
+import '../../../../../core/routing/routes.dart';
 
-import '../../../../core/theming/app_assets.dart';
-import '../../../../core/theming/app_colors.dart';
-import '../../../../core/theming/app_styles.dart';
-import '../../../../core/widgets/app_text_button.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/widgets/app_text_button.dart';
 
 class UserAccount extends StatelessWidget {
   const UserAccount({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_home/core/helpers/get_user.dart';
 
-import '../../../../core/theming/app_styles.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class WelcomeSection extends StatelessWidget {
   const WelcomeSection({super.key});

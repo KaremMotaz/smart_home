@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../data/models/rooms_model.dart';
-import '../widgets/selected_room_card.dart';
+import '../widgets/selected_room/selected_room_card.dart';
 
 class SelectedRoomView extends StatelessWidget {
   const SelectedRoomView({super.key, required this.room});

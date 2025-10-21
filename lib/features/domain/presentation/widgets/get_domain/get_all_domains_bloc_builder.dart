@@ -6,8 +6,8 @@ import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 import 'get_all_domains_view_body.dart';
 
-class GetAllDomainsViewBodyBlocBuilder extends StatelessWidget {
-  const GetAllDomainsViewBodyBlocBuilder({super.key});
+class GetAllDomainsBlocBuilder extends StatelessWidget {
+  const GetAllDomainsBlocBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {

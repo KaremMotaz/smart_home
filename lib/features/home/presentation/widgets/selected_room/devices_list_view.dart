@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_assets.dart';
 import 'device_card.dart';
 
 class DevicesListView extends StatelessWidget {

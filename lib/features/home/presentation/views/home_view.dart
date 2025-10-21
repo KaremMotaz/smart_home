@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/theming/app_colors.dart';
-import '../widgets/all_rooms_section.dart';
-import '../widgets/custom_drawer.dart';
-import '../widgets/home_menu.dart';
-import '../widgets/members_section.dart';
-import '../widgets/temp_and_devices_section.dart';
-import '../widgets/welcome_section.dart';
+import '../widgets/rooms/all_rooms_section.dart';
+import '../widgets/menu/custom_drawer.dart';
+import '../widgets/menu/home_menu.dart';
+import '../widgets/members/members_section.dart';
+import '../widgets/temp_and_devices/temp_and_devices_section.dart';
+import '../widgets/welcome/welcome_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

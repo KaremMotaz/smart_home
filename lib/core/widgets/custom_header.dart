@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import '../theming/app_colors.dart';
 import '../theming/app_styles.dart';
 
-class CustomHeaderSection extends StatelessWidget {
-  const CustomHeaderSection({
+class CustomHeader extends StatelessWidget {
+  const CustomHeader({
     super.key,
     required this.title,
     required this.subtitle,

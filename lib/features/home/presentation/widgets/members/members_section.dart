@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_colors.dart';
 import 'members_list_view.dart';
 
 class MembersSection extends StatelessWidget {

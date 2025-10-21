@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../data/models/rooms_model.dart';
-import '../../../../core/theming/app_styles.dart';
+import '../../../data/models/rooms_model.dart';
+import '../../../../../core/theming/app_styles.dart';
 import 'custom_switch.dart';
 
 class RoomDetailsSection extends StatelessWidget {

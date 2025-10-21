@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/app_colors.dart';
-import '../../data/models/rooms_model.dart';
-import 'custom_divider.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../data/models/rooms_model.dart';
+import '../../../../../core/widgets/custom_divider.dart';
 import 'device_section.dart';
 import 'room_details_section.dart';
 

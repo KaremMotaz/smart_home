@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../widgets/settings/profile_section.dart';
 import '../widgets/settings/settings_section.dart';
-import '../../../home/presentation/widgets/custom_divider.dart';
+import '../../../../core/widgets/custom_divider.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

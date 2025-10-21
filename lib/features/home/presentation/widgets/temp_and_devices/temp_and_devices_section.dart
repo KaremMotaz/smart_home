@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/app_styles.dart';
+import '../../../../../core/theming/app_styles.dart';
 import 'add_device_section.dart';
 
 class TempAndDevicesSection extends StatelessWidget {

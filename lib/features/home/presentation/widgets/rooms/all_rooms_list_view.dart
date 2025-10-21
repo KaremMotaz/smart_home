@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../data/models/rooms_model.dart';
+import '../../../data/models/rooms_model.dart';
 import 'room_card.dart';
 
 class AllRoomsListView extends StatelessWidget {

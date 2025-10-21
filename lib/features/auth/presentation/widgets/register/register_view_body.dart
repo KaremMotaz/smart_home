@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'register_form_container.dart';
+import 'package:smart_home/core/widgets/form_container.dart';
+import 'package:smart_home/features/auth/presentation/widgets/register/register_form.dart';
 import 'register_header.dart';
 
 class RegisterViewBody extends StatelessWidget {
@@ -11,7 +11,7 @@ class RegisterViewBody extends StatelessWidget {
     return const Column(
       children: [
         RegisterHeader(),
-        Expanded(child: RegisterFormContainer()),
+        Expanded(child: FormContainer(child: RegisterForm())),
       ],
     );
   }

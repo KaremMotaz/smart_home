@@ -11,8 +11,8 @@ import '../../../../../core/services/cache_helper.dart';
 import '../../../manager/login_cubit/login_cubit.dart';
 import 'login_view_body.dart';
 
-class LoginViewBodyBlocListener extends StatelessWidget {
-  const LoginViewBodyBlocListener({super.key});
+class LoginBlocListener extends StatelessWidget {
+  const LoginBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {

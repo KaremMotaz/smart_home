@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theming/app_colors.dart';
-import '../../data/models/members_model.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../data/models/members_model.dart';
 
 class MembersListView extends StatelessWidget {
   const MembersListView({super.key});
