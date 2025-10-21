@@ -1,9 +1,13 @@
+import 'package:smart_home/features/Settings/data/models/update_user_email_response.dart';
+import 'package:smart_home/features/Settings/data/models/update_user_profile_picture_response.dart';
+import 'package:smart_home/features/Settings/data/models/update_user_response.dart';
+import 'package:smart_home/features/Settings/data/models/update_username_response.dart';
 import '../../../../core/helpers/get_user.dart';
 import '../models/change_secret_request_body.dart';
-import '../models/update_user_email.dart';
-import '../models/update_user_profile_picture.dart';
+import '../models/update_user_email_request_body.dart';
+import '../models/update_user_profile_picture_request_body.dart';
 import '../models/update_user_request_body.dart';
-import '../models/update_username.dart';
+import '../models/update_username_request_body.dart';
 import '../services/settings_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
@@ -12,46 +16,55 @@ class ProfileRepo {
   final SettingsService settingsService;
 
   ProfileRepo({required this.settingsService});
-  Future<ApiResult<void>> updateUser({
+  Future<ApiResult<UpdateUserResponse>> updateUser({
     required UpdateUserRequestBody body,
   }) async {
     try {
-      await settingsService.updateUser(userId: getUser()!.id, body: body);
-      return const ApiResult.success(null);
-    } catch (error) {
-      return ApiResult.failure(ApiErrorHandler.handle(error: error));
-    }
-  }
-
-  Future<ApiResult<void>> updateUserProfilePicture({
-    required UpdateUserProfilePicture body,
-  }) async {
-    try {
-      await settingsService.updateUserProfilePicture(
+      final UpdateUserResponse result = await settingsService.updateUser(
         userId: getUser()!.id,
         body: body,
       );
-      return const ApiResult.success(null);
+      saveUser(userDataResponse: result);
+      return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<ApiResult<void>> updateUserEmail({
-    required UpdateUserEmail body,
+  Future<ApiResult<UpdateUserProfilePictureResponse>> updateUserProfilePicture({
+    required UpdateUserProfilePictureRequestBody body,
   }) async {
     try {
-      await settingsService.updateUserEmail(userId: getUser()!.id, body: body);
-      return const ApiResult.success(null);
+      final UpdateUserProfilePictureResponse result = await settingsService
+          .updateUserProfilePicture(userId: getUser()!.id, body: body);
+      saveUser(userDataResponse: result);
+      return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
 
-  Future<ApiResult<void>> updateUsername({required UpdateUsername body}) async {
+  Future<ApiResult<UpdateUserEmailResponse>> updateUserEmail({
+    required UpdateUserEmailRequestBody body,
+  }) async {
     try {
-      await settingsService.updateUsername(userId: getUser()!.id, body: body);
-      return const ApiResult.success(null);
+      final UpdateUserEmailResponse result = await settingsService
+          .updateUserEmail(userId: getUser()!.id, body: body);
+      saveUser(userDataResponse: result);
+      return ApiResult.success(result);
+    } catch (error) {
+      return ApiResult.failure(ApiErrorHandler.handle(error: error));
+    }
+  }
+
+  Future<ApiResult<UpdateUsernameResponse>> updateUsername({
+    required UpdateUsernameRequestBody body,
+  }) async {
+    try {
+      final UpdateUsernameResponse result = await settingsService
+          .updateUsername(userId: getUser()!.id, body: body);
+      saveUser(userDataResponse: result);
+      return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }

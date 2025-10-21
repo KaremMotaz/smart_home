@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_home/core/helpers/extensions.dart';
 import 'package:smart_home/core/helpers/get_user.dart';
 import 'package:smart_home/features/Settings/data/models/update_user_request_body.dart';
-import 'package:smart_home/features/Settings/data/models/update_username.dart';
+import 'package:smart_home/features/Settings/data/models/update_username_request_body.dart';
 import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/bloc_button.dart';
@@ -70,7 +70,7 @@ class _EditLastNameFormState extends State<EditLastNameForm> {
         ),
       );
       context.read<EditProfileCubit>().updateUsername(
-        updateUsername: UpdateUsername(
+        updateUsernameRequestBody: UpdateUsernameRequestBody(
           username: "${getUser()?.firstName}${lastNameController.text}",
         ),
       );

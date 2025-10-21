@@ -3,10 +3,10 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/change_secret_request_body.dart';
-import '../../data/models/update_user_email.dart';
-import '../../data/models/update_user_profile_picture.dart';
+import '../../data/models/update_user_email_request_body.dart';
+import '../../data/models/update_user_profile_picture_request_body.dart';
 import '../../data/models/update_user_request_body.dart';
-import '../../data/models/update_username.dart';
+import '../../data/models/update_username_request_body.dart';
 import '../../data/repos/profile_repo.dart';
 part 'edit_profile_state.dart';
 part 'edit_profile_cubit.freezed.dart';
@@ -34,11 +34,12 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   }
 
   Future<void> updateUserProfilePicture({
-    required UpdateUserProfilePicture updateUserProfilePicture,
+    required UpdateUserProfilePictureRequestBody
+    updateUserProfilePictureRequestBody,
   }) async {
     emit(const EditProfileState.editProfileLoading());
     final ApiResult result = await profileRepo.updateUserProfilePicture(
-      body: updateUserProfilePicture,
+      body: updateUserProfilePictureRequestBody,
     );
     result.when(
       success: (data) async {
@@ -51,11 +52,11 @@ class EditProfileCubit extends Cubit<EditProfileState> {
   }
 
   Future<void> updateUserEmail({
-    required UpdateUserEmail updateUserEmail,
+    required UpdateUserEmailRequestBody updateUserEmailRequestBody,
   }) async {
     emit(const EditProfileState.editProfileLoading());
     final ApiResult result = await profileRepo.updateUserEmail(
-      body: updateUserEmail,
+      body: updateUserEmailRequestBody,
     );
     result.when(
       success: (data) async {
@@ -67,10 +68,12 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     );
   }
 
-  Future<void> updateUsername({required UpdateUsername updateUsername}) async {
+  Future<void> updateUsername({
+    required UpdateUsernameRequestBody updateUsernameRequestBody,
+  }) async {
     emit(const EditProfileState.editProfileLoading());
     final ApiResult result = await profileRepo.updateUsername(
-      body: updateUsername,
+      body: updateUsernameRequestBody,
     );
     result.when(
       success: (data) async {

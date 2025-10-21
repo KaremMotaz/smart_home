@@ -16,7 +16,7 @@ UserDataResponse? getUser() {
   }
 }
 
-Future<void> saveUser({required UserDataResponse userDataResponse}) async {
+Future<void> saveUser({required dynamic userDataResponse}) async {
   final jsonString = jsonEncode(userDataResponse.toJson());
   await CacheHelper.set(key: kUserData, value: jsonString);
 }
