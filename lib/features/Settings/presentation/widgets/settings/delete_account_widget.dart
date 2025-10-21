@@ -52,7 +52,7 @@ class DeleteAccountWidget extends StatelessWidget {
                       buttonText: "Delete Account",
                       bodyContent:
                           "Are you sure you want to delete your account?",
-                      title: "Log Out?",
+                      title: "Delete Account?",
                       buttonColor: AppColors.darkRed,
                       onPressed: () async {
                         await context.read<DeleteAccountCubit>().deleteUser();
