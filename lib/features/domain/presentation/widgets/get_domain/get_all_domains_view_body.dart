@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/functions/build_snack_bar.dart';
-import '../../../../core/helpers/constants.dart';
-import '../../../../core/routing/routes.dart';
-import '../../../../core/services/cache_helper.dart';
-import '../../../../core/theming/app_colors.dart';
-import '../../../../core/theming/app_styles.dart';
-import '../../../../core/widgets/app_text_button.dart';
-import '../../data/models/get_all_domains_response_body.dart';
-import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
+import '../../../../../core/functions/build_snack_bar.dart';
+import '../../../../../core/helpers/constants.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../../../core/services/cache_helper.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/widgets/app_text_button.dart';
+import '../../../data/models/get_all_domains_response_body.dart';
+import '../../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 import 'domain_card.dart';
 
 class GetAllDomainsViewBody extends StatelessWidget {

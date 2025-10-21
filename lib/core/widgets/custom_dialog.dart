@@ -84,7 +84,7 @@ class CustomDialog<C extends StateStreamable<S>, S> extends StatelessWidget {
                     backgroundColor: buttonColor,
                     isLoading: isLoading,
                     verticalPadding: 5,
-                    buttonHeight: 40,
+                    buttonHeight: 50,
                     borderRadius: 12,
                     textStyle: AppStyles.semiBold16.copyWith(
                       color: Colors.white,

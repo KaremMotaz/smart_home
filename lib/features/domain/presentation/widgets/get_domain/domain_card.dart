@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/theming/app_assets.dart';
-import '../../../../core/theming/app_colors.dart';
-import '../../../../core/theming/app_styles.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class DomainCard extends StatelessWidget {
   const DomainCard({

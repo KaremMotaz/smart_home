@@ -5,7 +5,7 @@ import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../data/repos/add_domain_repo.dart';
 import '../../manager/add_domain_cubit/add_domain_cubit.dart';
-import '../widgets/add_domain_bloc_listener.dart';
+import '../widgets/add_domain/add_domain_bloc_listener.dart';
 
 class AddDomainView extends StatelessWidget {
   const AddDomainView({super.key});

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/theming/app_assets.dart';
-import '../../../../core/theming/app_styles.dart';
-import '../../../../core/widgets/custom_error_widget.dart';
-import '../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_styles.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
+import '../../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 import 'get_all_domains_view_body.dart';
 
 class GetAllDomainsViewBodyBlocBuilder extends StatelessWidget {
