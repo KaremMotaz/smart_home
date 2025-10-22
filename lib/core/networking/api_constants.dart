@@ -12,4 +12,5 @@ class ApiConstants {
   static const deleteUser = "users/{user_id}";
   static const addDomain = "domains";
   static const getAllDomains = "domains";
+  static const updateDomain = "domains/{domain_id}";
 }

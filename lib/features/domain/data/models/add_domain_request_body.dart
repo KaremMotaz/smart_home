@@ -7,7 +7,10 @@ class AddDomainRequestBody {
   final String name;
   final String alias;
 
-  AddDomainRequestBody({required this.name, required this.alias});
+  AddDomainRequestBody({
+    required this.name,
+    required this.alias,
+  });
 
   Map<String, dynamic> toJson() {
     return _$AddDomainRequestBodyToJson(this);

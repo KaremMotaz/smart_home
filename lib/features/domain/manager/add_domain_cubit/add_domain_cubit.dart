@@ -1,11 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/add_domain_request_body.dart';
 import '../../data/repos/add_domain_repo.dart';
-
 part 'add_domain_cubit.freezed.dart';
 part 'add_domain_state.dart';
 
