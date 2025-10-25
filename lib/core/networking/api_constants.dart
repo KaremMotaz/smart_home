@@ -7,7 +7,7 @@ class ApiConstants {
   static const updateUser = "users/{user_id}";
   static const updateUserProfilePicture = "users/{user_id}/picture";
   static const updateUserEmail = "users/{user_id}/email";
-  static const updateUserUsername = "users/{user_id}/username";
+  static const updateUsername = "users/{user_id}/username";
   static const changeSecret = "users/secret";
   static const deleteUser = "users/{user_id}";
   static const addDomain = "domains";

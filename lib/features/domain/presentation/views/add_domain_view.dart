@@ -18,7 +18,7 @@ class AddDomainView extends StatelessWidget {
       child: const Scaffold(
         backgroundColor: AppColors.orange2,
         resizeToAvoidBottomInset: true,
-        body: AddDomainBlocListener(),
+        body: SafeArea(child: AddDomainBlocListener()),
       ),
     );
   }

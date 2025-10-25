@@ -15,7 +15,7 @@ class EditPhoneForm extends StatefulWidget {
 
 class _EditPhoneFormState extends State<EditPhoneForm> {
   final TextEditingController phoneController = TextEditingController(
-    text: getUser()?.metadata.entries.first.key,
+    text: getUser()?.metadata!.entries.first.value ?? "",
   );
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 

@@ -1,7 +1,5 @@
-import 'package:smart_home/features/Settings/data/models/update_user_email_response.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_profile_picture_response.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_response.dart';
-import 'package:smart_home/features/Settings/data/models/update_username_response.dart';
+import 'package:smart_home/core/helpers/logger.dart';
+import 'package:smart_home/core/models/user_data_response.dart';
 import '../../../../core/helpers/get_user.dart';
 import '../models/change_secret_request_body.dart';
 import '../models/update_user_email_request_body.dart';
@@ -16,11 +14,11 @@ class ProfileRepo {
   final SettingsService settingsService;
 
   ProfileRepo({required this.settingsService});
-  Future<ApiResult<UpdateUserResponse>> updateUser({
+  Future<ApiResult<UserDataResponse>> updateUser({
     required UpdateUserRequestBody body,
   }) async {
     try {
-      final UpdateUserResponse result = await settingsService.updateUser(
+      final UserDataResponse result = await settingsService.updateUser(
         userId: getUser()!.id,
         body: body,
       );
@@ -31,11 +29,11 @@ class ProfileRepo {
     }
   }
 
-  Future<ApiResult<UpdateUserProfilePictureResponse>> updateUserProfilePicture({
+  Future<ApiResult<UserDataResponse>> updateUserProfilePicture({
     required UpdateUserProfilePictureRequestBody body,
   }) async {
     try {
-      final UpdateUserProfilePictureResponse result = await settingsService
+      final UserDataResponse result = await settingsService
           .updateUserProfilePicture(userId: getUser()!.id, body: body);
       saveUser(userDataResponse: result);
       return ApiResult.success(result);
@@ -44,11 +42,11 @@ class ProfileRepo {
     }
   }
 
-  Future<ApiResult<UpdateUserEmailResponse>> updateUserEmail({
+  Future<ApiResult<UserDataResponse>> updateUserEmail({
     required UpdateUserEmailRequestBody body,
   }) async {
     try {
-      final UpdateUserEmailResponse result = await settingsService
+      final UserDataResponse result = await settingsService
           .updateUserEmail(userId: getUser()!.id, body: body);
       saveUser(userDataResponse: result);
       return ApiResult.success(result);
@@ -57,15 +55,16 @@ class ProfileRepo {
     }
   }
 
-  Future<ApiResult<UpdateUsernameResponse>> updateUsername({
+  Future<ApiResult<UserDataResponse>> updateUsername({
     required UpdateUsernameRequestBody body,
   }) async {
     try {
-      final UpdateUsernameResponse result = await settingsService
+      final UserDataResponse result = await settingsService
           .updateUsername(userId: getUser()!.id, body: body);
       saveUser(userDataResponse: result);
       return ApiResult.success(result);
     } catch (error) {
+      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }

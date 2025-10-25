@@ -14,11 +14,17 @@ class EditProfileSection extends StatelessWidget {
             title: "First name",
             data: getUser()?.firstName ?? "Unknown",
           ),
-          CustomEditFieldWidget(title: "Last name", data: getUser()?.lastName ?? "Unknown"),
-          CustomEditFieldWidget(title: "Email", data: getUser()?.email ?? "Unknown"),
+          CustomEditFieldWidget(
+            title: "Last name",
+            data: getUser()?.lastName ?? "Unknown",
+          ),
+          CustomEditFieldWidget(
+            title: "Email",
+            data: getUser()?.email ?? "Unknown",
+          ),
           CustomEditFieldWidget(
             title: "Phone",
-            data: getUser()?.metadata.entries.first.key ?? "Unknown",
+            data: getUser()?.metadata!.entries.first.value ?? "Unknown",
           ),
           const CustomEditFieldWidget(title: "Password", data: "********"),
         ],

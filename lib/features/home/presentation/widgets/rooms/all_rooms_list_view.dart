@@ -8,9 +8,10 @@ class AllRoomsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<RoomsModel> roomsList = RoomsModel.roomsList;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return SizedBox(
-      height: 280,
+      height: screenHeight * 0.4,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: roomsList.length,

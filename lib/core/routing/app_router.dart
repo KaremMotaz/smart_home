@@ -23,7 +23,7 @@ import 'routes.dart';
 abstract class AppRouter {
   static GoRouter createRouter({required String initialRoute}) {
     return GoRouter(
-      initialLocation: Routes.settingsView,
+      initialLocation: initialRoute,
       routes: [
         GoRoute(
           path: Routes.onboardingView,

@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:smart_home/core/helpers/logger.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/manager/user_data_cubit/user_data_cubit.dart';
@@ -34,6 +35,7 @@ class LoginCubit extends Cubit<LoginState> {
   void checkToGetUserDataAfterLogin() {
     String? jsonString = CacheHelper.getString(key: kUserData);
     if (jsonString.isNullOrEmpty()) {
+      Logger.log("get user data + ${jsonString.isNullOrEmpty()}");
       userDataCubit.getUserData();
     }
   }

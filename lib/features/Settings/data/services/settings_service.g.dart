@@ -22,7 +22,7 @@ class _SettingsService implements SettingsService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<UpdateUserResponse> updateUser({
+  Future<UserDataResponse> updateUser({
     required UpdateUserRequestBody body,
     required String userId,
   }) async {
@@ -31,7 +31,7 @@ class _SettingsService implements SettingsService {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<UpdateUserResponse>(
+    final _options = _setStreamType<UserDataResponse>(
       Options(method: 'PATCH', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -42,9 +42,9 @@ class _SettingsService implements SettingsService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UpdateUserResponse _value;
+    late UserDataResponse _value;
     try {
-      _value = UpdateUserResponse.fromJson(_result.data!);
+      _value = UserDataResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -53,7 +53,7 @@ class _SettingsService implements SettingsService {
   }
 
   @override
-  Future<UpdateUserProfilePictureResponse> updateUserProfilePicture({
+  Future<UserDataResponse> updateUserProfilePicture({
     required UpdateUserProfilePictureRequestBody body,
     required String userId,
   }) async {
@@ -62,7 +62,7 @@ class _SettingsService implements SettingsService {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<UpdateUserProfilePictureResponse>(
+    final _options = _setStreamType<UserDataResponse>(
       Options(method: 'PATCH', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -73,9 +73,9 @@ class _SettingsService implements SettingsService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UpdateUserProfilePictureResponse _value;
+    late UserDataResponse _value;
     try {
-      _value = UpdateUserProfilePictureResponse.fromJson(_result.data!);
+      _value = UserDataResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -84,7 +84,7 @@ class _SettingsService implements SettingsService {
   }
 
   @override
-  Future<UpdateUserEmailResponse> updateUserEmail({
+  Future<UserDataResponse> updateUserEmail({
     required UpdateUserEmailRequestBody body,
     required String userId,
   }) async {
@@ -93,7 +93,7 @@ class _SettingsService implements SettingsService {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<UpdateUserEmailResponse>(
+    final _options = _setStreamType<UserDataResponse>(
       Options(method: 'PATCH', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -104,9 +104,9 @@ class _SettingsService implements SettingsService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UpdateUserEmailResponse _value;
+    late UserDataResponse _value;
     try {
-      _value = UpdateUserEmailResponse.fromJson(_result.data!);
+      _value = UserDataResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -115,7 +115,7 @@ class _SettingsService implements SettingsService {
   }
 
   @override
-  Future<UpdateUsernameResponse> updateUsername({
+  Future<UserDataResponse> updateUsername({
     required UpdateUsernameRequestBody body,
     required String userId,
   }) async {
@@ -124,20 +124,20 @@ class _SettingsService implements SettingsService {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _options = _setStreamType<UpdateUsernameResponse>(
+    final _options = _setStreamType<UserDataResponse>(
       Options(method: 'PATCH', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'users/${userId}/email',
+            'users/${userId}/username',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late UpdateUsernameResponse _value;
+    late UserDataResponse _value;
     try {
-      _value = UpdateUsernameResponse.fromJson(_result.data!);
+      _value = UserDataResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

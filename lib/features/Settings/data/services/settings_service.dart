@@ -1,9 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_email_response.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_profile_picture_response.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_response.dart';
-import 'package:smart_home/features/Settings/data/models/update_username_response.dart';
+import 'package:smart_home/core/models/user_data_response.dart';
 import '../models/change_secret_request_body.dart';
 import '../models/update_user_email_request_body.dart';
 import '../models/update_user_profile_picture_request_body.dart';
@@ -17,25 +14,25 @@ abstract class SettingsService {
   factory SettingsService(Dio dio) = _SettingsService;
 
   @PATCH(ApiConstants.updateUser)
-  Future<UpdateUserResponse> updateUser({
+  Future<UserDataResponse> updateUser({
     @Body() required UpdateUserRequestBody body,
     @Path("user_id") required String userId,
   });
 
   @PATCH(ApiConstants.updateUserProfilePicture)
-  Future<UpdateUserProfilePictureResponse> updateUserProfilePicture({
+  Future<UserDataResponse> updateUserProfilePicture({
     @Body() required UpdateUserProfilePictureRequestBody body,
     @Path("user_id") required String userId,
   });
 
   @PATCH(ApiConstants.updateUserEmail)
-  Future<UpdateUserEmailResponse> updateUserEmail({
+  Future<UserDataResponse> updateUserEmail({
     @Body() required UpdateUserEmailRequestBody body,
     @Path("user_id") required String userId,
   });
 
-  @PATCH(ApiConstants.updateUserEmail)
-  Future<UpdateUsernameResponse> updateUsername({
+  @PATCH(ApiConstants.updateUsername)
+  Future<UserDataResponse> updateUsername({
     @Body() required UpdateUsernameRequestBody body,
     @Path("user_id") required String userId,
   });

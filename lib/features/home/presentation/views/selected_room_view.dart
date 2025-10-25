@@ -20,7 +20,7 @@ class SelectedRoomView extends StatelessWidget {
             height: double.infinity,
           ),
           Positioned(
-            top: 5,
+            top: 25,
             child: Material(
               color: Colors.transparent,
               child: IconButton(
