@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-
+import 'package:smart_home/core/helpers/logger.dart';
+import 'package:smart_home/core/networking/api_service.dart';
 import '../helpers/constants.dart';
 import '../services/cache_helper.dart';
 import 'api_constants.dart';
@@ -66,19 +67,24 @@ class DioFactory {
   Future<bool> _refreshAccessToken() async {
     final refreshToken = await CacheHelper.getSecureData(key: kRefreshToken);
     if (refreshToken == null) return false;
+
     try {
-      final Response response = await Dio().post(
-        ApiConstants.apiBaseUrl + ApiConstants.refreshToken,
+      final apiService = ApiService(Dio());
+      final response = await apiService.refreshAccessToken(
+        refreshTokenHeader: 'Bearer $refreshToken',
       );
-      final newAccessToken = response.data["access_token"];
-      final newRefreshToken = response.data["refresh_token"];
-      await CacheHelper.setSecureData(key: kAccessToken, value: newAccessToken);
+      await CacheHelper.setSecureData(
+        key: kAccessToken,
+        value: response.accessToken,
+      );
       await CacheHelper.setSecureData(
         key: kRefreshToken,
-        value: newRefreshToken,
+        value: response.refreshToken,
       );
+
       return true;
-    } catch (e) {
+    } catch (e, s) {
+      Logger.log('Refresh token failed: $e\n$s');
       return false;
     }
   }
