@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/functions/error_dialog.dart';
-import 'package:smart_home/core/functions/profile_updated_show_dialog.dart';
-import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
+import '../../../../../core/functions/error_dialog.dart';
+import '../../../../../core/functions/profile_updated_show_dialog.dart';
+import '../../../manager/edit_profile_cubit/edit_profile_cubit.dart';
 
 class EditProfileListenerWrapper extends StatelessWidget {
   const EditProfileListenerWrapper({

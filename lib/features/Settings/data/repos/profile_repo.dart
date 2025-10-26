@@ -1,6 +1,6 @@
-import 'package:smart_home/core/helpers/logger.dart';
-import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
-import 'package:smart_home/core/models/user_data_response.dart';
+import '../../../../core/helpers/logger.dart';
+import '../../../../core/manager/user_cubit/user_cubit.dart';
+import '../../../../core/models/user_data_response.dart';
 import '../../../../core/functions/get_user.dart';
 import '../models/change_secret_request_body.dart';
 import '../models/update_user_email_request_body.dart';

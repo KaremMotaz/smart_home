@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../../core/helpers/constants.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../../../core/services/cache_helper.dart';
 import '../../models/onboarding_model.dart';
 import '../widgets/onboarding_view_body.dart';
-import '../../../../../core/helpers/constants.dart';
-import '../../../../../core/routing/routes.dart';
 import '../widgets/page_view_item.dart';
 
 class OnboardingView extends StatefulWidget {

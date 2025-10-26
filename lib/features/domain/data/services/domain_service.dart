@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:smart_home/features/domain/data/models/update_domain_request_body.dart';
-import 'package:smart_home/features/domain/data/models/update_domain_response.dart';
+import '../models/update_domain_request_body.dart';
+import '../models/update_domain_response.dart';
 import '../models/add_domain_request_body.dart';
 import '../models/add_domain_response.dart';
 import '../models/get_all_domains_response_body.dart';

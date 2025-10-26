@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/widgets/custom_header.dart';
-import 'package:smart_home/core/widgets/form_container.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/edit_profile/edit_first_name_form.dart';
+import '../../../../../core/widgets/custom_header.dart';
+import '../../../../../core/widgets/form_container.dart';
+import 'edit_first_name_form.dart';
 
 class EditFirstNameViewBody extends StatelessWidget {
   const EditFirstNameViewBody({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/widgets/form_container.dart';
-import 'package:smart_home/features/auth/presentation/widgets/register/register_form.dart';
+
+import '../../../../../core/widgets/form_container.dart';
+import 'register_form.dart';
 import 'register_header.dart';
 
 class RegisterViewBody extends StatelessWidget {

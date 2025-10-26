@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
-import 'package:smart_home/core/services/get_it_service.dart';
+
+import '../../../../core/manager/user_cubit/user_cubit.dart';
+import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_divider.dart';
 import '../widgets/settings/profile_section.dart';
 import '../widgets/settings/settings_section.dart';
-import '../../../../core/widgets/custom_divider.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

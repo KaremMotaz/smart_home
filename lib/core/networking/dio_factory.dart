@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:smart_home/core/helpers/logger.dart';
-import 'package:smart_home/core/models/refresh_token_request_body.dart';
-import 'package:smart_home/core/networking/api_service.dart';
+import '../helpers/logger.dart';
+import '../../features/auth/data/models/refresh_token_request_body.dart';
+import '../../features/auth/data/services/auth_service.dart';
 import '../helpers/constants.dart';
 import '../services/cache_helper.dart';
 import 'api_constants.dart';
@@ -77,8 +77,8 @@ class DioFactory {
         "Content-Type": "application/json",
       };
 
-      final apiService = ApiService(refreshDio);
-      final response = await apiService.refreshAccessToken(
+      final authService = AuthService(refreshDio);
+      final response = await authService.refreshAccessToken(
         refreshTokenHeader: 'Bearer $refreshToken',
         refreshTokenRequestBody: RefreshTokenRequestBody(
           refreshToken: refreshToken,

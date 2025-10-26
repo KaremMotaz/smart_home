@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/theming/app_assets.dart';
-import 'package:smart_home/core/theming/app_styles.dart';
+import '../../../../../core/theming/app_assets.dart';
+import '../../../../../core/theming/app_styles.dart';
 
 class NoDomainsFound extends StatelessWidget {
   const NoDomainsFound({super.key});

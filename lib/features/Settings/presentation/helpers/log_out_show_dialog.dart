@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/functions/build_snack_bar.dart';
-import 'package:smart_home/core/functions/error_dialog.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/services/get_it_service.dart';
-import 'package:smart_home/core/theming/app_colors.dart';
-import 'package:smart_home/core/widgets/custom_dialog.dart';
-import 'package:smart_home/features/Settings/data/repos/settings_repo.dart';
-import 'package:smart_home/features/Settings/manager/log_out_cubit/log_out_cubit.dart';
+import '../../../../core/functions/build_snack_bar.dart';
+import '../../../../core/functions/error_dialog.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/services/get_it_service.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/custom_dialog.dart';
+import '../../data/repos/settings_repo.dart';
+import '../../manager/log_out_cubit/log_out_cubit.dart';
 
 Future<void> logOutShowDialog(BuildContext context) {
   return showDialog(

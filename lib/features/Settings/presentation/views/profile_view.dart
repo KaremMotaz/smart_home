@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/profile/user_account_data.dart';
+import '../widgets/profile/user_account_data.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../widgets/profile/edit_profile_section.dart';
 

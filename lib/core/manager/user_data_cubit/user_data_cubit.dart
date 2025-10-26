@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import '../user_cubit/user_cubit.dart';
 import '../../models/user_data_response.dart';
 import '../../networking/api_error_model.dart';
 import '../../networking/api_result.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/features/domain/presentation/widgets/add_domain/add_domain_view_body.dart';
+import 'add_domain_view_body.dart';
 import '../../../../../core/functions/build_snack_bar.dart';
 import '../../../../../core/functions/error_dialog.dart';
 import '../../../manager/add_domain_cubit/add_domain_cubit.dart';

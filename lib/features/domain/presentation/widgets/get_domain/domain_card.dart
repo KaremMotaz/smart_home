@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
@@ -7,13 +8,11 @@ class DomainCard extends StatelessWidget {
   const DomainCard({
     super.key,
     required this.name,
-    required this.alias,
     required this.isSelected,
     required this.onTap,
   });
 
   final String name;
-  final String alias;
   final bool isSelected;
   final VoidCallback onTap;
 
@@ -62,12 +61,6 @@ class DomainCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: AppStyles.bold18,
-              ),
-              const SizedBox(height: 6),
-              Text(
-                alias,
-                textAlign: TextAlign.center,
-                style: AppStyles.semiBold14.copyWith(color: AppColors.grey),
               ),
             ],
           ),

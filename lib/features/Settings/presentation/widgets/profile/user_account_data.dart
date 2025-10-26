@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
-import 'package:smart_home/core/models/user_data_response.dart';
-import 'package:smart_home/core/theming/app_styles.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/profile/profile_image.dart';
+import '../../../../../core/manager/user_cubit/user_cubit.dart';
+import '../../../../../core/models/user_data_response.dart';
+import '../../../../../core/theming/app_styles.dart';
+import 'profile_image.dart';
 
 class UserAccountData extends StatelessWidget {
   const UserAccountData({super.key});

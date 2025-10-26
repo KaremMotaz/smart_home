@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
+import '../models/refresh_token_response.dart';
 
 import '../../../../core/networking/api_constants.dart';
 import '../models/login_request_body.dart';
@@ -20,4 +21,11 @@ abstract class AuthService {
 
   @POST(ApiConstants.login)
   Future<LoginResponseBody> login({@Body() required LoginRequestBody body});
+
+  @POST(ApiConstants.refreshToken)
+  Future<RefreshTokenResponse> refreshAccessToken({
+    @Header("Authorization") required String refreshTokenHeader,
+    @Body() required refreshTokenRequestBody,
+    @Header("Content-Type") required String contentType,
+  });
 }

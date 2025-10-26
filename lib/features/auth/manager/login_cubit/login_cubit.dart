@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/helpers/logger.dart';
+import '../../../../core/helpers/logger.dart';
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/extensions.dart';
 import '../../../../core/manager/user_data_cubit/user_data_cubit.dart';

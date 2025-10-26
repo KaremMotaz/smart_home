@@ -1,10 +1,10 @@
-import 'package:smart_home/core/helpers/constants.dart';
-import 'package:smart_home/features/domain/data/models/update_domain_request_body.dart';
-import 'package:smart_home/features/domain/data/models/update_domain_response.dart';
+import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/logger.dart';
-import '../services/domain_service.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
+import '../models/update_domain_request_body.dart';
+import '../models/update_domain_response.dart';
+import '../services/domain_service.dart';
 
 class UpdateDomainRepo {
   final DomainService domainService;

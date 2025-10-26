@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../../core/functions/build_snack_bar.dart';
 import '../../../../../core/helpers/constants.dart';
 import '../../../../../core/routing/routes.dart';
@@ -46,7 +47,6 @@ class GetAllDomainsViewBody extends StatelessWidget {
                 final domain = domains[index];
                 return DomainCard(
                   name: domain.name,
-                  alias: domain.alias,
                   isSelected: selectedIndex == index,
                   onTap: () {
                     context.read<GetAllDomainsCubit>().selectDomain(index);

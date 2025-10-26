@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/widgets/custom_header.dart';
-import 'package:smart_home/core/widgets/form_container.dart';
-import 'package:smart_home/features/domain/presentation/widgets/add_domain/add_domain_form.dart';
+import '../../../../../core/widgets/custom_header.dart';
+import '../../../../../core/widgets/form_container.dart';
+import 'add_domain_form.dart';
 
 class AddDomainViewBody extends StatelessWidget {
   const AddDomainViewBody({super.key});

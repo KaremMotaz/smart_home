@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:smart_home/core/helpers/extensions.dart';
-import 'package:smart_home/core/helpers/logger.dart';
+import '../helpers/extensions.dart';
+import '../helpers/logger.dart';
 
 import '../models/user_data_response.dart';
 import '../services/cache_helper.dart';

@@ -13,4 +13,5 @@ class ApiConstants {
   static const addDomain = "domains";
   static const getAllDomains = "domains";
   static const updateDomain = "domains/{domain_id}";
+  static const addDevice = "addDevice";
 }

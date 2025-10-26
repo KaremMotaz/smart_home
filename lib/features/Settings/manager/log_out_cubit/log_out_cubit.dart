@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:smart_home/core/networking/api_error_model.dart';
-import 'package:smart_home/features/Settings/data/repos/settings_repo.dart';
+import '../../../../core/networking/api_error_model.dart';
+import '../../data/repos/settings_repo.dart';
 import '../../../../core/networking/api_result.dart';
 part 'log_out_state.dart';
 part 'log_out_cubit.freezed.dart';

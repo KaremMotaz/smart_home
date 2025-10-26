@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/functions/build_snack_bar.dart';
-import 'package:smart_home/core/functions/error_dialog.dart';
-import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/core/services/get_it_service.dart';
-import 'package:smart_home/core/theming/app_colors.dart';
-import 'package:smart_home/core/widgets/custom_dialog.dart';
-import 'package:smart_home/features/Settings/data/repos/settings_repo.dart';
-import 'package:smart_home/features/Settings/manager/delete_account_cubit/delete_account_cubit.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/settings/custom_settings_item.dart';
+import '../../../../../core/functions/build_snack_bar.dart';
+import '../../../../../core/functions/error_dialog.dart';
+import '../../../../../core/routing/routes.dart';
+import '../../../../../core/services/get_it_service.dart';
+import '../../../../../core/theming/app_colors.dart';
+import '../../../../../core/widgets/custom_dialog.dart';
+import '../../../data/repos/settings_repo.dart';
+import '../../../manager/delete_account_cubit/delete_account_cubit.dart';
+import 'custom_settings_item.dart';
 
 class DeleteAccountWidget extends StatelessWidget {
   const DeleteAccountWidget({super.key});

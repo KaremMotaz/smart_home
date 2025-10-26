@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../core/manager/inactivity_cubit/inactivity_cubit.dart';
-import '../../core/routing/routes.dart';
 import '../../core/routing/app_router.dart';
+import '../../core/routing/routes.dart';
 import '../../core/theming/theme_manager.dart';
 
 class SmartHome extends StatelessWidget {

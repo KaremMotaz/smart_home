@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
-import 'package:smart_home/core/models/user_data_response.dart';
+import '../../../../../core/manager/user_cubit/user_cubit.dart';
+import '../../../../../core/models/user_data_response.dart';
 
 import '../../../../../core/theming/app_styles.dart';
 

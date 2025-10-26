@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/functions/get_initial_route.dart';
-import '../../../../../core/manager/inactivity_cubit/inactivity_cubit.dart';
+
 import '../../../../../core/functions/build_snack_bar.dart';
 import '../../../../../core/functions/error_dialog.dart';
+import '../../../../../core/functions/get_initial_route.dart';
+import '../../../../../core/manager/inactivity_cubit/inactivity_cubit.dart';
 import '../../../manager/biometric_cubit/biometric_cubit.dart';
 import '../../../manager/biometric_cubit/biometric_state.dart';
 import 'fingerprint_shape.dart';

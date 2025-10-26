@@ -1,8 +1,10 @@
 import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'inactivity_state.dart';
+
 part 'inactivity_cubit.freezed.dart';
+part 'inactivity_state.dart';
 
 class InactivityCubit extends Cubit<InactivityState> {
   Timer? _timer;

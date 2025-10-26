@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:smart_home/core/models/user_data_response.dart';
+import '../../../../core/models/user_data_response.dart';
 import '../models/change_secret_request_body.dart';
 import '../models/update_user_email_request_body.dart';
 import '../models/update_user_profile_picture_request_body.dart';

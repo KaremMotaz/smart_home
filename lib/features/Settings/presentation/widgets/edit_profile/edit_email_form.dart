@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/helpers/app_regex.dart';
-import 'package:smart_home/core/helpers/extensions.dart';
-import 'package:smart_home/core/functions/get_user.dart';
-import 'package:smart_home/features/Settings/data/models/update_user_email_request_body.dart';
-import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
+import '../../../../../core/helpers/app_regex.dart';
+import '../../../../../core/helpers/extensions.dart';
+import '../../../../../core/functions/get_user.dart';
+import '../../../data/models/update_user_email_request_body.dart';
+import '../../../manager/edit_profile_cubit/edit_profile_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/bloc_button.dart';
 

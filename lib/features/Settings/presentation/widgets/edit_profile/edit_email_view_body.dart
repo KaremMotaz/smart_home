@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/widgets/custom_header.dart';
-import 'package:smart_home/core/widgets/form_container.dart';
-import 'package:smart_home/features/Settings/presentation/widgets/edit_profile/edit_email_form.dart';
+import '../../../../../core/widgets/custom_header.dart';
+import '../../../../../core/widgets/form_container.dart';
+import 'edit_email_form.dart';
 
 class EditEmailViewBody extends StatelessWidget {
   const EditEmailViewBody({super.key});

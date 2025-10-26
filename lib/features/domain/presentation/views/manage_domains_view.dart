@@ -20,16 +20,17 @@ class ManageDomainsView extends StatelessWidget {
           GetAllDomainsCubit(getAllDomainsRepo: getIt.get<GetAllDomainsRepo>())
             ..getAllDomains(),
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: const Text("Domains", style: AppStyles.bold18),
-          backgroundColor: AppColors.homeBackground,
+          title: const Text("Projects", style: AppStyles.bold18),
+          backgroundColor: Colors.white,
           actions: [
             TextButton(
               onPressed: () {
                 GoRouter.of(context).push(Routes.addDomainView);
               },
               child: Text(
-                "Add Domin",
+                "Add Project",
                 style: AppStyles.bold18.copyWith(color: AppColors.grey),
               ),
             ),
@@ -43,7 +44,6 @@ class ManageDomainsView extends StatelessWidget {
                 )
               : null,
         ),
-        backgroundColor: AppColors.homeBackground,
         body: const SafeArea(child: GetAllDomainsBlocBuilder()),
       ),
     );

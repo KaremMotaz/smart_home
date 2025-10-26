@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
-import 'package:smart_home/core/helpers/logger.dart';
+import '../helpers/logger.dart';
 part 'user_data_response.g.dart';
 
 @JsonSerializable(explicitToJson: true)

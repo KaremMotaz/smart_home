@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
-import 'package:smart_home/core/services/get_it_service.dart';
-import 'package:smart_home/features/Settings/presentation/views/about_view.dart';
+import '../manager/user_cubit/user_cubit.dart';
+import '../services/get_it_service.dart';
+import '../../features/Settings/presentation/views/about_view.dart';
 import '../../features/Settings/presentation/views/edit_profile_view.dart';
 import '../../features/Devices/presentation/views/devices_view.dart';
 import '../../features/Rooms/presentation/views/all_rooms_view.dart';
