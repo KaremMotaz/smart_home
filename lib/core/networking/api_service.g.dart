@@ -49,16 +49,26 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<RefreshTokenResponse> refreshAccessToken(
-    String refreshTokenHeader,
-  ) async {
+  Future<RefreshTokenResponse> refreshAccessToken({
+    required String refreshTokenHeader,
+    required dynamic refreshTokenRequestBody,
+    required String contentType,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': refreshTokenHeader};
+    final _headers = <String, dynamic>{
+      r'Authorization': refreshTokenHeader,
+      r'Content-Type': contentType,
+    };
     _headers.removeWhere((k, v) => v == null);
-    const Map<String, dynamic>? _data = null;
+    final _data = refreshTokenRequestBody;
     final _options = _setStreamType<RefreshTokenResponse>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(
+            method: 'POST',
+            headers: _headers,
+            extra: _extra,
+            contentType: contentType,
+          )
           .compose(
             _dio.options,
             'users/tokens/refresh',

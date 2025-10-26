@@ -1,8 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/helpers/constants.dart';
 import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
-import 'package:smart_home/core/services/cache_helper.dart';
 import 'package:smart_home/core/services/get_it_service.dart';
 import 'package:smart_home/features/Settings/presentation/views/about_view.dart';
 import '../../features/Settings/presentation/views/edit_profile_view.dart';
@@ -117,14 +115,14 @@ abstract class AppRouter {
           },
         ),
       ],
-      redirect: (context, state) async {
-        final String? fullPath = state.fullPath;
+      // redirect: (context, state) async {
+      //   final String? fullPath = state.fullPath;
 
-        if (fullPath != null && fullPath.isNotEmpty) {
-          await CacheHelper.set(key: kLastVisitedRoute, value: fullPath);
-        }
-        return null;
-      },
+      //   if (fullPath != null && fullPath.isNotEmpty) {
+      //     await CacheHelper.set(key: kLastVisitedRoute, value: fullPath);
+      //   }
+      //   return null;
+      // },
     );
   }
 }

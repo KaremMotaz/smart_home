@@ -15,5 +15,7 @@ abstract class ApiService {
   @POST(ApiConstants.refreshToken)
   Future<RefreshTokenResponse> refreshAccessToken({
     @Header("Authorization") required String refreshTokenHeader,
+    @Body() required refreshTokenRequestBody,
+    @Header("Content-Type") required String contentType,
   });
 }

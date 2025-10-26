@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-
 import '../../../../../core/theming/app_colors.dart';
-import '../../../manager/register_cubit/register_cubit.dart';
 
-class PhoneField extends StatefulWidget {
+class PhoneField<T extends Cubit> extends StatefulWidget {
   const PhoneField({super.key});
 
   @override
-  State<PhoneField> createState() => _PhoneFieldState();
+  State<PhoneField<T>> createState() => _PhoneFieldState<T>();
 }
 
-class _PhoneFieldState extends State<PhoneField> {
+class _PhoneFieldState<T extends Cubit> extends State<PhoneField<T>> {
   final TextEditingController _phoneNumberController = TextEditingController();
   PhoneNumber initialNumber = PhoneNumber(isoCode: 'EG');
 
@@ -77,11 +75,13 @@ class _PhoneFieldState extends State<PhoneField> {
         setState(() {
           _isValid = isValid;
         });
+        final cubit = context.read<T>();
+        final method = cubit as dynamic;
 
         if (isValid && _fullNumber != null) {
-          context.read<RegisterCubit>().setPhoneNumber(_fullNumber!);
+          method.setPhoneNumber(_fullNumber!);
         } else {
-          context.read<RegisterCubit>().setPhoneNumber('');
+          method.setPhoneNumber('');
         }
       },
 

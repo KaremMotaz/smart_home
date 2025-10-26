@@ -18,6 +18,11 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     : super(const EditProfileState.editProfileInitial());
   final ProfileRepo profileRepo;
   final UserCubit userCubit;
+  String? phoneNumber;
+
+  void setPhoneNumber(String number) {
+    phoneNumber = number;
+  }
 
   Future<void> updateUser({
     required UpdateUserRequestBody updateUserRequestBody,

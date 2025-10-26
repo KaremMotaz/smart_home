@@ -34,7 +34,7 @@ class _EditPhoneFormState extends State<EditPhoneForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const PhoneField(),
+            const PhoneField<EditProfileCubit>(),
             BlocButton<EditProfileCubit, EditProfileState>(
               label: "Save",
               borderRadius: 50,

@@ -9,13 +9,9 @@ class RefreshTokenResponse {
   @JsonKey(name: 'refresh_token')
   final String refreshToken;
 
-  @JsonKey(name: 'access_type')
-  final String accessType;
-
   RefreshTokenResponse({
     required this.accessToken,
     required this.refreshToken,
-    required this.accessType,
   });
 
   factory RefreshTokenResponse.fromJson(Map<String, dynamic> json) =>

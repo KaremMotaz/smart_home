@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:smart_home/core/helpers/logger.dart';
+import 'package:smart_home/core/models/refresh_token_request_body.dart';
 import 'package:smart_home/core/networking/api_service.dart';
 import '../helpers/constants.dart';
 import '../services/cache_helper.dart';
@@ -69,10 +70,22 @@ class DioFactory {
     if (refreshToken == null) return false;
 
     try {
-      final apiService = ApiService(Dio());
+      final refreshDio = Dio(BaseOptions(baseUrl: ApiConstants.apiBaseUrl));
+
+      refreshDio.options.headers = {
+        "Authorization": "Bearer $refreshToken",
+        "Content-Type": "application/json",
+      };
+
+      final apiService = ApiService(refreshDio);
       final response = await apiService.refreshAccessToken(
         refreshTokenHeader: 'Bearer $refreshToken',
+        refreshTokenRequestBody: RefreshTokenRequestBody(
+          refreshToken: refreshToken,
+        ),
+        contentType: 'application/json',
       );
+
       await CacheHelper.setSecureData(
         key: kAccessToken,
         value: response.accessToken,

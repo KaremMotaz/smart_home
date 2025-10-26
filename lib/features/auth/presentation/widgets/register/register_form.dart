@@ -79,7 +79,7 @@ class _RegisterFormState extends State<RegisterForm> {
             controller: lastNameController,
           ),
           const SizedBox(height: 18),
-          const PhoneField(),
+          const PhoneField<RegisterCubit>(),
           const SizedBox(height: 18),
           AppTextFormField(
             hintText: "Password",
