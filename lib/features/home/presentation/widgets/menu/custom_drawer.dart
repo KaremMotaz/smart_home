@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/routing/routes.dart';
-import '../../../../Settings/presentation/helpers/log_out_show_dialog.dart';
+import '../../../../settings/presentation/helpers/log_out_show_dialog.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
