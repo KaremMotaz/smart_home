@@ -53,7 +53,7 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ApiService>(() => ApiService(getIt.get()));
 
   getIt.registerLazySingleton<UserCubit>(() => UserCubit());
-  
+
   getIt.registerLazySingleton<UserDataRepo>(
     () => UserDataRepo(apiService: getIt.get()),
   );
