@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:smart_home/core/functions/get_user.dart';
 import '../../../../../core/theming/app_colors.dart';
 
 class PhoneField<T extends Cubit> extends StatefulWidget {
@@ -11,8 +12,27 @@ class PhoneField<T extends Cubit> extends StatefulWidget {
 }
 
 class _PhoneFieldState<T extends Cubit> extends State<PhoneField<T>> {
-  final TextEditingController _phoneNumberController = TextEditingController();
+  late final TextEditingController _phoneNumberController;
   PhoneNumber initialNumber = PhoneNumber(isoCode: 'EG');
+
+  @override
+  void initState() {
+    super.initState();
+
+    final String storedNumber = getUser()?.metadata?.entries.first.value ?? '';
+
+    String localNumber = storedNumber;
+
+    if (storedNumber.startsWith('+')) {
+      localNumber = storedNumber.replaceFirst(RegExp(r'^\+\d{1,2}'), '');
+
+      if (!localNumber.startsWith('0')) {
+        localNumber = '0$localNumber';
+      }
+    }
+
+    _phoneNumberController = TextEditingController(text: localNumber);
+  }
 
   bool _isValid = false;
   String? _fullNumber;

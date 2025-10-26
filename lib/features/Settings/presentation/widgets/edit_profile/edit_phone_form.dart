@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/core/functions/get_user.dart';
 import 'package:smart_home/features/Settings/data/models/update_user_request_body.dart';
 import 'package:smart_home/features/Settings/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:smart_home/features/auth/presentation/widgets/register/phone_field.dart';
@@ -14,16 +13,7 @@ class EditPhoneForm extends StatefulWidget {
 }
 
 class _EditPhoneFormState extends State<EditPhoneForm> {
-  final TextEditingController phoneController = TextEditingController(
-    text: getUser()?.metadata!.entries.first.value ?? "",
-  );
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
-  @override
-  void dispose() {
-    phoneController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +44,9 @@ class _EditPhoneFormState extends State<EditPhoneForm> {
     if (formKey.currentState!.validate()) {
       context.read<EditProfileCubit>().updateUser(
         updateUserRequestBody: UpdateUserRequestBody(
-          metadata: {"phoneNumber": phoneController.text},
+          metadata: {
+            "phoneNumber": context.read<EditProfileCubit>().phoneNumber,
+          },
         ),
       );
     }
