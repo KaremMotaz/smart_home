@@ -4,7 +4,7 @@ import '../manager/user_cubit/user_cubit.dart';
 import '../services/get_it_service.dart';
 import '../../features/settings/presentation/views/about_view.dart';
 import '../../features/settings/presentation/views/edit_profile_view.dart';
-import '../../features/devices/presentation/views/devices_view.dart';
+import '../../features/devices/presentation/views/add_devices_view.dart';
 import '../../features/rooms/presentation/views/all_rooms_view.dart';
 import '../../features/settings/presentation/views/help_view.dart';
 import '../../features/settings/presentation/views/profile_view.dart';
@@ -69,7 +69,7 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.devicesView,
-          builder: (context, state) => const DevicesView(),
+          builder: (context, state) => const AddDevicesView(),
         ),
 
         GoRoute(
