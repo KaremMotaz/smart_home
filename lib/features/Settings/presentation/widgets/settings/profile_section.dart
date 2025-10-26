@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/helpers/get_user.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import 'package:smart_home/core/models/user_data_response.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
@@ -21,28 +23,32 @@ class ProfileSection extends StatelessWidget {
         highlightColor: AppColors.lighterGrey,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 12),
-          child: Row(
-            children: [
-              const CircleAvatar(
-                radius: 40,
-                backgroundColor: AppColors.lighterGrey,
-                backgroundImage: AssetImage(AppAssets.member1),
-              ),
-              const SizedBox(width: 20),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+          child: BlocBuilder<UserCubit, UserDataResponse?>(
+            builder: (context, user) {
+              return Row(
                 children: [
-                  Text(
-                    "${getUser()?.firstName ?? "Unknown"} ${getUser()?.lastName ?? "Unknown"}",
-                    style: AppStyles.bold20,
+                  const CircleAvatar(
+                    radius: 40,
+                    backgroundColor: AppColors.lighterGrey,
+                    backgroundImage: AssetImage(AppAssets.member1),
                   ),
-                  Text(
-                    getUser()?.email ?? "Unknown",
-                    style: AppStyles.regular16,
+                  const SizedBox(width: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "${user?.firstName ?? "Unknown"} ${user?.lastName ?? "Unknown"}",
+                        style: AppStyles.bold20,
+                      ),
+                      Text(
+                        user?.email ?? "Unknown",
+                        style: AppStyles.regular16,
+                      ),
+                    ],
                   ),
                 ],
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),

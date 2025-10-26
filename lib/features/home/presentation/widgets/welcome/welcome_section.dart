@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/helpers/get_user.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import 'package:smart_home/core/models/user_data_response.dart';
 
 import '../../../../../core/theming/app_styles.dart';
 
@@ -11,7 +13,14 @@ class WelcomeSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Hi ${getUser()?.firstName}", style: AppStyles.semiBold24),
+        BlocBuilder<UserCubit, UserDataResponse?>(
+          builder: (context, user) {
+            return Text(
+              "Hi ${user?.firstName ?? ''}",
+              style: AppStyles.semiBold24,
+            );
+          },
+        ),
         const SizedBox(height: 4),
         Text(
           "Welcome to your smart home",

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/helpers/get_user.dart';
+import 'package:smart_home/features/Settings/presentation/widgets/profile/user_account_data.dart';
 import '../../../../core/theming/app_colors.dart';
-import '../../../../core/theming/app_styles.dart';
 import '../widgets/profile/edit_profile_section.dart';
-import '../widgets/profile/profile_image.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -23,21 +21,14 @@ class ProfileView extends StatelessWidget {
             topRight: Radius.circular(50),
           ),
         ),
-        child: SizedBox(
+        child: const SizedBox(
           height: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const ProfileImage(),
-              const SizedBox(height: 10),
-              Text(
-                "${getUser()?.firstName ?? "Unknown"} ${getUser()?.lastName ?? "Unknown"}",
-                style: AppStyles.bold22,
-              ),
-              const SizedBox(height: 5),
-              Text(getUser()?.email ?? "Unknown", style: AppStyles.regular14),
-              const SizedBox(height: 25),
-              const EditProfileSection(),
+              UserAccountData(),
+              SizedBox(height: 25),
+              EditProfileSection(),
             ],
           ),
         ),

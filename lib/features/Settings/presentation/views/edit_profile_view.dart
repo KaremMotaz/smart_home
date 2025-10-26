@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
 import 'package:smart_home/core/services/get_it_service.dart';
 import 'package:smart_home/core/theming/app_colors.dart';
 import 'package:smart_home/features/Settings/data/repos/profile_repo.dart';
@@ -14,8 +15,10 @@ class EditProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<EditProfileCubit>(
-      create: (context) =>
-          EditProfileCubit(profileRepo: getIt.get<ProfileRepo>()),
+      create: (context) => EditProfileCubit(
+        profileRepo: getIt.get<ProfileRepo>(),
+        userCubit: getIt.get<UserCubit>(),
+      ),
       child: Scaffold(
         backgroundColor: AppColors.orange2,
         resizeToAvoidBottomInset: true,

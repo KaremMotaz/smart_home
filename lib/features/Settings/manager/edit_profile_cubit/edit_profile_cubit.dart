@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:smart_home/core/helpers/logger.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/change_secret_request_body.dart';
@@ -13,9 +14,10 @@ part 'edit_profile_state.dart';
 part 'edit_profile_cubit.freezed.dart';
 
 class EditProfileCubit extends Cubit<EditProfileState> {
-  EditProfileCubit({required this.profileRepo})
+  EditProfileCubit({required this.profileRepo, required this.userCubit})
     : super(const EditProfileState.editProfileInitial());
   final ProfileRepo profileRepo;
+  final UserCubit userCubit;
 
   Future<void> updateUser({
     required UpdateUserRequestBody updateUserRequestBody,
@@ -25,7 +27,8 @@ class EditProfileCubit extends Cubit<EditProfileState> {
       body: updateUserRequestBody,
     );
     result.when(
-      success: (data) async {
+      success: (userDataResponse) {
+        userCubit.updateUser(userDataResponse: userDataResponse);
         emit(const EditProfileState.editProfileSuccess());
       },
       failure: (apiErrorModel) async {

@@ -1,6 +1,7 @@
 import 'package:smart_home/core/helpers/logger.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
 import 'package:smart_home/core/models/user_data_response.dart';
-import '../../../../core/helpers/get_user.dart';
+import '../../../../core/functions/get_user.dart';
 import '../models/change_secret_request_body.dart';
 import '../models/update_user_email_request_body.dart';
 import '../models/update_user_profile_picture_request_body.dart';
@@ -12,8 +13,9 @@ import '../../../../core/networking/api_result.dart';
 
 class ProfileRepo {
   final SettingsService settingsService;
+  final UserCubit userCubit;
 
-  ProfileRepo({required this.settingsService});
+  ProfileRepo({required this.settingsService, required this.userCubit});
   Future<ApiResult<UserDataResponse>> updateUser({
     required UpdateUserRequestBody body,
   }) async {
@@ -22,7 +24,7 @@ class ProfileRepo {
         userId: getUser()!.id,
         body: body,
       );
-      saveUser(userDataResponse: result);
+      userCubit.updateUser(userDataResponse: result);
       return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
@@ -35,7 +37,7 @@ class ProfileRepo {
     try {
       final UserDataResponse result = await settingsService
           .updateUserProfilePicture(userId: getUser()!.id, body: body);
-      saveUser(userDataResponse: result);
+      userCubit.updateUser(userDataResponse: result);
       return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
@@ -46,9 +48,11 @@ class ProfileRepo {
     required UpdateUserEmailRequestBody body,
   }) async {
     try {
-      final UserDataResponse result = await settingsService
-          .updateUserEmail(userId: getUser()!.id, body: body);
-      saveUser(userDataResponse: result);
+      final UserDataResponse result = await settingsService.updateUserEmail(
+        userId: getUser()!.id,
+        body: body,
+      );
+      userCubit.updateUser(userDataResponse: result);
       return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
@@ -59,9 +63,11 @@ class ProfileRepo {
     required UpdateUsernameRequestBody body,
   }) async {
     try {
-      final UserDataResponse result = await settingsService
-          .updateUsername(userId: getUser()!.id, body: body);
-      saveUser(userDataResponse: result);
+      final UserDataResponse result = await settingsService.updateUsername(
+        userId: getUser()!.id,
+        body: body,
+      );
+      userCubit.updateUser(userDataResponse: result);
       return ApiResult.success(result);
     } catch (error) {
       Logger.log(error.toString());

@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../core/helpers/get_user.dart';
-
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/register_request_body.dart';
@@ -11,10 +10,12 @@ part 'register_cubit.freezed.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit({required this.registerRepo})
+  RegisterCubit({required this.registerRepo, required this.userCubit})
     : super(const RegisterState.registerInitial());
 
   final RegisterRepo registerRepo;
+  final UserCubit userCubit;
+
   String? phoneNumber;
 
   void setPhoneNumber(String number) {
@@ -30,7 +31,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
     result.when(
       success: (userDataResponse) async {
-        await saveUser(userDataResponse: userDataResponse);
+        userCubit.updateUser(userDataResponse: userDataResponse);
         emit(const RegisterState.registerSuccess());
       },
       failure: (apiErrorModel) async {

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import 'package:smart_home/core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../widgets/settings/profile_section.dart';
 import '../widgets/settings/settings_section.dart';
@@ -22,23 +25,26 @@ class SettingsView extends StatelessWidget {
             topRight: Radius.circular(50),
           ),
         ),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               children: [
-                SizedBox(height: 10),
-                ProfileSection(),
-                SizedBox(height: 10),
-                CustomDivider(
+                const SizedBox(height: 10),
+                BlocProvider.value(
+                  value: getIt<UserCubit>(),
+                  child: const ProfileSection(),
+                ),
+                const SizedBox(height: 10),
+                const CustomDivider(
                   color: AppColors.darkbrown,
                   horizontalPadding: 25,
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            SettingsSection(),
-            Spacer(),
+            const SizedBox(height: 20),
+            const SettingsSection(),
+            const Spacer(),
           ],
         ),
       ),

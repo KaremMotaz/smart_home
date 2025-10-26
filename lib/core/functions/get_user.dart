@@ -1,25 +1,26 @@
 import 'dart:convert';
+import 'package:smart_home/core/helpers/extensions.dart';
 import 'package:smart_home/core/helpers/logger.dart';
 
 import '../models/user_data_response.dart';
 import '../services/cache_helper.dart';
-import 'constants.dart';
+import '../helpers/constants.dart';
 
 UserDataResponse? getUser() {
   final jsonString = CacheHelper.getString(key: kUserData);
   Logger.log(jsonString.toString());
-  if (jsonString == null || jsonString.isEmpty) {
+  if (jsonString.isNullOrEmpty()) {
     return null;
   }
   try {
-    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString!);
     return UserDataResponse.fromJson(jsonMap);
   } catch (e) {
     return null;
   }
 }
 
-Future<void> saveUser({required dynamic userDataResponse}) async {
+Future<void> saveUser({required UserDataResponse userDataResponse}) async {
   final jsonString = jsonEncode(userDataResponse.toJson());
   Logger.log("Save user data $jsonString");
   await CacheHelper.set(key: kUserData, value: jsonString);

@@ -1,5 +1,5 @@
 import 'package:smart_home/core/functions/logout.dart';
-import '../../../../core/helpers/get_user.dart';
+import '../../../../core/functions/get_user.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../services/settings_service.dart';

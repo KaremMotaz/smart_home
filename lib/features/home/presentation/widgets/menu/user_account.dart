@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/core/helpers/get_user.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import 'package:smart_home/core/models/user_data_response.dart';
 import '../../../../../core/routing/routes.dart';
-
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
@@ -26,12 +27,16 @@ class UserAccount extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Transform.translate(
-                offset: const Offset(0, 6),
-                child: Text(
-                  'Hi ${getUser()?.firstName}',
-                  style: AppStyles.semiBold20.copyWith(color: Colors.white),
-                ),
+              BlocBuilder<UserCubit, UserDataResponse?>(
+                builder: (context, user) {
+                  return Transform.translate(
+                    offset: const Offset(0, 6),
+                    child: Text(
+                      'Hi ${user?.firstName ?? ''}',
+                      style: AppStyles.semiBold20.copyWith(color: Colors.white),
+                    ),
+                  );
+                },
               ),
               AppTextButton(
                 onPressed: () {

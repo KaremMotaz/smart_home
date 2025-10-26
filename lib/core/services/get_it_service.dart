@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
 import 'package:smart_home/features/Settings/data/repos/profile_repo.dart';
 import 'package:smart_home/features/Settings/data/repos/settings_repo.dart';
 import 'package:smart_home/features/Settings/data/services/settings_service.dart';
@@ -50,18 +51,21 @@ Future<void> setupGetIt() async {
   );
 
   getIt.registerLazySingleton<ApiService>(() => ApiService(getIt.get()));
+
+  getIt.registerLazySingleton<UserCubit>(() => UserCubit());
+  
   getIt.registerLazySingleton<UserDataRepo>(
     () => UserDataRepo(apiService: getIt.get()),
   );
   getIt.registerFactory<UserDataCubit>(
-    () => UserDataCubit(userDataRepo: getIt.get()),
+    () => UserDataCubit(userDataRepo: getIt.get(), userCubit: getIt.get()),
   );
 
   getIt.registerLazySingleton<SettingsService>(
     () => SettingsService(getIt.get()),
   );
   getIt.registerLazySingleton<ProfileRepo>(
-    () => ProfileRepo(settingsService: getIt.get()),
+    () => ProfileRepo(settingsService: getIt.get(), userCubit: getIt.get()),
   );
 
   getIt.registerLazySingleton<SettingsRepo>(

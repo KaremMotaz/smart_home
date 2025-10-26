@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
 
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
@@ -13,8 +14,10 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<RegisterCubit>(
-      create: (context) =>
-          RegisterCubit(registerRepo: getIt.get<RegisterRepo>()),
+      create: (context) => RegisterCubit(
+        registerRepo: getIt.get<RegisterRepo>(),
+        userCubit: getIt.get<UserCubit>(),
+      ),
       child: const Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: AppColors.orange2,

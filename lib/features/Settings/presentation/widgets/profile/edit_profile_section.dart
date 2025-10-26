@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/core/helpers/get_user.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import 'package:smart_home/core/models/user_data_response.dart';
 import 'custom_edit_field_widget.dart';
 
 class EditProfileSection extends StatelessWidget {
@@ -7,28 +9,32 @@ class EditProfileSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-        children: [
-          CustomEditFieldWidget(
-            title: "First name",
-            data: getUser()?.firstName ?? "Unknown",
+    return BlocBuilder<UserCubit, UserDataResponse?>(
+      builder: (context, user) {
+        return Expanded(
+          child: ListView(
+            children: [
+              CustomEditFieldWidget(
+                title: "First name",
+                data: user?.firstName ?? "Unknown",
+              ),
+              CustomEditFieldWidget(
+                title: "Last name",
+                data: user?.lastName ?? "Unknown",
+              ),
+              CustomEditFieldWidget(
+                title: "Email",
+                data: user?.email ?? "Unknown",
+              ),
+              CustomEditFieldWidget(
+                title: "Phone",
+                data: user?.metadata!.entries.first.value ?? "Unknown",
+              ),
+              const CustomEditFieldWidget(title: "Password", data: "********"),
+            ],
           ),
-          CustomEditFieldWidget(
-            title: "Last name",
-            data: getUser()?.lastName ?? "Unknown",
-          ),
-          CustomEditFieldWidget(
-            title: "Email",
-            data: getUser()?.email ?? "Unknown",
-          ),
-          CustomEditFieldWidget(
-            title: "Phone",
-            data: getUser()?.metadata!.entries.first.value ?? "Unknown",
-          ),
-          const CustomEditFieldWidget(title: "Password", data: "********"),
-        ],
-      ),
+        );
+      },
     );
   }
 }

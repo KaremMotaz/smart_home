@@ -1,4 +1,7 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smart_home/core/manager/user_cubit/user_cubit.dart';
+import 'package:smart_home/core/services/get_it_service.dart';
 import 'package:smart_home/features/Settings/presentation/views/about_view.dart';
 import '../../features/Settings/presentation/views/edit_profile_view.dart';
 import '../../features/Devices/presentation/views/devices_view.dart';
@@ -47,7 +50,10 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.homeView,
-          builder: (context, state) => const HomeView(),
+          builder: (context, state) => BlocProvider.value(
+            value: getIt<UserCubit>(),
+            child: const HomeView(),
+          ),
         ),
         GoRoute(
           path: Routes.addDomainView,
@@ -76,7 +82,10 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.profileView,
-          builder: (context, state) => const ProfileView(),
+          builder: (context, state) => BlocProvider.value(
+            value: getIt<UserCubit>(),
+            child: const ProfileView(),
+          ),
         ),
         GoRoute(
           path: Routes.editProfileView,
