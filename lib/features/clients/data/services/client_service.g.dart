@@ -33,7 +33,7 @@ class _ClientService implements ClientService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'addClient',
+            '{domain_id}/clients',
             queryParameters: queryParameters,
             data: _data,
           )

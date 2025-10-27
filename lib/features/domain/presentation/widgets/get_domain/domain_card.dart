@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
+import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domain/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 
 import '../../../../../core/theming/app_assets.dart';
 import '../../../../../core/theming/app_colors.dart';
@@ -9,12 +12,12 @@ import '../../../../../core/theming/app_styles.dart';
 class DomainCard extends StatelessWidget {
   const DomainCard({
     super.key,
-    required this.name,
     required this.isSelected,
     required this.onTap,
+    required this.domain,
   });
 
-  final String name;
+  final Domain domain;
   final bool isSelected;
   final VoidCallback onTap;
 
@@ -65,7 +68,7 @@ class DomainCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    name,
+                    domain.name,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: AppStyles.bold18,
@@ -77,8 +80,16 @@ class DomainCard extends StatelessWidget {
           Positioned(
             right: 0,
             child: IconButton(
-              onPressed: () {
-                GoRouter.of(context).push(Routes.editDomainView);
+              onPressed: () async {
+                final result = await context.push(
+                  Routes.updateDomainView,
+                  extra: {'domain': domain},
+                );
+                if (result == true) {
+                  if (context.mounted) {
+                    context.read<GetAllDomainsCubit>().getAllDomains();
+                  }
+                }
               },
               icon: const Icon(Icons.edit, color: AppColors.darkerbrown),
             ),

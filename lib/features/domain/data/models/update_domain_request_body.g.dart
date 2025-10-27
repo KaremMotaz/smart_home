@@ -8,16 +8,8 @@ part of 'update_domain_request_body.dart';
 
 UpdateDomainRequestBody _$UpdateDomainRequestBodyFromJson(
   Map<String, dynamic> json,
-) => UpdateDomainRequestBody(
-  name: json['name'] as String?,
-  alias: json['alias'] as String?,
-  metadata: json['metadata'] as String?,
-);
+) => UpdateDomainRequestBody(name: json['name'] as String);
 
 Map<String, dynamic> _$UpdateDomainRequestBodyToJson(
   UpdateDomainRequestBody instance,
-) => <String, dynamic>{
-  'name': instance.name,
-  'alias': instance.alias,
-  'metadata': instance.metadata,
-};
+) => <String, dynamic>{'name': instance.name};

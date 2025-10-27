@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/features/domain/presentation/views/edit_domain_view.dart';
+import 'package:smart_home/features/domain/presentation/views/update_domain_view.dart';
+import '../../features/domain/data/models/get_all_domains_response_body.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../services/get_it_service.dart';
 import '../../features/settings/presentation/views/about_view.dart';
@@ -65,8 +66,12 @@ abstract class AppRouter {
           builder: (context, state) => const AddDomainView(),
         ),
         GoRoute(
-          path: Routes.editDomainView,
-          builder: (context, state) => const EditDomainView(),
+          path: Routes.updateDomainView,
+          builder: (context, state) {
+            final extra = state.extra as Map<String, dynamic>?;
+            final domain = extra?['domain'] as Domain?;
+            return UpdateDomainView(domain: domain!);
+          },
         ),
         GoRoute(
           path: Routes.manageUsersView,

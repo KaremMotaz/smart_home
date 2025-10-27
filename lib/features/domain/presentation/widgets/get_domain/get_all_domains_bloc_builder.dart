@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/theming/app_colors.dart';
-import '../../../../../core/widgets/custom_circular_progress_indicator.dart';
+import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
 import 'no_domains_found.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
@@ -16,8 +15,10 @@ class GetAllDomainsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         return state.when(
           getAllDomainsLoading: () {
-            return const CustomCircularProgressIndicator(
-              color: AppColors.darkerbrown,
+            return GetAllDomainsViewBody(
+              domains: Domain.dummyDomains,
+              selectedIndex: 0,
+              isLoading: true,
             );
           },
           getAllDomainsSuccess: (getAllDomainsResponseBody, selectedIndex) {
@@ -25,7 +26,7 @@ class GetAllDomainsBlocBuilder extends StatelessWidget {
               return const NoDomainsFound();
             } else {
               return GetAllDomainsViewBody(
-                getAllDomainsResponseBody: getAllDomainsResponseBody,
+                domains: getAllDomainsResponseBody.domains,
                 selectedIndex: selectedIndex,
               );
             }

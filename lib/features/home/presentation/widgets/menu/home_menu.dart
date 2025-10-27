@@ -10,7 +10,7 @@ class HomeMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, top: 15),
+      padding: const EdgeInsets.only(left: 15),
       child: Material(
         color: Colors.transparent,
         child: InkWell(

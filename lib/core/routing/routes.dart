@@ -8,7 +8,7 @@ class Routes {
   static const String allRoomsView = '/allRoomsView';
   static const String selectedroomView = '/selectedroomView';
   static const String addDomainView = '/addDomainView';
-  static const String editDomainView = '/editDomainView';
+  static const String updateDomainView = '/editDomainView';
   static const String manageDomainsView = '/manageDomainsView';
   static const String manageUsersView = '/manageUsersView';
   static const String devicesView = '/devicesView';

@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:smart_home/features/devices/data/repos/provision_client_repo.dart';
 import 'package:smart_home/features/devices/data/services/provision_service.dart';
+import 'package:smart_home/features/domain/data/repos/update_domain_repo.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../../features/settings/data/repos/profile_repo.dart';
 import '../../features/settings/data/repos/settings_repo.dart';
@@ -50,6 +51,9 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<GetAllDomainsRepo>(
     () => GetAllDomainsRepo(domainService: getIt.get()),
+  );
+  getIt.registerLazySingleton<UpdateDomainRepo>(
+    () => UpdateDomainRepo(domainService: getIt.get()),
   );
 
   getIt.registerLazySingleton<ApiService>(() => ApiService(getIt.get()));

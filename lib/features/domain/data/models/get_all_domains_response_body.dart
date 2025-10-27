@@ -44,4 +44,17 @@ class Domain {
   factory Domain.fromJson(Map<String, dynamic> json) => _$DomainFromJson(json);
 
   Map<String, dynamic> toJson() => _$DomainToJson(this);
+
+  static List<Domain> dummyDomains = List.generate(
+    6,
+    (index) => Domain(
+      id: "",
+      name: "test",
+      route: "",
+      status: "",
+      createdAt: "",
+      createdBy: "",
+      updatedAt: "",
+    ),
+  );
 }

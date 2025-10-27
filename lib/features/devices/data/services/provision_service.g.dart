@@ -36,7 +36,7 @@ class _ProvisionService implements ProvisionService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/provision/clients',
+            'provision/clients',
             queryParameters: queryParameters,
             data: _data,
           )
