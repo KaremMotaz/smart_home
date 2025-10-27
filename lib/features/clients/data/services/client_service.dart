@@ -11,7 +11,7 @@ part 'client_service.g.dart';
 abstract class ClientService {
   factory ClientService(Dio dio) = _ClientService;
 
-  @POST(ApiConstants.addClient)
+  @POST(ApiConstants.createClient)
   Future<AddClientResponse> addClient({
     @Body() required AddClientRequestBody body,
   });

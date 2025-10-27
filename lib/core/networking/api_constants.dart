@@ -13,6 +13,6 @@ class ApiConstants {
   static const addDomain = "domains";
   static const getAllDomains = "domains";
   static const updateDomain = "domains/{domain_id}";
-  static const createClient = "/provision/clients";
-  // static const addClient = "addClient";
+  static const createClient = "{domain_id}/clients";
+  static const provisionClient = "provision/clients";
 }

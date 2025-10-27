@@ -1,4 +1,3 @@
-import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
@@ -12,11 +11,12 @@ class UpdateDomainRepo {
   UpdateDomainRepo({required this.domainService});
   Future<ApiResult<UpdateDomainResponse>> updateDomain({
     required UpdateDomainRequestBody body,
+    required String domainId,
   }) async {
     try {
       final UpdateDomainResponse response = await domainService.updateDomain(
         body: body,
-        domainId: kSelectedDomainId,
+        domainId: domainId,
       );
       return ApiResult.success(response);
     } catch (error) {

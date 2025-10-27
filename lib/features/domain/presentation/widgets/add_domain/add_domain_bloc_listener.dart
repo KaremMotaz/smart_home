@@ -22,7 +22,7 @@ class AddDomainBlocListener extends StatelessWidget {
               context: context,
               message: "Project Added Successfully",
             );
-            GoRouter.of(context).pop();
+            context.pop(true);
           },
           addDomainFailure: (apiErrorModel) {
             errorDialog(

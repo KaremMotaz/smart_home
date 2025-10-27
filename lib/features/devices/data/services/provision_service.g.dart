@@ -27,15 +27,16 @@ class _ProvisionService implements ProvisionService {
     required String domainId,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'domain_id': domainId};
-    final _headers = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'domain_id': domainId};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     _data.addAll(client.toJson());
     final _options = _setStreamType<ProvisionClientResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/provision/client',
+            '/provision/clients',
             queryParameters: queryParameters,
             data: _data,
           )

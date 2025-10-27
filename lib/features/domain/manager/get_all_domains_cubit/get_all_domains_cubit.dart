@@ -1,12 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../../core/functions/load_saved_domain_index.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../data/models/get_all_domains_response_body.dart';
 import '../../data/repos/get_all_domains_repo.dart';
-
 part 'get_all_domains_cubit.freezed.dart';
 part 'get_all_domains_state.dart';
 

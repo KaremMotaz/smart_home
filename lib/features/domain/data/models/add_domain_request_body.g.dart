@@ -10,9 +10,9 @@ AddDomainRequestBody _$AddDomainRequestBodyFromJson(
   Map<String, dynamic> json,
 ) => AddDomainRequestBody(
   name: json['name'] as String,
-  alias: json['alias'] as String,
+  route: json['route'] as String,
 );
 
 Map<String, dynamic> _$AddDomainRequestBodyToJson(
   AddDomainRequestBody instance,
-) => <String, dynamic>{'name': instance.name, 'alias': instance.alias};
+) => <String, dynamic>{'name': instance.name, 'route': instance.route};

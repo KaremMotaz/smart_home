@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smart_home/features/domain/presentation/views/edit_domain_view.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../services/get_it_service.dart';
 import '../../features/settings/presentation/views/about_view.dart';
@@ -56,12 +57,16 @@ abstract class AppRouter {
           ),
         ),
         GoRoute(
+          path: Routes.manageDomainsView,
+          builder: (context, state) => const ManageDomainsView(),
+        ),
+        GoRoute(
           path: Routes.addDomainView,
           builder: (context, state) => const AddDomainView(),
         ),
         GoRoute(
-          path: Routes.manageDomainsView,
-          builder: (context, state) => const ManageDomainsView(),
+          path: Routes.editDomainView,
+          builder: (context, state) => const EditDomainView(),
         ),
         GoRoute(
           path: Routes.manageUsersView,
@@ -71,7 +76,6 @@ abstract class AppRouter {
           path: Routes.devicesView,
           builder: (context, state) => const AddDevicesView(),
         ),
-
         GoRoute(
           path: Routes.soundView,
           builder: (context, state) => const SoundView(),

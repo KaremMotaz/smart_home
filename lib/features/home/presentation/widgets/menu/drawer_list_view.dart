@@ -15,7 +15,7 @@ class DrawerListView extends StatelessWidget {
       children: [
         CustomDrawerOption(
           icon: AppAssets.domainIcon,
-          title: 'Manage Domains',
+          title: 'Manage Projects',
           onTap: () {
             GoRouter.of(context).pop();
             GoRouter.of(context).push(Routes.manageDomainsView);

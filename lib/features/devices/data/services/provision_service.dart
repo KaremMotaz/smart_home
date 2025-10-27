@@ -9,9 +9,10 @@ part 'provision_service.g.dart';
 abstract class ProvisionService {
   factory ProvisionService(Dio dio) = _ProvisionService;
 
-  @POST(ApiConstants.createClient)
+  @POST(ApiConstants.provisionClient)
   Future<ProvisionClientResponse> createClient({
     @Body() required ProvisionClientRequestBody client,
-    @Query("domain_id") required String domainId,
+    @Header("domain_id") required String domainId,
+    // @Body() required String domainId,
   });
 }

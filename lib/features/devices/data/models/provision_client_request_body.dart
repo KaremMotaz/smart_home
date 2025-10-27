@@ -6,7 +6,7 @@ part 'provision_client_request_body.g.dart';
 class ProvisionClientRequestBody {
   final String name;
   final String? metadata;
-
+  
   ProvisionClientRequestBody({required this.name, this.metadata});
 
   factory ProvisionClientRequestBody.fromJson(Map<String, dynamic> json) =>

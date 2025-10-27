@@ -32,7 +32,7 @@ class GetAllDomainsViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Your Domains", style: AppStyles.bold18),
+          const Text("Your Projects", style: AppStyles.bold18),
           const SizedBox(height: 20),
           Expanded(
             child: GridView.builder(

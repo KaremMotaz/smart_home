@@ -1,4 +1,4 @@
-import 'package:smart_home/core/helpers/constants.dart';
+import 'package:smart_home/core/functions/get_domain_id.dart';
 import 'package:smart_home/core/networking/api_error_handler.dart';
 import 'package:smart_home/core/networking/api_result.dart';
 import 'package:smart_home/features/devices/data/models/provision_client_request_body.dart';
@@ -16,7 +16,7 @@ class ProvisionClientRepo {
   }) async {
     try {
       final ProvisionClientResponse response = await provisionService
-          .createClient(client: client, domainId: kSelectedDomainId);
+          .createClient(client: client, domainId: await getDomainId());
       return ApiResult.success(response);
     } catch (error) {
       Logger.log(error.toString());

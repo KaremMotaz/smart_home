@@ -16,10 +16,12 @@ class UpdateDomainCubit extends Cubit<UpdateDomainState> {
 
   Future<void> updateDomain({
     required UpdateDomainRequestBody updateDomainRequestBody,
+    required String domainId,
   }) async {
     emit(const UpdateDomainState.updateDomainLoading());
     final ApiResult result = await updateDomainRepo.updateDomain(
       body: updateDomainRequestBody,
+      domainId: domainId,
     );
     result.when(
       success: (data) {

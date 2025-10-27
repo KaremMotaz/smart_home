@@ -1,8 +1,8 @@
 import '../helpers/constants.dart';
 import '../services/cache_helper.dart';
 
-void appLogout() {
-  CacheHelper.deleteSecureData(key: kAccessToken);
-  CacheHelper.delete(key: kUserData);
-  CacheHelper.delete(key: kLastVisitedRoute);
+void appLogout() async {
+  await CacheHelper.deleteSecureData(key: kAccessToken);
+  await CacheHelper.delete(key: kUserData);
+  await CacheHelper.delete(key: kLastVisitedRoute);
 }

@@ -15,13 +15,13 @@ class AddDomainForm extends StatefulWidget {
 
 class _LoginFormState extends State<AddDomainForm> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController aliasController = TextEditingController();
+  final TextEditingController routeController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
     nameController.dispose();
-    aliasController.dispose();
+    routeController.dispose();
     super.dispose();
   }
 
@@ -46,7 +46,7 @@ class _LoginFormState extends State<AddDomainForm> {
           AppTextFormField(
             textInputType: TextInputType.name,
             hintText: "Project Alias",
-            controller: aliasController,
+            controller: routeController,
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return "Please enter your project alias";
@@ -74,7 +74,7 @@ class _LoginFormState extends State<AddDomainForm> {
       context.read<AddDomainCubit>().addDomain(
         addDomainRequestBody: AddDomainRequestBody(
           name: nameController.text,
-          alias: aliasController.text,
+          route: routeController.text,
         ),
       );
     }
