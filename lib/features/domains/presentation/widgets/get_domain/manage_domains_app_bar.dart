@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
 import 'package:smart_home/core/theming/app_colors.dart';
 import 'package:smart_home/core/theming/app_styles.dart';
-import 'package:smart_home/features/domain/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
+import 'package:smart_home/features/domains/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 
 class ManageDomainsAppBar extends StatelessWidget
     implements PreferredSizeWidget {

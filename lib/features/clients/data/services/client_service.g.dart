@@ -22,27 +22,29 @@ class _ClientService implements ClientService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AddClientResponse> addClient({
-    required AddClientRequestBody body,
+  Future<CreateClientResponse> createClient({
+    required CreateClientRequestBody body,
+    required String domainId,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
-    final _options = _setStreamType<AddClientResponse>(
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _options = _setStreamType<CreateClientResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '{domain_id}/clients',
+            '${domainId}/clients',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AddClientResponse _value;
+    late CreateClientResponse _value;
     try {
-      _value = AddClientResponse.fromJson(_result.data!);
+      _value = CreateClientResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

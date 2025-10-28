@@ -11,12 +11,12 @@ class ProvisionClientRepo {
   final ProvisionService provisionService;
 
   ProvisionClientRepo({required this.provisionService});
-  Future<ApiResult<ProvisionClientResponse>> createClient({
+  Future<ApiResult<ProvisionClientResponse>> provisionClient({
     required ProvisionClientRequestBody client,
   }) async {
     try {
       final ProvisionClientResponse response = await provisionService
-          .createClient(client: client, domainId: await getDomainId());
+          .provisionClient(client: client, domainId: await getDomainId());
       return ApiResult.success(response);
     } catch (error) {
       Logger.log(error.toString());

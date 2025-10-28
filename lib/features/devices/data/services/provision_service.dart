@@ -10,7 +10,7 @@ abstract class ProvisionService {
   factory ProvisionService(Dio dio) = _ProvisionService;
 
   @POST(ApiConstants.provisionClient)
-  Future<ProvisionClientResponse> createClient({
+  Future<ProvisionClientResponse> provisionClient({
     @Body() required ProvisionClientRequestBody client,
     @Header("domain_id") required String domainId,
     // @Body() required String domainId,

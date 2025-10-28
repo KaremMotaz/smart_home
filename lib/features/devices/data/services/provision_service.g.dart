@@ -22,7 +22,7 @@ class _ProvisionService implements ProvisionService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<ProvisionClientResponse> createClient({
+  Future<ProvisionClientResponse> provisionClient({
     required ProvisionClientRequestBody client,
     required String domainId,
   }) async {

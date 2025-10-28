@@ -71,7 +71,7 @@ class _LoginFormState extends State<ProvisionClientForm> {
 
   void validateThenProvisionClient(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      context.read<ProvisionClientCubit>().createClient(
+      context.read<ProvisionClientCubit>().provisionClient(
         client: ProvisionClientRequestBody(
           name: deviceNameController.text,
           metadata: metaDataController.text,

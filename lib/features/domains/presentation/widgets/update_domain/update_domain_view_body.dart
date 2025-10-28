@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
-import 'package:smart_home/features/domain/presentation/widgets/update_domain/update_domain_form.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domains/presentation/widgets/update_domain/update_domain_form.dart';
 import '../../../../../core/widgets/custom_header.dart';
 import '../../../../../core/widgets/form_container.dart';
 

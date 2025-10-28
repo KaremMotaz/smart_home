@@ -11,10 +11,10 @@ class ProvisionClientViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomHeader(
-          title: "Add Device",
-          appBarTitle: "Add Device",
+          title: "Provision Device",
+          appBarTitle: "Provision Device",
           subtitle:
-              "Add a new device to organize, connect, and control your smart devices effortlessly.",
+              "Provision a new device to organize, connect, and control your smart devices effortlessly.",
         ),
         Expanded(child: FormContainer(child: ProvisionClientForm())),
       ],

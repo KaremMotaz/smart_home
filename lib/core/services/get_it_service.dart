@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:smart_home/features/clients/data/repos/create_client_repo.dart';
+import 'package:smart_home/features/clients/data/services/client_service.dart';
 import 'package:smart_home/features/devices/data/repos/provision_client_repo.dart';
 import 'package:smart_home/features/devices/data/services/provision_service.dart';
-import 'package:smart_home/features/domain/data/repos/update_domain_repo.dart';
+import 'package:smart_home/features/domains/data/repos/update_domain_repo.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../../features/settings/data/repos/profile_repo.dart';
 import '../../features/settings/data/repos/settings_repo.dart';
@@ -11,9 +13,9 @@ import '../../features/settings/data/services/settings_service.dart';
 import '../manager/user_data_cubit/user_data_cubit.dart';
 import '../networking/api_service.dart';
 import '../repos/user_data_repo.dart';
-import '../../features/domain/data/repos/add_domain_repo.dart';
-import '../../features/domain/data/repos/get_all_domains_repo.dart';
-import '../../features/domain/data/services/domain_service.dart';
+import '../../features/domains/data/repos/add_domain_repo.dart';
+import '../../features/domains/data/repos/get_all_domains_repo.dart';
+import '../../features/domains/data/services/domain_service.dart';
 import '../networking/dio_factory.dart';
 import '../../features/auth/data/repos/login_repo.dart';
 import '../../features/auth/data/repos/register_repo.dart';
@@ -83,5 +85,10 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<ProvisionClientRepo>(
     () => ProvisionClientRepo(provisionService: getIt.get()),
+  );
+
+  getIt.registerLazySingleton<ClientService>(() => ClientService(getIt.get()));
+  getIt.registerLazySingleton<CreateClientRepo>(
+    () => CreateClientRepo(clientService: getIt.get()),
   );
 }

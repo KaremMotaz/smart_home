@@ -18,4 +18,5 @@ class Routes {
   static const String editProfileView = '/editProfileView';
   static const String helpView = '/helpView';
   static const String aboutView = '/aboutView';
+  static const String createDeviceView = '/createDeviceView';
 }

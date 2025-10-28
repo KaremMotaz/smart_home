@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/features/domain/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response_body.dart';
 import 'no_domains_found.dart';
 import '../../../../../core/widgets/custom_error_widget.dart';
 import '../../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';

@@ -14,9 +14,11 @@ class ProvisionClientCubit extends Cubit<ProvisionClientState> {
 
   final ProvisionClientRepo provisionClientRepo;
 
-  Future<void> createClient({required ProvisionClientRequestBody client}) async {
+  Future<void> provisionClient({
+    required ProvisionClientRequestBody client,
+  }) async {
     emit(const ProvisionClientState.provisionClientLoading());
-    final ApiResult result = await provisionClientRepo.createClient(
+    final ApiResult result = await provisionClientRepo.provisionClient(
       client: client,
     );
     result.when(

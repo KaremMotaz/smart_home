@@ -6,8 +6,8 @@ import 'package:smart_home/features/devices/data/repos/provision_client_repo.dar
 import 'package:smart_home/features/devices/manager/provision_client_cubit/provision_client_cubit.dart';
 import 'package:smart_home/features/devices/presentation/widgets/provision_client_bloc_listener.dart';
 
-class AddDevicesView extends StatelessWidget {
-  const AddDevicesView({super.key});
+class ProvisionDevicesView extends StatelessWidget {
+  const ProvisionDevicesView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,19 +1,20 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:smart_home/features/domain/presentation/views/update_domain_view.dart';
-import '../../features/domain/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/clients/presentation/views/create_client_view.dart';
+import 'package:smart_home/features/domains/presentation/views/update_domain_view.dart';
+import '../../features/domains/data/models/get_all_domains_response_body.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../services/get_it_service.dart';
 import '../../features/settings/presentation/views/about_view.dart';
 import '../../features/settings/presentation/views/edit_profile_view.dart';
-import '../../features/devices/presentation/views/add_devices_view.dart';
+import '../../features/devices/presentation/views/provision_devices_view.dart';
 import '../../features/rooms/presentation/views/all_rooms_view.dart';
 import '../../features/settings/presentation/views/help_view.dart';
 import '../../features/settings/presentation/views/profile_view.dart';
 import '../../features/settings/presentation/views/settings_view.dart';
 import '../../features/settings/presentation/views/sound_view.dart';
-import '../../features/domain/presentation/views/add_domain_view.dart';
-import '../../features/domain/presentation/views/manage_domains_view.dart';
+import '../../features/domains/presentation/views/add_domain_view.dart';
+import '../../features/domains/presentation/views/manage_domains_view.dart';
 import '../../features/home/data/models/rooms_model.dart';
 import '../../features/manage_users/presentation/views/manage_users_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
@@ -79,7 +80,11 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.devicesView,
-          builder: (context, state) => const AddDevicesView(),
+          builder: (context, state) => const ProvisionDevicesView(),
+        ),
+        GoRoute(
+          path: Routes.createDeviceView,
+          builder: (context, state) => const CreateClientView(),
         ),
         GoRoute(
           path: Routes.soundView,
