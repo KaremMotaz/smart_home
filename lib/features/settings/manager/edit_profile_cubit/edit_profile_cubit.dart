@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../../core/helpers/logger.dart';
 import '../../../../core/manager/user_cubit/user_cubit.dart';
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
@@ -86,11 +85,9 @@ class EditProfileCubit extends Cubit<EditProfileState> {
     );
     result.when(
       success: (data) async {
-        Logger.log(data.toString());
         emit(const EditProfileState.editProfileSuccess());
       },
       failure: (apiErrorModel) async {
-        Logger.log(apiErrorModel.error.toString());
         emit(EditProfileState.editProfileFailure(apiErrorModel: apiErrorModel));
       },
     );

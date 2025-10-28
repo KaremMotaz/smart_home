@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:json_annotation/json_annotation.dart';
-import '../helpers/logger.dart';
 part 'user_data_response.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -38,7 +37,6 @@ class UserDataResponse {
     try {
       return _$UserDataResponseFromJson(json);
     } catch (e) {
-      Logger.log(e.toString());
       final fixedJson = _sanitizeJson(json);
       return _$UserDataResponseFromJson(fixedJson);
     }

@@ -5,8 +5,6 @@ import 'package:smart_home/features/devices/data/models/provision_client_request
 import 'package:smart_home/features/devices/data/models/provision_client_response.dart';
 import 'package:smart_home/features/devices/data/services/provision_service.dart';
 
-import '../../../../core/helpers/logger.dart';
-
 class ProvisionClientRepo {
   final ProvisionService provisionService;
 
@@ -19,7 +17,6 @@ class ProvisionClientRepo {
           .provisionClient(client: client, domainId: await getDomainId());
       return ApiResult.success(response);
     } catch (error) {
-      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }

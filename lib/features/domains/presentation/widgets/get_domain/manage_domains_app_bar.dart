@@ -26,7 +26,7 @@ class ManageDomainsAppBar extends StatelessWidget
             }
           },
           child: Text(
-            "Add Project",
+            "Create Project",
             style: AppStyles.bold18.copyWith(color: AppColors.grey),
           ),
         ),

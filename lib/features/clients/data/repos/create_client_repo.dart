@@ -4,7 +4,6 @@ import 'package:smart_home/core/networking/api_result.dart';
 import 'package:smart_home/features/clients/data/models/create_client_request_body.dart';
 import 'package:smart_home/features/clients/data/models/create_client_response.dart';
 import 'package:smart_home/features/clients/data/services/client_service.dart';
-import '../../../../core/helpers/logger.dart';
 
 class CreateClientRepo {
   final ClientService clientService;
@@ -20,7 +19,6 @@ class CreateClientRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }

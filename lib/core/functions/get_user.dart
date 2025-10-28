@@ -1,14 +1,11 @@
 import 'dart:convert';
 import '../helpers/extensions.dart';
-import '../helpers/logger.dart';
-
 import '../models/user_data_response.dart';
 import '../services/cache_helper.dart';
 import '../helpers/constants.dart';
 
 UserDataResponse? getUser() {
   final jsonString = CacheHelper.getString(key: kUserData);
-  Logger.log(jsonString.toString());
   if (jsonString.isNullOrEmpty()) {
     return null;
   }
@@ -22,6 +19,5 @@ UserDataResponse? getUser() {
 
 Future<void> saveUser({required UserDataResponse userDataResponse}) async {
   final jsonString = jsonEncode(userDataResponse.toJson());
-  Logger.log("Save user data $jsonString");
   await CacheHelper.set(key: kUserData, value: jsonString);
 }

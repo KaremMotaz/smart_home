@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import '../helpers/logger.dart';
 import '../../features/auth/data/models/refresh_token_request_body.dart';
 import '../../features/auth/data/services/auth_service.dart';
 import '../helpers/constants.dart';
@@ -96,8 +95,7 @@ class DioFactory {
       );
 
       return true;
-    } catch (e, s) {
-      Logger.log('Refresh token failed: $e\n$s');
+    } catch (e) {
       return false;
     }
   }

@@ -1,4 +1,3 @@
-import '../../../../core/helpers/logger.dart';
 import '../../../../core/manager/user_cubit/user_cubit.dart';
 import '../../../../core/models/user_data_response.dart';
 import '../../../../core/functions/get_user.dart';
@@ -70,7 +69,6 @@ class ProfileRepo {
       userCubit.updateUser(userDataResponse: result);
       return ApiResult.success(result);
     } catch (error) {
-      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }

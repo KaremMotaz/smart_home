@@ -1,5 +1,4 @@
 import 'package:smart_home/features/domains/data/services/domains_local_data_source.dart';
-import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../models/get_all_domains_response.dart';
@@ -18,7 +17,6 @@ class GetAllDomainsRepo {
       // Try to get data from cache first
       final GetAllDomainsResponse? cached = await domainsLocalDataSource
           .getAllDomains();
-      Logger.log(cached.toString());
       if (cached != null && cached.domains.isNotEmpty) {
         return ApiResult.success(cached);
       }
@@ -31,7 +29,6 @@ class GetAllDomainsRepo {
       await domainsLocalDataSource.cacheAllDomains(data: response);
       return ApiResult.success(response);
     } catch (error) {
-      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }

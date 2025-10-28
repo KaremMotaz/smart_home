@@ -1,4 +1,3 @@
-import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../models/update_domain_request_body.dart';
@@ -20,7 +19,6 @@ class UpdateDomainRepo {
       );
       return ApiResult.success(response);
     } catch (error) {
-      Logger.log(error.toString());
       return ApiResult.failure(ApiErrorHandler.handle(error: error));
     }
   }
