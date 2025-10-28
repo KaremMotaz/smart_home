@@ -13,7 +13,7 @@ import '../../features/settings/presentation/views/help_view.dart';
 import '../../features/settings/presentation/views/profile_view.dart';
 import '../../features/settings/presentation/views/settings_view.dart';
 import '../../features/settings/presentation/views/sound_view.dart';
-import '../../features/domains/presentation/views/add_domain_view.dart';
+import '../../features/domains/presentation/views/create_domain_view.dart';
 import '../../features/domains/presentation/views/manage_domains_view.dart';
 import '../../features/home/data/models/rooms_model.dart';
 import '../../features/manage_users/presentation/views/manage_users_view.dart';
@@ -64,7 +64,7 @@ abstract class AppRouter {
         ),
         GoRoute(
           path: Routes.addDomainView,
-          builder: (context, state) => const AddDomainView(),
+          builder: (context, state) => const CreateDomainView(),
         ),
         GoRoute(
           path: Routes.updateDomainView,

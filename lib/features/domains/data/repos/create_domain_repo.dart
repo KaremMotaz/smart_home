@@ -1,19 +1,19 @@
 import '../../../../core/helpers/logger.dart';
 import '../../../../core/networking/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
-import '../models/add_domain_request_body.dart';
-import '../models/add_domain_response.dart';
+import '../models/create_domain_request_body.dart';
+import '../models/create_domain_response.dart';
 import '../services/domain_service.dart';
 
-class AddDomainRepo {
+class CreateDomainRepo {
   final DomainService domainService;
 
-  AddDomainRepo({required this.domainService});
-  Future<ApiResult<AddDomainResponse>> addDomain({
-    required AddDomainRequestBody body,
+  CreateDomainRepo({required this.domainService});
+  Future<ApiResult<CreateDomainResponse>> createDomain({
+    required CreateDomainRequestBody body,
   }) async {
     try {
-      final AddDomainResponse response = await domainService.addDomain(
+      final CreateDomainResponse response = await domainService.createDomain(
         body: body,
       );
       return ApiResult.success(response);

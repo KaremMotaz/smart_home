@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'add_domain_response.g.dart';
+part 'create_domain_response.g.dart';
 
 @JsonSerializable()
-class AddDomainResponse {
+class CreateDomainResponse {
   final String id;
   final String name;
   final String route;
@@ -15,7 +15,7 @@ class AddDomainResponse {
   @JsonKey(name: 'updated_at')
   final String updatedAt;
 
-  const AddDomainResponse({
+  const CreateDomainResponse({
     required this.route,
     required this.createdAt,
     required this.createdBy,
@@ -25,7 +25,7 @@ class AddDomainResponse {
     required this.updatedAt,
   });
 
-  factory AddDomainResponse.fromJson(Map<String, dynamic> json) {
-    return _$AddDomainResponseFromJson(json);
+  factory CreateDomainResponse.fromJson(Map<String, dynamic> json) {
+    return _$CreateDomainResponseFromJson(json);
   }
 }

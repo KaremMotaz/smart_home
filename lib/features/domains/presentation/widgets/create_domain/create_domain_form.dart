@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/app_text_form_field.dart';
 import '../../../../../core/widgets/bloc_button.dart';
-import '../../../data/models/add_domain_request_body.dart';
-import '../../../manager/add_domain_cubit/add_domain_cubit.dart';
+import '../../../data/models/create_domain_request_body.dart';
+import '../../../manager/create_domain_cubit/create_domain_cubit.dart';
 
-class AddDomainForm extends StatefulWidget {
-  const AddDomainForm({super.key});
+class CreateDomainForm extends StatefulWidget {
+  const CreateDomainForm({super.key});
 
   @override
-  State<AddDomainForm> createState() => _LoginFormState();
+  State<CreateDomainForm> createState() => _LoginFormState();
 }
 
-class _LoginFormState extends State<AddDomainForm> {
+class _LoginFormState extends State<CreateDomainForm> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController routeController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -55,11 +55,11 @@ class _LoginFormState extends State<AddDomainForm> {
             },
           ),
           const SizedBox(height: 40),
-          BlocButton<AddDomainCubit, AddDomainState>(
+          BlocButton<CreateDomainCubit, CreateDomainState>(
             label: "Submit",
             borderRadius: 50,
             buttonHeight: 60,
-            isLoading: (state) => state is AddDomainLoading,
+            isLoading: (state) => state is CreateDomainLoading,
             onPressed: () {
               validateThenAddDomain(context);
             },
@@ -71,8 +71,8 @@ class _LoginFormState extends State<AddDomainForm> {
 
   void validateThenAddDomain(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      context.read<AddDomainCubit>().addDomain(
-        addDomainRequestBody: AddDomainRequestBody(
+      context.read<CreateDomainCubit>().createDomain(
+        addDomainRequestBody: CreateDomainRequestBody(
           name: nameController.text,
           route: routeController.text,
         ),

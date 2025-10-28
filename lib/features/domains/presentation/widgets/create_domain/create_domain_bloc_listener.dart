@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'add_domain_view_body.dart';
+import 'create_domain_view_body.dart';
 import '../../../../../core/functions/build_snack_bar.dart';
 import '../../../../../core/functions/error_dialog.dart';
-import '../../../manager/add_domain_cubit/add_domain_cubit.dart';
+import '../../../manager/create_domain_cubit/create_domain_cubit.dart';
 
-class AddDomainBlocListener extends StatelessWidget {
-  const AddDomainBlocListener({super.key});
+class CreateDomainBlocListener extends StatelessWidget {
+  const CreateDomainBlocListener({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AddDomainCubit, AddDomainState>(
+    return BlocListener<CreateDomainCubit, CreateDomainState>(
       listenWhen: (previous, current) {
-        return current is AddDomainSuccess || current is AddDomainFailure;
+        return current is CreateDomainSuccess || current is CreateDomainFailure;
       },
       listener: (context, state) {
         state.whenOrNull(
-          addDomainSuccess: () {
+          createDomainSuccess: () {
             successSnackBar(
               context: context,
               message: "Project Added Successfully",
@@ -25,7 +25,7 @@ class AddDomainBlocListener extends StatelessWidget {
 
             context.pop(true);
           },
-          addDomainFailure: (apiErrorModel) {
+          createDomainFailure: (apiErrorModel) {
             errorDialog(
               context: context,
               message: apiErrorModel.message,
@@ -34,7 +34,7 @@ class AddDomainBlocListener extends StatelessWidget {
           },
         );
       },
-      child: const AddDomainViewBody(),
+      child: const CreateDomainViewBody(),
     );
   }
 }

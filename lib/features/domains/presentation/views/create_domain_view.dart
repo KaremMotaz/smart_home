@@ -5,25 +5,25 @@ import 'package:smart_home/features/domains/data/models/get_all_domains_response
 
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
-import '../../data/repos/add_domain_repo.dart';
-import '../../manager/add_domain_cubit/add_domain_cubit.dart';
-import '../widgets/add_domain/add_domain_bloc_listener.dart';
+import '../../data/repos/create_domain_repo.dart';
+import '../../manager/create_domain_cubit/create_domain_cubit.dart';
+import '../widgets/create_domain/create_domain_bloc_listener.dart';
 
-class AddDomainView extends StatelessWidget {
-  const AddDomainView({super.key});
+class CreateDomainView extends StatelessWidget {
+  const CreateDomainView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AddDomainCubit>(
-      create: (context) => AddDomainCubit(
-        addDomainRepo: getIt.get<AddDomainRepo>(),
+    return BlocProvider<CreateDomainCubit>(
+      create: (context) => CreateDomainCubit(
+        addDomainRepo: getIt.get<CreateDomainRepo>(),
         localCacheService: getIt
             .get<LocalCacheService<GetAllDomainsResponse>>(),
       ),
       child: const Scaffold(
         backgroundColor: AppColors.orange2,
         resizeToAvoidBottomInset: true,
-        body: SafeArea(child: AddDomainBlocListener()),
+        body: SafeArea(child: CreateDomainBlocListener()),
       ),
     );
   }

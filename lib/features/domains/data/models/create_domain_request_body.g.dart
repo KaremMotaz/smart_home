@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'add_domain_request_body.dart';
+part of 'create_domain_request_body.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AddDomainRequestBody _$AddDomainRequestBodyFromJson(
+CreateDomainRequestBody _$CreateDomainRequestBodyFromJson(
   Map<String, dynamic> json,
-) => AddDomainRequestBody(
+) => CreateDomainRequestBody(
   name: json['name'] as String,
   route: json['route'] as String,
 );
 
-Map<String, dynamic> _$AddDomainRequestBodyToJson(
-  AddDomainRequestBody instance,
+Map<String, dynamic> _$CreateDomainRequestBodyToJson(
+  CreateDomainRequestBody instance,
 ) => <String, dynamic>{'name': instance.name, 'route': instance.route};

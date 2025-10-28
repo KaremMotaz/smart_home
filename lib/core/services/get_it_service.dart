@@ -16,7 +16,7 @@ import '../../features/settings/data/services/settings_service.dart';
 import '../manager/user_data_cubit/user_data_cubit.dart';
 import '../networking/api_service.dart';
 import '../repos/user_data_repo.dart';
-import '../../features/domains/data/repos/add_domain_repo.dart';
+import '../../features/domains/data/repos/create_domain_repo.dart';
 import '../../features/domains/data/repos/get_all_domains_repo.dart';
 import '../../features/domains/data/services/domain_service.dart';
 import '../networking/dio_factory.dart';
@@ -51,8 +51,8 @@ Future<void> setupGetIt() async {
   );
 
   getIt.registerLazySingleton<DomainService>(() => DomainService(getIt.get()));
-  getIt.registerLazySingleton<AddDomainRepo>(
-    () => AddDomainRepo(domainService: getIt.get()),
+  getIt.registerLazySingleton<CreateDomainRepo>(
+    () => CreateDomainRepo(domainService: getIt.get()),
   );
   getIt.registerLazySingleton<LocalCacheService<GetAllDomainsResponse>>(
     () => LocalCacheService<GetAllDomainsResponse>(),

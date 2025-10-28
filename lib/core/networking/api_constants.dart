@@ -10,7 +10,7 @@ class ApiConstants {
   static const updateUsername = "users/{user_id}/username";
   static const changeSecret = "users/secret";
   static const deleteUser = "users/{user_id}";
-  static const addDomain = "domains";
+  static const createDomain = "domains";
   static const getAllDomains = "domains";
   static const updateDomain = "domains/{domain_id}";
   static const createClient = "{domain_id}/clients";
