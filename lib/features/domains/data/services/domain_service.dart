@@ -4,7 +4,7 @@ import '../models/update_domain_request_body.dart';
 import '../models/update_domain_response.dart';
 import '../models/add_domain_request_body.dart';
 import '../models/add_domain_response.dart';
-import '../models/get_all_domains_response_body.dart';
+import '../models/get_all_domains_response.dart';
 import '../../../../core/networking/api_constants.dart';
 part 'domain_service.g.dart';
 
@@ -18,7 +18,7 @@ abstract class DomainService {
   });
 
   @GET(ApiConstants.getAllDomains)
-  Future<GetAllDomainsResponseBody> getAllDomains();
+  Future<GetAllDomainsResponse> getAllDomains();
 
   @PATCH(ApiConstants.updateDomain)
   Future<UpdateDomainResponse> updateDomain({

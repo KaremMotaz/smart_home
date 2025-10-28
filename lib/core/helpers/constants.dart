@@ -5,4 +5,5 @@ const String kSelectedDomainIndex = "selectedDomainIndex";
 const String kHasSeenOnboarding = "hasSeenOnboarding";
 const String kLastVisitedRoute = "lastVisitedRoute";
 const String kUserData = "userData";
-
+const String kDomainsBox = "domains_box";
+const String kDomains = "domains";

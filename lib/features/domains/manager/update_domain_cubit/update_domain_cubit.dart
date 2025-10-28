@@ -1,5 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:smart_home/core/helpers/constants.dart';
+import 'package:smart_home/core/services/local_cache_service.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response.dart';
 
 import '../../../../core/networking/api_error_model.dart';
 import '../../../../core/networking/api_result.dart';
@@ -10,9 +13,13 @@ part 'update_domain_cubit.freezed.dart';
 part 'update_domain_state.dart';
 
 class UpdateDomainCubit extends Cubit<UpdateDomainState> {
-  UpdateDomainCubit({required this.updateDomainRepo})
-    : super(const UpdateDomainState.updateDomainInitial());
+  UpdateDomainCubit({
+    required this.updateDomainRepo,
+    required this.localCacheService,
+  }) : super(const UpdateDomainState.updateDomainInitial());
+
   final UpdateDomainRepo updateDomainRepo;
+  final LocalCacheService<GetAllDomainsResponse> localCacheService;
 
   Future<void> updateDomain({
     required UpdateDomainRequestBody updateDomainRequestBody,
@@ -24,7 +31,8 @@ class UpdateDomainCubit extends Cubit<UpdateDomainState> {
       domainId: domainId,
     );
     result.when(
-      success: (data) {
+      success: (data) async {
+        await localCacheService.clear(boxName: kDomainsBox, key: kDomains);
         emit(const UpdateDomainState.updateDomainSuccess());
       },
       failure: (apiErrorModel) async {

@@ -6,7 +6,7 @@ class GetAllDomainsState with _$GetAllDomainsState {
       GetAllDomainsLoading;
 
   const factory GetAllDomainsState.getAllDomainsSuccess({
-    required GetAllDomainsResponseBody getAllDomainsResponseBody,
+    required GetAllDomainsResponse getAllDomainsResponseBody,
     @Default(-1) int selectedIndex,
   }) = GetAllDomainsSuccess;
   const factory GetAllDomainsState.getAllDomainsFailure({

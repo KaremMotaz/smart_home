@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/features/clients/presentation/views/create_client_view.dart';
 import 'package:smart_home/features/domains/presentation/views/update_domain_view.dart';
-import '../../features/domains/data/models/get_all_domains_response_body.dart';
+import '../../features/domains/data/models/get_all_domains_response.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../services/get_it_service.dart';
 import '../../features/settings/presentation/views/about_view.dart';

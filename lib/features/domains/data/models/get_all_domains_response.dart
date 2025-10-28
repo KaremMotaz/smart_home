@@ -1,21 +1,21 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'get_all_domains_response_body.g.dart';
+part 'get_all_domains_response.g.dart';
 
 @JsonSerializable()
-class GetAllDomainsResponseBody {
+class GetAllDomainsResponse {
   final List<Domain> domains;
   final int limit;
   final int total;
 
-  GetAllDomainsResponseBody({
+  GetAllDomainsResponse({
     required this.domains,
     required this.limit,
     required this.total,
   });
 
-  factory GetAllDomainsResponseBody.fromJson(Map<String, dynamic> json) =>
-      _$GetAllDomainsResponseBodyFromJson(json);
+  factory GetAllDomainsResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetAllDomainsResponseFromJson(json);
 }
 
 @JsonSerializable()

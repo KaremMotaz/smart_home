@@ -10,7 +10,7 @@ import '../../../../../core/services/cache_helper.dart';
 import '../../../../../core/theming/app_colors.dart';
 import '../../../../../core/theming/app_styles.dart';
 import '../../../../../core/widgets/app_text_button.dart';
-import '../../../data/models/get_all_domains_response_body.dart';
+import '../../../data/models/get_all_domains_response.dart';
 import '../../../manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 import 'domain_card.dart';
 

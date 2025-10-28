@@ -22,6 +22,7 @@ class AddDomainBlocListener extends StatelessWidget {
               context: context,
               message: "Project Added Successfully",
             );
+
             context.pop(true);
           },
           addDomainFailure: (apiErrorModel) {

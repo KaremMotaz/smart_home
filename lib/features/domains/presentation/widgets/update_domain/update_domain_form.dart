@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smart_home/features/domains/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response.dart';
 import 'package:smart_home/features/domains/data/models/update_domain_request_body.dart';
 import 'package:smart_home/features/domains/manager/update_domain_cubit/update_domain_cubit.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';

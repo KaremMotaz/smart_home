@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:smart_home/core/services/local_cache_service.dart';
 import 'package:smart_home/features/clients/data/repos/create_client_repo.dart';
 import 'package:smart_home/features/clients/data/services/client_service.dart';
 import 'package:smart_home/features/devices/data/repos/provision_client_repo.dart';
 import 'package:smart_home/features/devices/data/services/provision_service.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response.dart';
 import 'package:smart_home/features/domains/data/repos/update_domain_repo.dart';
+import 'package:smart_home/features/domains/data/services/domains_local_data_source.dart';
 import '../manager/user_cubit/user_cubit.dart';
 import '../../features/settings/data/repos/profile_repo.dart';
 import '../../features/settings/data/repos/settings_repo.dart';
@@ -51,8 +54,17 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<AddDomainRepo>(
     () => AddDomainRepo(domainService: getIt.get()),
   );
+  getIt.registerLazySingleton<LocalCacheService<GetAllDomainsResponse>>(
+    () => LocalCacheService<GetAllDomainsResponse>(),
+  );
+  getIt.registerLazySingleton<DomainsLocalDataSource>(
+    () => DomainsLocalDataSource(cache: getIt.get()),
+  );
   getIt.registerLazySingleton<GetAllDomainsRepo>(
-    () => GetAllDomainsRepo(domainService: getIt.get()),
+    () => GetAllDomainsRepo(
+      domainService: getIt.get(),
+      domainsLocalDataSource: getIt.get(),
+    ),
   );
   getIt.registerLazySingleton<UpdateDomainRepo>(
     () => UpdateDomainRepo(domainService: getIt.get()),

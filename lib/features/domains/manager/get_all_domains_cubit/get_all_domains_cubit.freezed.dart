@@ -125,7 +125,7 @@ return getAllDomainsFailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getAllDomainsLoading,TResult Function( GetAllDomainsResponseBody getAllDomainsResponseBody,  int selectedIndex)?  getAllDomainsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  getAllDomainsLoading,TResult Function( GetAllDomainsResponse getAllDomainsResponseBody,  int selectedIndex)?  getAllDomainsSuccess,TResult Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case GetAllDomainsLoading() when getAllDomainsLoading != null:
 return getAllDomainsLoading();case GetAllDomainsSuccess() when getAllDomainsSuccess != null:
@@ -148,7 +148,7 @@ return getAllDomainsFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getAllDomainsLoading,required TResult Function( GetAllDomainsResponseBody getAllDomainsResponseBody,  int selectedIndex)  getAllDomainsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getAllDomainsFailure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  getAllDomainsLoading,required TResult Function( GetAllDomainsResponse getAllDomainsResponseBody,  int selectedIndex)  getAllDomainsSuccess,required TResult Function( ApiErrorModel apiErrorModel)  getAllDomainsFailure,}) {final _that = this;
 switch (_that) {
 case GetAllDomainsLoading():
 return getAllDomainsLoading();case GetAllDomainsSuccess():
@@ -170,7 +170,7 @@ return getAllDomainsFailure(_that.apiErrorModel);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getAllDomainsLoading,TResult? Function( GetAllDomainsResponseBody getAllDomainsResponseBody,  int selectedIndex)?  getAllDomainsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  getAllDomainsLoading,TResult? Function( GetAllDomainsResponse getAllDomainsResponseBody,  int selectedIndex)?  getAllDomainsSuccess,TResult? Function( ApiErrorModel apiErrorModel)?  getAllDomainsFailure,}) {final _that = this;
 switch (_that) {
 case GetAllDomainsLoading() when getAllDomainsLoading != null:
 return getAllDomainsLoading();case GetAllDomainsSuccess() when getAllDomainsSuccess != null:
@@ -222,7 +222,7 @@ class GetAllDomainsSuccess implements GetAllDomainsState {
   const GetAllDomainsSuccess({required this.getAllDomainsResponseBody, this.selectedIndex = -1});
   
 
- final  GetAllDomainsResponseBody getAllDomainsResponseBody;
+ final  GetAllDomainsResponse getAllDomainsResponseBody;
 @JsonKey() final  int selectedIndex;
 
 /// Create a copy of GetAllDomainsState
@@ -255,7 +255,7 @@ abstract mixin class $GetAllDomainsSuccessCopyWith<$Res> implements $GetAllDomai
   factory $GetAllDomainsSuccessCopyWith(GetAllDomainsSuccess value, $Res Function(GetAllDomainsSuccess) _then) = _$GetAllDomainsSuccessCopyWithImpl;
 @useResult
 $Res call({
- GetAllDomainsResponseBody getAllDomainsResponseBody, int selectedIndex
+ GetAllDomainsResponse getAllDomainsResponseBody, int selectedIndex
 });
 
 
@@ -275,7 +275,7 @@ class _$GetAllDomainsSuccessCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') $Res call({Object? getAllDomainsResponseBody = null,Object? selectedIndex = null,}) {
   return _then(GetAllDomainsSuccess(
 getAllDomainsResponseBody: null == getAllDomainsResponseBody ? _self.getAllDomainsResponseBody : getAllDomainsResponseBody // ignore: cast_nullable_to_non_nullable
-as GetAllDomainsResponseBody,selectedIndex: null == selectedIndex ? _self.selectedIndex : selectedIndex // ignore: cast_nullable_to_non_nullable
+as GetAllDomainsResponse,selectedIndex: null == selectedIndex ? _self.selectedIndex : selectedIndex // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }

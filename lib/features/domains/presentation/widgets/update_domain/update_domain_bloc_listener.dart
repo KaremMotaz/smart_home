@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/functions/build_snack_bar.dart';
 import 'package:smart_home/core/functions/error_dialog.dart';
-import 'package:smart_home/features/domains/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response.dart';
 import 'package:smart_home/features/domains/manager/update_domain_cubit/update_domain_cubit.dart';
 import 'package:smart_home/features/domains/presentation/widgets/update_domain/update_domain_view_body.dart';
 

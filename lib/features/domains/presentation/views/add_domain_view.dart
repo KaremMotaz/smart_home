@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:smart_home/core/services/local_cache_service.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response.dart';
 
 import '../../../../core/services/get_it_service.dart';
 import '../../../../core/theming/app_colors.dart';
@@ -13,8 +15,11 @@ class AddDomainView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AddDomainCubit>(
-      create: (context) =>
-          AddDomainCubit(addDomainRepo: getIt.get<AddDomainRepo>()),
+      create: (context) => AddDomainCubit(
+        addDomainRepo: getIt.get<AddDomainRepo>(),
+        localCacheService: getIt
+            .get<LocalCacheService<GetAllDomainsResponse>>(),
+      ),
       child: const Scaffold(
         backgroundColor: AppColors.orange2,
         resizeToAvoidBottomInset: true,

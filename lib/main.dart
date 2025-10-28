@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:smart_home/core/helpers/hive_config.dart';
 
 import 'core/functions/get_initial_route.dart';
 import 'core/services/cache_helper.dart';
@@ -20,6 +21,7 @@ class MyHttpOverrides extends HttpOverrides {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await HiveConfig.init();
   await CacheHelper.init();
   await setupGetIt();
   SystemChrome.setEnabledSystemUIMode(

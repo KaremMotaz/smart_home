@@ -8,7 +8,7 @@ part of 'domain_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter,avoid_unused_constructor_parameters,unreachable_from_main
 
 class _DomainService implements DomainService {
   _DomainService(this._dio, {this.baseUrl, this.errorLogger}) {
@@ -52,12 +52,12 @@ class _DomainService implements DomainService {
   }
 
   @override
-  Future<GetAllDomainsResponseBody> getAllDomains() async {
+  Future<GetAllDomainsResponse> getAllDomains() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GetAllDomainsResponseBody>(
+    final _options = _setStreamType<GetAllDomainsResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -68,9 +68,9 @@ class _DomainService implements DomainService {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GetAllDomainsResponseBody _value;
+    late GetAllDomainsResponse _value;
     try {
-      _value = GetAllDomainsResponseBody.fromJson(_result.data!);
+      _value = GetAllDomainsResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

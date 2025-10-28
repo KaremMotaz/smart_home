@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:smart_home/core/routing/routes.dart';
-import 'package:smart_home/features/domains/data/models/get_all_domains_response_body.dart';
+import 'package:smart_home/features/domains/data/models/get_all_domains_response.dart';
 import 'package:smart_home/features/domains/manager/get_all_domains_cubit/get_all_domains_cubit.dart';
 
 import '../../../../../core/theming/app_assets.dart';
