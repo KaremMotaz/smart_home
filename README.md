@@ -43,7 +43,7 @@ The app allows users to connect to nearby hubs, manage rooms, control devices, a
 ### Cover App Preview  
 ![Cover App Preview](assets/Smart_Home_App_Presentation/1.png)  
 
-### Welcome To Smart Home  
+### Welcome To Smart Home App  
 ![Welcome To Smart Home App](assets/Smart_Home_App_Presentation/2.png)  
 
 ### Splash Screen  
